@@ -38,7 +38,7 @@ h3{
 
 #rightContent{
     height: 100%;
-    width: 49%;
+    width: 49.5%;
     border: solid #eee 1px;
     float: left;
 
@@ -114,6 +114,8 @@ h3{
     clear:both;
     display: none;
     height: 100%;
+    width: 90%;
+    margin-left: 10%;
     /*border: solid 1px red;*/
     color: #fff
 }
