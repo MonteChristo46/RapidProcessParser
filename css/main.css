@@ -38,13 +38,13 @@ h3{
 
 #rightContent{
     height: 100%;
-    width: 49%;
+    width: 49.5%;
     border: solid #eee 1px;
     float: left;
 
 }
 #rightContentTop,#rightContentMiddle,#rightContentBottom{
-    height: 33%;
+    height: 33.3%;
     width: 100%;
     border: solid #eee 1px;
     background-image: url("../content/images/placeholder_2.jpg");
@@ -114,7 +114,9 @@ h3{
     clear:both;
     display: none;
     height: 100%;
-    border: solid 1px red;
+    width: 90%;
+    margin-left: 10%;
+    /*border: solid 1px red;*/
     color: #fff
 }
 .automaticNumberCounter{

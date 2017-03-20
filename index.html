@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!-- May NAME IS DANIEL -->
-<!--My name is Richard-->
-<!--Text von Richard-->
-<!-- Pringels sind geil! -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,7 +19,12 @@
                 <h1>Hello, Please Upload your </br>
                 <span class="highlight">Rapid Miner</span> File!</h1>
             </div>
-            <button id="buttonUpload">upload you file here</button>
+
+            <form action="" method="post" enctype="multipart/form-data">
+            <input type="file" id="file" name="files[]" multiple="multiple"/>
+            <input type="submit" value="Upload files" />
+            </form>
+            <!--<button id="buttonUpload">upload you file here</button>-->
         </div>
     </div>
     <div id =  "rightContent">
@@ -55,12 +56,12 @@
             </div>
             <div class = "box">
                 <h3>Process instances in the database</h3>
-                <span class="automaticNumberCounter" action="yourPhpScript">19000</span>
+                <span class="automaticNumberCounter" action="yourPhpScript" value='19000'>19000</span>
                 <h3>Activities in the database</h3>
-                <span class="automaticNumberCounter">90000</span>
+                <span class="automaticNumberCounter" value='90000'>90000</span>
             </div>
         </div>
-        <div id = "rightContentBottom" onclick="expandDiv(this); countNumbers()">
+        <div id = "rightContentBottom" onclick="expandDiv(this)">
             <div class = "rightContentWrapper">
                 <div class = "icon"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
                 <div class = "rightContentHeading"><span class="highlight">About</span> the Project</div>
@@ -76,37 +77,54 @@
 <script>
     function toDo(obj){
         expandDiv(obj);
-        countNumbers();
+        countNumbers(obj);
     }
+
     function expandDiv(object){
-            $(object).find(".box").slideToggle('slow', function(){
-                var bodyHeight = $('body').height();
-                var rightContent = $(object);
-                var rightContentTopHeight = Math.round((rightContent.height()/bodyHeight)*100);
-                var newHeight = 0.6; // in percentage
-                if(rightContentTopHeight/100 < newHeight){
-                    rightContent.height(newHeight*bodyHeight);
-                    rightContent.siblings().height(Math.round(((1-newHeight)/2)*100)+"%");
-                    rightContent.siblings().attr("onclick","");
-                }else if(rightContentTopHeight/100 == newHeight){
-                    rightContent.height(33+"%"); // Height of leftContentTop
-                    rightContent.siblings().height(33+"%");
-                    rightContent.siblings().attr("onclick","expandDiv(this)");
-                }
-            });
-    }
-    /*Von http://stackoverflow.com/questions/23006516/jquery-animated-number-counter-from-zero-to-value*/
-    function countNumbers() {
-        $('.automaticNumberCounter').each(function () {
-            var $this = $(this);
-            jQuery({Counter: 0}).animate({Counter: $this.text()}, {
-                duration: 2000,
-                easing: 'swing',
-                step: function (now) {
-                    $this.text(Math.ceil(now));
-                }
-            });
+        $(object).find(".box").slideToggle('slow', function(){
+            var bodyHeight = $('body').height();
+            var rightContent = $(object);
+            var heading = rightContent.find(".rightContentHeading");
+            var rightContentTopHeight = Math.round((rightContent.height()/bodyHeight)*100);
+            var newHeight = 0.6; // in percentage
+            if(rightContentTopHeight/100 < newHeight){
+                //heading.css("display", "none");
+                rightContent.height(newHeight*bodyHeight);
+                rightContent.siblings().height(Math.round(((1-newHeight)/2)*100)+"%");
+                rightContent.siblings().attr("onclick","");
+            }else if(rightContentTopHeight/100 == newHeight){
+                //heading.css("display", "block");
+                rightContent.height(33.3+"%"); // Height of rightContentTop
+                rightContent.siblings().height(33.3+"%");
+                rightContent.siblings().attr("onclick","expandDiv(this)");
+            }
         });
+
+    }
+
+    function countNumbers(object) {
+        var opened = false;
+        var boxHeight = $(object).height();
+        var bodyHeight = $('body').height();
+        var actualHeight = Math.round((boxHeight/bodyHeight)*100);
+        console.log(actualHeight);
+        var startingHeight = 33;
+        if(actualHeight <= startingHeight){
+            var opened = true;
+        }
+        if(opened) {
+            $('.automaticNumberCounter').each(function () {
+                var $this = $(this);
+                //Value anstelle von text(), da der Counter den Text verändert
+                jQuery({Counter: 0}).animate({Counter: $this.attr('value')}, {
+                    duration: 2000,
+                    easing: 'swing',
+                    step: function (now) {
+                        $this.text(Math.ceil(now));
+                    }
+                });
+            });
+        }
     }
 </script>
 </html>
