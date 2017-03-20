@@ -67,7 +67,7 @@ class DataBaseInterface
     /*PROBLEM: Die ID für ProcessInstance und Aktivität werden automatisch von der Datenbank vergeben, Wie kriege ich die raus?
     *Ist wichtig um eine Aktivität einer Prozessinstanz zuzuordnen oder Attribute einer Aktivität
     */
-    public function uploadProcessInstanceToDatabase(){
+    public function uploadProcessInstancesToDatabase(){
         foreach($this->processInstances as $processInstance){
             //Process Instance Part
             $processInstanceName = $processInstance->getName();
