@@ -19,6 +19,7 @@ class ProcessInstance
         $date = $this->getDate();
         $this->date = $date["mday"].".".$date["mon"].".".$date["year"]; //Funzt noch nicht
         */
+
     }
 
     //if you want to add a single activity
