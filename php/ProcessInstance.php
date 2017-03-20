@@ -14,7 +14,7 @@ class ProcessInstance
 
     public function __construct($name){
         $this->name = $name;
-        $date = $this->getDate();
+        $date = getDate();
         $this->date = $date["mday"].".".$date["mon"].".".$date["year"]; //Funzt noch nicht
     }
 

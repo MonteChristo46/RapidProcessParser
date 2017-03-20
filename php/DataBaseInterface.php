@@ -45,7 +45,7 @@ class DataBaseInterface
     /*PROBLEM: Die ID für ProcessInstance und Aktivität werden automatisch von der Datenbank vergeben, Wie kriege ich die raus?
     *Ist wichtig um eine Aktivität einer Prozessinstanz zuzuordnen oder Attribute einer Aktivität
     */
-    public function uploadProcessInstanceToDatabase(){
+    public function uploadProcessInstancesToDatabase(){
         foreach($this->processInstances as $processInstance){
             //Process Instance Part
             $processInstanceName = $processInstance->getName();
@@ -59,7 +59,7 @@ class DataBaseInterface
             foreach($activities as $activity){
                 $activityName = $activity->getName();
                 $sqlForAddingActivity = "INSERT INTO `Activity`(`P_ID`, `Activity_name`) 
-                                        VALUES (4, '$activityName')";
+                                        VALUES (4, '$activityName')"; //4 stands for P_ID
                 mysqli_query($this->db, $sqlForAddingActivity) or die("Request failed: " . mysqli_error());
 
                 //Attribute Part
@@ -69,7 +69,7 @@ class DataBaseInterface
                     $attributeValue = $attribute->getValue();
 
                     $sqlForAddingAttribute = "INSERT INTO `Attribute`(`A_ID`, `Attr_Name`, `Attr_Value`) 
-                                              VALUES ('9', '$attributeName', '$attributeValue')";
+                                              VALUES ('9', '$attributeName', '$attributeValue')"; //9 stands for A_ID
 
                     mysqli_query($this->db, $sqlForAddingAttribute) or die("Request failed: " . mysqli_error());
 

@@ -40,7 +40,7 @@ $processInstance->addActivity($activityEnd);
 //Prozessinstanzen der Datenbankschnitstelle zuweisen und upload. Auch hier gibt es noch andere Methoden
 $databaseInterface = new DataBaseInterface();
 $databaseInterface->addProcessInstance($processInstance); // Auch hier gibt es den Plural der Methode
-$databaseInterface->uploadProcessInstanceToDatabase(); //Lädt alle Prozessinstanzen im databaseInterface object in die DB
+$databaseInterface->uploadProcessInstancesToDatabase(); //Lädt alle Prozessinstanzen im databaseInterface object in die DB
 
 //Die Objekte zum Anschauen --> Achtung ich muss noch date fixen
 echo("<pre>");
