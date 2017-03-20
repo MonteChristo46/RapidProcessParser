@@ -42,8 +42,20 @@ $databaseInterface = new DataBaseInterface();
 $databaseInterface->addProcessInstance($processInstance); // Auch hier gibt es den Plural der Methode
 $databaseInterface->uploadProcessInstanceToDatabase(); //Lädt alle Prozessinstanzen im databaseInterface object in die DB
 
+//Auslesen der letzten IDs in der Datenbank
+$lastInstanceID = $databaseInterface->getLastInstanceID();
+$lastActivityID = $databaseInterface->getLastActivityID();
+$lastAttrID = $databaseInterface->getLastAttributeID();
+
 //Die Objekte zum Anschauen --> Achtung ich muss noch date fixen
+echo "Status:"."<br/>";
+echo "Last InstanceID: ".$lastInstanceID."<br/>";
+echo "Last ActivityID: ".$lastActivityID."<br/>";
+echo "Last AttributeID: ".$lastAttrID."<br/>";
+
 echo("<pre>");
 print_r($processInstance);
 echo("<pre>");
 print_r($databaseInterface);
+
+

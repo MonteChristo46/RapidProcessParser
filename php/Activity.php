@@ -18,6 +18,9 @@ class Activity
 
     //Muss vom Typ Attribute sein --> Drecks untypisierte Scheiße!
     //Sollte was zurückgeben
+    /**
+     * @param $attribute Attribute
+     */
     public function addAttribute($attribute){
         $this->attributes[] = $attribute;
     }
