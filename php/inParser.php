@@ -47,13 +47,39 @@ class inParser extends Parser
         //Process Tag
         $root = $xml->documentElement;
 
+        function readAndStoreParameters($operator){
+            //Read Parameters of an Operator and push in Database as Attributes
+            echo "done"."<br/>";
+        }
+
+        function hasSubprocess($operator){
+            $subprocess = $operator->getElementsByTagName("process");
+            if($subprocess->length > 0){
+                return true;
+            }else{
+                return false;
+            }
+        }
         //Jump directly to correct process tag (CHECK IF ALWAYS CORRECT!!)
+        /*
         $xPath = new DOMXPath($xml);
         $xpathQuery = "/process/operator/process"; //Take the second process tag!
-        $processTag = $xPath->query($xpathQuery);
+        $queryResult = $xPath->query($xpathQuery);
+        //Always correct (If more than one Process Tag can be found here, the first will be the right start)
+        $start = $queryResult[0];*/
 
-        //Will be finished tommorrow!
+        //Loop through all Operators beneath "process" and put them as Activity -> call readAndStoreParameters
+        $xpathToOperators = new DOMXPath($xml);
+        $pathToOperators = "/process/operator/process/operator";
+        $tasks = $xpathToOperators->query($pathToOperators);
 
+        foreach($tasks as $task){
+            //Check the operator on parameters and sub-operators/processes
+            readAndStoreParameters($task);
+            if(hasSubprocess($task)){
+                echo $task->getAttribute("name")." hat Subprozesse!";
+            }
+        }
 
     }
 
