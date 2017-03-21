@@ -51,7 +51,7 @@ class DataBaseInterface
         $result = mysqli_fetch_assoc($query);
         return $result['max(A_ID)'];
     }
-    //Benötigt? --> Eigentlich nicht --> Löschen?
+    //Für Attribut benötigt? --> Eigentlich nicht --> Löschen?
     public function getLastAttributeID(){
         $sqlForGettingId = "SELECT max(Attr_ID) FROM `Attribute`";
         $query = mysqli_query($this->db, $sqlForGettingId) or die("Request failed:".mysqli_error());

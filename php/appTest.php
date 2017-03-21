@@ -10,7 +10,7 @@ require_once ("Attribute.php");
 require ("Activity.php");
 require ("ProcessInstance.php");
 require ("DataBaseInterface.php");
-
+require ("Parser.php");
 
 echo("<h1>This is just a test and a example</h1>");
 echo("<h3>Heute Abend mach ich es dann fertig - bugt noch mit der Zuordnung der IDs</h3>");
@@ -53,6 +53,16 @@ echo "Last InstanceID: ".$lastInstanceID."<br/>";
 echo "Last ActivityID: ".$lastActivityID."<br/>";
 echo "Last AttributeID: ".$lastAttrID."<br/>";
 
+//Test Parser
+$invalidParser = new Parser("../Beispiele Rapidminer/notExisting.xml");
+$parser = new Parser("../Beispiele Rapidminer/Decision Tree 1.xml");
+
+
+
+echo "<pre>";
+print_r($invalidParser);
+echo "<pre>";
+print_r($parser);
 echo("<pre>");
 print_r($processInstance);
 echo("<pre>");
