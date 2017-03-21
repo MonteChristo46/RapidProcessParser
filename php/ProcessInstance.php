@@ -15,6 +15,7 @@ class ProcessInstance
     public function __construct($name){
         $this->name = $name;
         $this->date = date("d.m.Y", time()); //Returns date as String not as Object
+
         /*
         $date = $this->getDate();
         $this->date = $date["mday"].".".$date["mon"].".".$date["year"]; //Funzt noch nicht
