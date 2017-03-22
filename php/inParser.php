@@ -40,6 +40,7 @@ class inParser extends Parser
     public function parseInDatabase()
     {
         $xml = $this->file;
+        $activityArray = array();
         if(!$xml){
             return "No XML available for parsing!";
         }
@@ -73,7 +74,6 @@ class inParser extends Parser
 
         function readProcess($xml, $processTag)
         {
-            $activityArray = array();
             if(get_class($processTag) == "DOMNodeList"){
                 $process = $processTag[0];
             }else{
@@ -98,10 +98,11 @@ class inParser extends Parser
                 }
             }
             //Is returning four times because of recursive call of function
-            echo "<pre>";
-            print_r($activityArray);
-            return $activityArray;
+
         }
+        echo "<pre>";
+        print_r($activityArray);
+        return $activityArray;
         //Get Process Tag as StartPoint
         $xPathToProcess = new DOMXPath($xml);
         $pathToProcess = "/process/operator/process";
