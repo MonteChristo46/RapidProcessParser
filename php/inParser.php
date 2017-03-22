@@ -42,44 +42,62 @@ class inParser extends Parser
             return "No XML available for parsing!";
         }
         //Welcher Name soll hier gesetzt werden?
+        //NAME NOT IN XML
         $instance = new ProcessInstance("Process Instance 1");
 
-        //Process Tag
-        $root = $xml->documentElement;
-
-        function readAndStoreParameters($operator){
+        function readParameters($xml, $operator){
             //Read Parameters of an Operator and push in Database as Attributes
-            echo "done"."<br/>";
+            $parameterXPath = new DOMXPath($xml);
+            $parameterQuery = "parameter";
+            $parameters = $parameterXPath->query($parameterQuery, $operator);
+            $attributeArray = array();
+
+            foreach($parameters as $parameter){
+                $attribute = new Attribute($parameter->getAttribute("key"), $parameter->getAttribute("value"));
+                array_push($attributeArray, $attribute);
+            }
+
+            return $attributeArray;
         }
 
         function hasSubprocess($operator){
-            $subprocess = $operator->getElementsByTagName("process");
-            if($subprocess->length > 0){
-                return true;
+            $subprocesses = $operator->getElementsByTagName("process");
+            if($subprocesses->length > 0){
+                return $subprocesses;
             }else{
                 return false;
             }
         }
-        //Jump directly to correct process tag (CHECK IF ALWAYS CORRECT!!)
-        /*
-        $xPath = new DOMXPath($xml);
-        $xpathQuery = "/process/operator/process"; //Take the second process tag!
-        $queryResult = $xPath->query($xpathQuery);
-        //Always correct (If more than one Process Tag can be found here, the first will be the right start)
-        $start = $queryResult[0];*/
 
-        //Loop through all Operators beneath "process" and put them as Activity -> call readAndStoreParameters
-        $xpathToOperators = new DOMXPath($xml);
-        $pathToOperators = "/process/operator/process/operator";
-        $tasks = $xpathToOperators->query($pathToOperators);
+        function readProcess($processTag){
+            $operators = $processTag->getElementsByTagName("operator");
 
-        foreach($tasks as $task){
-            //Check the operator on parameters and sub-operators/processes
-            readAndStoreParameters($task);
-            if(hasSubprocess($task)){
-                echo $task->getAttribute("name")." hat Subprozesse!";
+            foreach($operators as $operator){
+                //Check the operator on parameters and sub-operators/processes
+                $activity = new Activity($operator->getAttribute("name"));
+                $attributes = readParameters($xml, $operator);
+                //Add Attributes to activity
+                $activity->addAttributes($attributes);
+
+                //Put activity in process instance or array to put it inside afterwards
+
+                $subprocesses = hasSubprocess($operator);
+                if($subprocesses){
+                    foreach($subprocesses as $subprocess){
+                        readProcess($subprocess);
+                    }
+                }
+
+
+
             }
+
         }
+        //Loop through all Operators beneath "process" and put them as Activity -> call readAndStoreParameters
+        $xPathToProcess = new DOMXPath($xml);
+        $pathToProcess = "/process/operator/process";
+        $process= $xPathToProcess->query($pathToProcess);
+        echo "Tasks: ".$process->length."<br/>";
 
     }
 
