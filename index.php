@@ -47,8 +47,8 @@
             $count = 0;
             $uploadedFiles = count($_FILES['upload']['name']);
 
-            if(count($_FILES['upload']['name']) > 0){
-                //Loop through each file
+            if($uploadedFiles > 0){+
+
                 for($i=0; $i<count($_FILES['upload']['name']); $i++) {
                     $tmpFilePath = $_FILES['upload']['tmp_name'][$i];
                     if($tmpFilePath != ""){

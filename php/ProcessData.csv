@@ -1,0 +1,107 @@
+"Test Spalte 1","Test Spalte 2","Test Spalte 3","Test Spalte 4","Test Spalte 5"
+0,"Activity A"
+0,"Activity B"
+0,"Activity C"
+0,"Activity F"
+5,Start
+5,Ende
+6,Retrieve
+6,"Data Preparation"
+6,"Select Attributes"
+6,"Set Role"
+6,"Replace Missing Values"
+6,"Filter Examples"
+6,"Cross Validation"
+6,"Decision Tree"
+6,"Apply Model"
+6,Performance
+7,Retrieve
+7,"Data Preparation"
+7,"Select Attributes"
+7,"Set Role"
+7,"Replace Missing Values"
+7,"Filter Examples"
+7,"Cross Validation"
+7,"Decision Tree"
+7,"Apply Model"
+7,Performance
+8,Retrieve
+8,"Data Preparation"
+8,"Select Attributes"
+8,"Set Role"
+8,"Replace Missing Values"
+8,"Filter Examples"
+8,"Cross Validation"
+8,"Decision Tree"
+8,"Apply Model"
+8,Performance
+9,Retrieve
+9,"Data Preparation"
+9,"Select Attributes"
+9,"Set Role"
+9,"Replace Missing Values"
+9,"Filter Examples"
+9,"Cross Validation"
+9,"Decision Tree"
+9,"Apply Model"
+9,Performance
+10,Retrieve
+10,"Data Preparation"
+10,"Select Attributes"
+10,"Set Role"
+10,"Replace Missing Values"
+10,"Filter Examples"
+10,"Cross Validation"
+10,"Decision Tree"
+10,"Apply Model"
+10,Performance
+11,Retrieve
+11,"Data Preparation"
+11,"Select Attributes"
+11,"Set Role"
+11,"Replace Missing Values"
+11,"Filter Examples"
+11,"Cross Validation"
+11,"Decision Tree"
+11,"Apply Model"
+11,Performance
+12,Retrieve
+12,"Data Preparation"
+12,"Select Attributes"
+12,"Set Role"
+12,"Replace Missing Values"
+12,"Filter Examples"
+12,"Cross Validation"
+12,"Decision Tree"
+12,"Apply Model"
+12,Performance
+13,Retrieve
+13,"Data Preparation"
+13,"Select Attributes"
+13,"Set Role"
+13,"Replace Missing Values"
+13,"Filter Examples"
+13,"Cross Validation"
+13,"Decision Tree"
+13,"Apply Model"
+13,Performance
+14,"Retrieve Titanic Training"
+14,"Decision Tree"
+15,"Retrieve Titanic Training"
+15,"Decision Tree"
+16,"Retrieve Titanic Training"
+16,"Decision Tree"
+17,Retrieve
+17,"Data Preparation"
+17,"Select Attributes"
+17,"Set Role"
+17,"Replace Missing Values"
+17,"Filter Examples"
+17,"Cross Validation"
+17,"Decision Tree"
+17,"Apply Model"
+17,Performance
+18,"Retrieve Titanic+Data"
+18,"Select Attributes"
+18,"Set Role"
+18,"Decision Tree"
