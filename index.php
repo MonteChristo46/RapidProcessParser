@@ -61,7 +61,7 @@
                             $files[] = $shortname;
                             $count += 1;
                             $parser = new inParser($filePath);
-                            $parser->parseInDatabase();
+                            $parser->parseInDatabase();//Anpassen wenn Abstrakte Klasse fertig!
                         }
                     }
                 }
