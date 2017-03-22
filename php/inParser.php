@@ -72,7 +72,7 @@ class inParser extends Parser
             }
         }
 
-        function readProcess($xml, $processTag)
+        function readProcess($xml, $processTag, $activityArray)
         {
             if(get_class($processTag) == "DOMNodeList"){
                 $process = $processTag[0];
@@ -93,24 +93,28 @@ class inParser extends Parser
                 $subprocesses = hasSubprocess($operator);
                 if ($subprocesses) {
                     foreach ($subprocesses as $subprocess) {
-                        readProcess($xml, $subprocess);
+                        readProcess($xml, $subprocess, $activityArray);
                     }
                 }
             }
             //Is returning four times because of recursive call of function
 
         }
-        echo "<pre>";
-        print_r($activityArray);
-        return $activityArray;
+
+        //return $activityArray;
         //Get Process Tag as StartPoint
         $xPathToProcess = new DOMXPath($xml);
         $pathToProcess = "/process/operator/process";
         $processTag= $xPathToProcess->query($pathToProcess);
         //echo "Tasks: ".$process->length."<br/>";
 
-        $allActivities = readProcess($xml, $processTag);
-        $instance->addActivities($allActivities);
+        $activityArray = array();
+        readProcess($xml, $processTag, $activityArray);
+        echo "<pre>";
+        print_r($activityArray);
+
+        //$allActivities = readProcess($xml, $processTag);
+        $instance->addActivities($activityArray);
 
         return $instance;
     }
