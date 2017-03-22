@@ -7,6 +7,8 @@
  */
 require_once("Parser.php");
 require_once ("ProcessInstance.php");
+require_once ("Activity.php");
+require_once ("Attribute.php");
 require_once ("DataBaseInterface.php");
 
 class inParser extends Parser
@@ -65,40 +67,51 @@ class inParser extends Parser
             if($subprocesses->length > 0){
                 return $subprocesses;
             }else{
-                return false;
+                return null;
             }
         }
 
-        function readProcess($processTag){
-            $operators = $processTag->getElementsByTagName("operator");
+        function readProcess($xml, $processTag)
+        {
+            $activityArray = array();
+            if(get_class($processTag) == "DOMNodeList"){
+                $process = $processTag[0];
+            }else{
+                $process = $processTag;
+            }
 
-            foreach($operators as $operator){
+            $operators = $process->getElementsByTagName("operator");
+
+            foreach ($operators as $operator) {
                 //Check the operator on parameters and sub-operators/processes
                 $activity = new Activity($operator->getAttribute("name"));
                 $attributes = readParameters($xml, $operator);
                 //Add Attributes to activity
                 $activity->addAttributes($attributes);
-
-                //Put activity in process instance or array to put it inside afterwards
+                array_push($activityArray, $activity);
 
                 $subprocesses = hasSubprocess($operator);
-                if($subprocesses){
-                    foreach($subprocesses as $subprocess){
-                        readProcess($subprocess);
+                if ($subprocesses) {
+                    foreach ($subprocesses as $subprocess) {
+                        readProcess($xml, $subprocess);
                     }
                 }
-
-
-
             }
-
+            //Is returning four times because of recursive call of function
+            echo "<pre>";
+            print_r($activityArray);
+            return $activityArray;
         }
-        //Loop through all Operators beneath "process" and put them as Activity -> call readAndStoreParameters
+        //Get Process Tag as StartPoint
         $xPathToProcess = new DOMXPath($xml);
         $pathToProcess = "/process/operator/process";
-        $process= $xPathToProcess->query($pathToProcess);
-        echo "Tasks: ".$process->length."<br/>";
+        $processTag= $xPathToProcess->query($pathToProcess);
+        //echo "Tasks: ".$process->length."<br/>";
 
+        $allActivities = readProcess($xml, $processTag);
+        $instance->addActivities($allActivities);
+
+        return $instance;
     }
 
     /**
