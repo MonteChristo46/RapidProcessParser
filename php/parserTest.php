@@ -14,6 +14,3 @@ $root = $inParser->parseInDatabase();
 
 echo "<pre>";
 print_r($root);
-
-echo "<pre>";
-print_r($inParser);

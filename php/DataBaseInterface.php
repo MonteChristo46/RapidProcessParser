@@ -88,16 +88,18 @@ class DataBaseInterface
                 //Attribute Part
                 $activityID = $this->getLastActivityID();
                 $attributes = $activity->getAttributes();
-                foreach($attributes as $attribute){
-                    $attributeName = $attribute->getName();
-                    $attributeValue = $attribute->getValue();
+                if(count($attributes) > 0) {
+                    foreach ($attributes as $attribute) {
+                        $attributeName = $attribute->getName();
+                        $attributeValue = $attribute->getValue();
 
-                    $sqlForAddingAttribute = "INSERT INTO `Attribute`(`A_ID`, `Attr_Name`, `Attr_Value`) 
+                        $sqlForAddingAttribute = "INSERT INTO `Attribute`(`A_ID`, `Attr_Name`, `Attr_Value`) 
                                               VALUES ($activityID, '$attributeName', '$attributeValue')";
 
-                    mysqli_query($this->db, $sqlForAddingAttribute) or die("Request failed: " . mysqli_error());
+                        mysqli_query($this->db, $sqlForAddingAttribute) or die("Request failed: " . mysqli_error());
 
 
+                    }
                 }
             }
 

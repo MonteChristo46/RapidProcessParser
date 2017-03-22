@@ -40,13 +40,11 @@ class inParser extends Parser
     public function parseInDatabase()
     {
         $xml = $this->file;
-        //$activityArray = array();
         if(!$xml){
             return "No XML available for parsing!";
         }
         //Welcher Name soll hier gesetzt werden?
-        //NAME NOT IN XML
-        $instance = new ProcessInstance("Process Instance 1");
+        $instance = new ProcessInstance("Process Instance 2");
 
         function readParameters($xml, $operator){
             //Read Parameters of an Operator and push in Database as Attributes
@@ -82,7 +80,6 @@ class inParser extends Parser
             }
 
             $operators = $process->getElementsByTagName("operator");
-
             foreach ($operators as $operator) {
                 //Check the operator on parameters and sub-operators/processes
                 $activity = new Activity($operator->getAttribute("name"));
@@ -98,26 +95,22 @@ class inParser extends Parser
                     }
                 }
             }
-            //Is returning four times because of recursive call of function
             return $activityArray;
         }
 
-        //return $activityArray;
         //Get Process Tag as StartPoint
         $xPathToProcess = new DOMXPath($xml);
         $pathToProcess = "/process/operator/process";
         $processTag= $xPathToProcess->query($pathToProcess);
-        //echo "Tasks: ".$process->length."<br/>";
 
-
-
+        //Get complete Activities of process
         $result = readProcess($xml, $processTag);
-        echo "<pre>";
-        print_r($result);
 
-        //$allActivities = readProcess($xml, $processTag);
+        //Add all Activities to ProcessInstance and upload it to database
         $instance->addActivities($result);
-
+        $dbi = new DataBaseInterface();
+        $dbi->addProcessInstance($instance);
+        $dbi->uploadProcessInstancesToDatabase();
         return $instance;
     }
 
