@@ -40,7 +40,7 @@ class inParser extends Parser
     public function parseInDatabase()
     {
         $xml = $this->file;
-        $activityArray = array();
+        //$activityArray = array();
         if(!$xml){
             return "No XML available for parsing!";
         }
@@ -72,8 +72,10 @@ class inParser extends Parser
             }
         }
 
-        function readProcess($xml, $processTag, $activityArray)
+        function readProcess($xml, $processTag)
         {
+            global $activityArray;
+
             if(get_class($processTag) == "DOMNodeList"){
                 $process = $processTag[0];
             }else{
@@ -93,7 +95,7 @@ class inParser extends Parser
                 $subprocesses = hasSubprocess($operator);
                 if ($subprocesses) {
                     foreach ($subprocesses as $subprocess) {
-                        readProcess($xml, $subprocess, $activityArray);
+                        readProcess($xml, $subprocess);
                     }
                 }
             }
@@ -109,7 +111,7 @@ class inParser extends Parser
         //echo "Tasks: ".$process->length."<br/>";
 
         $activityArray = array();
-        readProcess($xml, $processTag, $activityArray);
+        readProcess($xml, $processTag);
         echo "<pre>";
         print_r($activityArray);
 
