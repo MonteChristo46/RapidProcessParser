@@ -89,4 +89,37 @@ class outParser extends Parser
         $dom->save("ProcessData.xes");
     }
 
+    public function parseDataToCSV(){
+        $processInstances = $this->processInstances;
+
+        $delimiter = ",";
+        $csv = fopen('ProcessData.csv', 'a+');
+        $header = array("Test Spalte 1", "Test Spalte 2", "Test Spalte 3", "Test Spalte 4", "Test Spalte 5");
+        fputcsv($csv, $header, $delimiter);
+
+        for($i=0; $i<count($processInstances); $i++){
+            $activities = $processInstances[$i]->getActivities();
+
+            for($j=0; $j<count($activities); $j++){
+                $attributes = $activities[$j]->getAttributes();
+                $dataSet = array();
+                array_push($dataSet, $i);
+                array_push($dataSet, $activities[$j]->getName());
+                /*
+                for($k=0; $k<count($attributes); $k++){
+                    echo gettype($attributes[$k]->getValue());
+                    if(gettype($attributes[$k]->getValue()) == "object"){
+                        array_push($dataSet, $attributes[$k]->getValue());
+                    }else{
+                        array_push($dataset, $attributes[$k], $delimiter);
+                    }
+
+                    echo $k."<br/>";
+                }*/
+            fputcsv($csv, $dataSet, $delimiter);
+            }
+        }
+        fclose($csv);
+    }
+
 }
