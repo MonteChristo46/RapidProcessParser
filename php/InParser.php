@@ -37,7 +37,7 @@ class inParser extends Parser
         //$this->file = $doc;
     }
 
-    function readParameters($xml, $operator){
+    private function readParameters($xml, $operator){
         //Read Parameters of an Operator and push in Database as Attributes
         $parameterXPath = new DOMXPath($xml);
         $parameterQuery = "parameter";
@@ -52,7 +52,7 @@ class inParser extends Parser
         return $attributeArray;
     }
 
-    function hasSubprocess($operator){
+    private function hasSubprocess($operator){
         $subprocesses = $operator->getElementsByTagName("process");
         if($subprocesses->length > 0){
             return $subprocesses;
@@ -61,7 +61,7 @@ class inParser extends Parser
         }
     }
 
-    function readProcess($xml, $processTag)
+    private function readProcess($xml, $processTag)
     {
         $activityArray = array();
         if(get_class($processTag) == "DOMNodeList"){
