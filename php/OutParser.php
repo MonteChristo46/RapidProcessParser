@@ -53,7 +53,40 @@ class outParser extends Parser
     }
 
     public function parseDataToXES(){
+        $processInstances =  $this->processInstances;
 
+        $dom = new DOMDocument("1.0", "UTF-8");
+        $dom->preserveWhiteSpace = false;
+        $dom->formatOutput = true;
+        $root = $dom->createElement("log");
+            $root->setAttribute("xmlns", "http://code.deckfour.org/xes");
+            $root->setAttribute("xes.version", "2.0");
+            $root->setAttribute("xes.creator", "RapidMiner Parser");
+        $dom->appendChild($root);
+        foreach($processInstances as $processInstance){
+            $trace = $dom->createElement("trace");
+            $root->appendChild($trace);
+            $activities = $processInstance->getActivities();
+            foreach($activities as $activity){
+                $eventTag = $dom->createElement("event");
+                $trace->appendChild($eventTag);
+                $stringName = $dom->createElement("string");
+                    $stringName->setAttribute("key","concept:name");
+                    $stringName->setAttribute("value",$activity->getName());
+                $eventTag->appendChild($stringName);
+                $attributes = $activity->getAttributes();
+                /*foreach($attributes as $arr){
+                    $stringAttribute = $dom->createElement("string");
+                    echo($arr->getValue());
+                       // $stringAttribute->setAttribute("key", "$attribute->getName()");
+                        //$stringAttribute->setAttribute("value","$attribute->getValue()");
+                    $eventTag->appendChild($stringAttribute);
+                }*/
+
+            }
+
+        }
+        $dom->save("ProcessData.xes");
     }
 
 }

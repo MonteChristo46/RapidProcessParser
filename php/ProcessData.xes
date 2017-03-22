@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<log xmlns="http://code.deckfour.org/xes" xes.version="2.0" xes.creator="RapidMiner Parser">
+  <trace>
+    <event>
+      <string key="concept:name" value="Activity A"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Activity B"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Activity C"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Activity F"/>
+    </event>
+  </trace>
+  <trace>
+    <event>
+      <string key="concept:name" value="Activity A"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Activity B"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Activity F"/>
+    </event>
+  </trace>
+  <trace/>
+  <trace>
+    <event>
+      <string key="concept:name" value="Start"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ende"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Start"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ende"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Start"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ende"/>
+    </event>
+  </trace>
+</log>

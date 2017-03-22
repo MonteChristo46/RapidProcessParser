@@ -7,9 +7,5 @@
  */
 require_once("OutParser.php");
 $outParser = new outParser();
-
-echo("This is a test");
-echo("<pre>");
-$result = $outParser->getDataFromDataBase();
-
-print_r($result);
+$outParser->getDataFromDatabase();
+$outParser->parseDataToXES();
