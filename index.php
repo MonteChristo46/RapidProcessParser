@@ -19,20 +19,65 @@
                 <h1>Hello, Please Upload your </br>
                 <span class="highlight">Rapid Miner</span> File!</h1>
             </div>
+            <div id="uploadForm">
+                <form action="" enctype="multipart/form-data" method="post">
 
-            <form action="php/upload.php" enctype="multipart/form-data" method="post">
+                    <div>
+                        <input id='upload' name="upload[]" type="file" multiple="multiple" />
+                    </div>
 
-                <div>
-                    <label for='upload'>Add Attachments:</label>
-                    <input id='upload' name="upload[]" type="file" multiple="multiple" />
-                </div>
+                    <p><input type="submit" name="submit" value="Submit"></p>
 
-                <p><input type="submit" name="submit" value="Submit"></p>
+                </form>
+            </div>
 
-            </form>
             <!--<button id="buttonUpload">upload you file here</button>-->
         </div>
     </div>
+    <?php
+        function alert($message){
+            echo '<script type="text/javascript" language="Javascript">';
+            echo 'alert("'.$message.'");';
+            echo '</script>';
+        }
+
+        require_once ("php/InParser.php");
+
+        if(isset($_POST['submit'])){
+            $count = 0;
+            $uploadedFiles = count($_FILES['upload']['name']);
+
+            if(count($_FILES['upload']['name']) > 0){
+                //Loop through each file
+                for($i=0; $i<count($_FILES['upload']['name']); $i++) {
+                    //Get the temp file path
+                    $tmpFilePath = $_FILES['upload']['tmp_name'][$i];
+
+                    //Make sure we have a filepath
+                    if($tmpFilePath != ""){
+
+                        //save the filename
+                        $shortname = $_FILES['upload']['name'][$i];
+
+                        //save the url and the file
+                        $filePath = "upload/" .$_FILES['upload']['name'][$i];
+
+                        //Upload the file into the temp dir
+                        if(move_uploaded_file($tmpFilePath, $filePath)) {
+
+                            $files[] = $shortname;
+                            $count += 1;
+                            $parser = new inParser($filePath);
+                            $parser->parseInDatabase();
+                        }
+                    }
+                }
+            }
+            if($count == $uploadedFiles){
+                alert("Success: Uploaded and stored ".$count." File(s) in Database!");
+            }
+        }
+    ?>
     <div id =  "rightContent">
         <div id = "rightContentTop" onclick="expandDiv(this)" >
             <div class = "rightContentWrapper" >
@@ -73,7 +118,7 @@
                 <div class = "rightContentHeading"><span class="highlight">About</span> the Project</div>
             </div>
             <div class = "box">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                 sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
                 sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
             </div>
@@ -87,9 +132,9 @@
     }
 
     function expandDiv(object){
-        $(object).find(".box").slideToggle('slow', function(){
-            var bodyHeight = $('body').height();
-            var rightContent = $(object);
+    $(object).find(".box").slideToggle('slow', function(){
+        var bodyHeight = $('body').height();
+        var rightContent = $(object);
             var heading = rightContent.find(".rightContentHeading");
             var rightContentTopHeight = Math.round((rightContent.height()/bodyHeight)*100);
             var newHeight = 0.6; // in percentage
@@ -109,8 +154,8 @@
     }
 
     function countNumbers(object) {
-        var opened = false;
-        var boxHeight = $(object).height();
+    var opened = false;
+    var boxHeight = $(object).height();
         var bodyHeight = $('body').height();
         var actualHeight = Math.round((boxHeight/bodyHeight)*100);
         console.log(actualHeight);
