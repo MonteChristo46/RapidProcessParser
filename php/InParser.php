@@ -116,7 +116,7 @@ class inParser extends Parser
         print_r($result);
 
         //$allActivities = readProcess($xml, $processTag);
-        $instance->addActivities($activityArray);
+        $instance->addActivities($result);
 
         return $instance;
     }

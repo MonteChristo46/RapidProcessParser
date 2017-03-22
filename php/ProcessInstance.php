@@ -11,7 +11,7 @@ class ProcessInstance
     private $name;
     private $date;
     private $activities; // List of all activities
-    private $Id;
+    private $id;
 
     public function __construct($name){
         $this->name = $name;
@@ -31,7 +31,7 @@ class ProcessInstance
     //If you want to add a list of activities
     public function addActivities($array){
         foreach($array as $arr){
-            $activities[]=$arr;
+            $this->activities[] = $arr;
         }
     }
 
@@ -78,7 +78,7 @@ class ProcessInstance
      */
     public function setId($Id)
     {
-        $this->Id = $Id;
+        $this->id = $Id;
     }
 
 }

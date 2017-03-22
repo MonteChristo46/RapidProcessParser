@@ -10,7 +10,7 @@ require_once ("Attribute.php");
 require ("Activity.php");
 require ("ProcessInstance.php");
 require ("DataBaseInterface.php");
-require("inParser.php");
+require("InParser.php");
 
 echo("<h1>This is just a test and a example</h1>");
 echo("<h3>Heute Abend mach ich es dann fertig - bugt noch mit der Zuordnung der IDs</h3>");

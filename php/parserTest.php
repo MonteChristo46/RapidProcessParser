@@ -6,8 +6,8 @@
  * Time: 19:33
  */
 
-require("outParser.php");
-require("inParser.php");
+require("OutParser.php");
+require("InParser.php");
 
 $inParser = new inParser("../Beispiele Rapidminer/Decision Tree 1.xml");
 $root = $inParser->parseInDatabase();
