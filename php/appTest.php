@@ -6,11 +6,11 @@
  * Time: 15:17
  */
 
-require_once ("Attribute.php");
-require ("Activity.php");
-require ("ProcessInstance.php");
-require ("DataBaseInterface.php");
-require("InParser.php");
+require_once("Attribute.php");
+require_once("Activity.php");
+require_once("ProcessInstance.php");
+require_once("DataBaseInterface.php");
+require_once("InParser.php");
 
 echo("<h1>This is just a test and a example</h1>");
 echo("<h3>Heute Abend mach ich es dann fertig - bugt noch mit der Zuordnung der IDs</h3>");

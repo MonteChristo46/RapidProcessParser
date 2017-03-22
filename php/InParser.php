@@ -37,6 +37,58 @@ class inParser extends Parser
         //$this->file = $doc;
     }
 
+    function readParameters($xml, $operator){
+        //Read Parameters of an Operator and push in Database as Attributes
+        $parameterXPath = new DOMXPath($xml);
+        $parameterQuery = "parameter";
+        $parameters = $parameterXPath->query($parameterQuery, $operator);
+        $attributeArray = array();
+
+        foreach($parameters as $parameter){
+            $attribute = new Attribute($parameter->getAttribute("key"), $parameter->getAttribute("value"));
+            array_push($attributeArray, $attribute);
+        }
+
+        return $attributeArray;
+    }
+
+    function hasSubprocess($operator){
+        $subprocesses = $operator->getElementsByTagName("process");
+        if($subprocesses->length > 0){
+            return $subprocesses;
+        }else{
+            return null;
+        }
+    }
+
+    function readProcess($xml, $processTag)
+    {
+        $activityArray = array();
+        if(get_class($processTag) == "DOMNodeList"){
+            $process = $processTag[0];
+        }else{
+            $process = $processTag;
+        }
+
+        $operators = $process->getElementsByTagName("operator");
+        foreach ($operators as $operator) {
+            //Check the operator on parameters and sub-operators/processes
+            $activity = new Activity($operator->getAttribute("name"));
+            $attributes = $this->readParameters($xml, $operator);
+            //Add Attributes to activity
+            $activity->addAttributes($attributes);
+            $activityArray[] =  $activity;
+
+            $subprocesses = $this->hasSubprocess($operator);
+            if ($subprocesses) {
+                foreach ($subprocesses as $subprocess) {
+                    $this->readProcess($xml, $subprocess);
+                }
+            }
+        }
+        return $activityArray;
+    }
+
     public function parseInDatabase()
     {
         $xml = $this->file;
@@ -46,65 +98,13 @@ class inParser extends Parser
         //Welcher Name soll hier gesetzt werden?
         $instance = new ProcessInstance("Process Instance 2");
 
-        function readParameters($xml, $operator){
-            //Read Parameters of an Operator and push in Database as Attributes
-            $parameterXPath = new DOMXPath($xml);
-            $parameterQuery = "parameter";
-            $parameters = $parameterXPath->query($parameterQuery, $operator);
-            $attributeArray = array();
-
-            foreach($parameters as $parameter){
-                $attribute = new Attribute($parameter->getAttribute("key"), $parameter->getAttribute("value"));
-                array_push($attributeArray, $attribute);
-            }
-
-            return $attributeArray;
-        }
-
-        function hasSubprocess($operator){
-            $subprocesses = $operator->getElementsByTagName("process");
-            if($subprocesses->length > 0){
-                return $subprocesses;
-            }else{
-                return null;
-            }
-        }
-
-        function readProcess($xml, $processTag)
-        {
-            $activityArray = array();
-            if(get_class($processTag) == "DOMNodeList"){
-                $process = $processTag[0];
-            }else{
-                $process = $processTag;
-            }
-
-            $operators = $process->getElementsByTagName("operator");
-            foreach ($operators as $operator) {
-                //Check the operator on parameters and sub-operators/processes
-                $activity = new Activity($operator->getAttribute("name"));
-                $attributes = readParameters($xml, $operator);
-                //Add Attributes to activity
-                $activity->addAttributes($attributes);
-                $activityArray[] =  $activity;
-
-                $subprocesses = hasSubprocess($operator);
-                if ($subprocesses) {
-                    foreach ($subprocesses as $subprocess) {
-                        readProcess($xml, $subprocess);
-                    }
-                }
-            }
-            return $activityArray;
-        }
-
         //Get Process Tag as StartPoint
         $xPathToProcess = new DOMXPath($xml);
         $pathToProcess = "/process/operator/process";
         $processTag= $xPathToProcess->query($pathToProcess);
 
         //Get complete Activities of process
-        $result = readProcess($xml, $processTag);
+        $result = $this->readProcess($xml, $processTag);
 
         //Add all Activities to ProcessInstance and upload it to database
         $instance->addActivities($result);

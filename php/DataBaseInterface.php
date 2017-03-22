@@ -13,7 +13,7 @@ class DataBaseInterface
     private $processInstances; //List of processInstances
 
     public function __construct(){
-        include("config.php");
+        include_once("config.php");
         $this->db = mysqli_connect(
             MYSQL_HOST,
             MYSQL_USER,

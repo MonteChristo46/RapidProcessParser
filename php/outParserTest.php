@@ -8,5 +8,5 @@
 require_once("OutParser.php");
 $outParser = new outParser();
 $outParser->getDataFromDatabase();
-//$outParser->parseDataToXES();
+$outParser->parseDataToXES();
 $outParser->parseDataToCSV();
