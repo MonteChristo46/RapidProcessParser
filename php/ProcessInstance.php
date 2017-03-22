@@ -11,6 +11,7 @@ class ProcessInstance
     private $name;
     private $date;
     private $activities; // List of all activities
+    private $Id;
 
     public function __construct($name){
         $this->name = $name;
@@ -71,4 +72,13 @@ class ProcessInstance
     {
         return $this->name;
     }
+
+    /**
+     * @param mixed $Id
+     */
+    public function setId($Id)
+    {
+        $this->Id = $Id;
+    }
+
 }
