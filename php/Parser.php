@@ -8,5 +8,5 @@
 
 abstract class Parser
 {
-
+    
 }
