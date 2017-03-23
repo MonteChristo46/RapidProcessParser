@@ -32,9 +32,6 @@ if(isset($_POST['submit'])){
     if($uploadedFiles > 0){
         for($i=0; $i<count($_FILES['upload']['name']); $i++) {
 
-            if ($_FILES['upload']['extension'] != "xml") {
-                echo "Error: Please upload XML Files";
-            } else {
                 $tmpFilePath = $_FILES['upload']['tmp_name'][$i];
                 if ($tmpFilePath != "") {
 
@@ -48,7 +45,6 @@ if(isset($_POST['submit'])){
                         $parser = new inParser($filePath);
                         $parser->parseInDatabase();//Anpassen wenn Abstrakte Klasse fertig!
                     }
-                }
             }
         }
     }
