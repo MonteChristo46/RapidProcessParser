@@ -45,13 +45,13 @@ h3{
     width: 49.5%;
     border: solid #eee 1px;
     float: left;
-
 }
 #rightContentTop,#rightContentMiddle,#rightContentBottom{
     height: 33.3%;
     width: 100%;
     border: solid #eee 1px;
-    background-image: url("../content/images/placeholder_2.jpg");
+    /*background-image: url("../content/images/placeholder_2.jpg");*/
+    background-color: #EEEEEE;
     background-size: 50%;
     display:table;
     cursor: pointer;
@@ -81,13 +81,15 @@ h3{
     vertical-align: middle;
 
 }
-
+#rightContent{
+    color: black;
+}
 .rightContentHeading, .icon{
     float:left
 }
 .rightContentHeading{
     font-size: 22px;
-    color: #fff;
+    color: black;
     margin-left: 3%;
     padding-top: 15px;
 }
@@ -113,7 +115,7 @@ h3{
     display: none;
     height: 100%;
     border: solid 1px red;
-    color: #fff
+    color: black
 }
 .box{
     clear:both;
@@ -122,7 +124,7 @@ h3{
     width: 90%;
     margin-left: 10%;
     /*border: solid 1px red;*/
-    color: #fff
+    color: #black
 }
 .automaticNumberCounter{
     font-size: 24px;
@@ -133,6 +135,7 @@ h3{
 .automaticNumberCounter:first-of-type{
     color: #E1CF21;
 }
+
 #uploadForm{
     margin-top: 15px;
 }
@@ -179,7 +182,7 @@ h3{
 input[type=text], input[type=date] {
     border: none;
     height: 40px;
-    border-bottom: 1px solid #DB0A5B;
+    border-bottom: 1px solid #26a69a;
     background-color: transparent;
     color: white;
 }
@@ -188,7 +191,7 @@ input[type=text], input[type=date] {
     font-size: 14px;
 }
 /*
-#rightContentTop:hover, #rightContentMiddle:hover, #rightContentBottom:hover{
+#rightContentWrapper:hover, #rightContentMiddle:hover, #rightContentBottom:hover{
     -webkit-animation-name: rotation;
     -webkit-animation-duration: 4s ;
     -webkit-animation-iteration-count: infinite;
@@ -213,3 +216,8 @@ input[type=text], input[type=date] {
     display: none;
 }
 */
+
+.switch{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

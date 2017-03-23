@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Rapid Miner Process Parser</title>
+    <link rel="stylesheet" href="extensions/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="extensions/noUiSlider-master/distribute/nouislider.min.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
-
+    <script src="extensions/noUiSlider-master/distribute/nouislider.min.js"></script>
     <script src="extensions/jquery-3.2.0.min.js"></script>
     <script src="js/app.js"></script>
     <link rel="stylesheet" href="extensions/font-awesome-4.7.0/css/font-awesome.css">
@@ -44,16 +46,35 @@
                 </br>
                <form action = "yourPHPFile" id="filterForm">
                    <label for="startDate ">Start Date </label><br/>
-                   <input type="date" id = "startDate "> </br><br/>
+                   <input type="date" id = "startDate" class="datepicker"></br><br/>
                    <label for="endDate">End Date </label><br/>
                    <input type="date" id="endDate"></br></br>
                    <label for="range">Select the amount of data you want to export</label><br/><br/>
                    <input type="range" name="ageInputName" id="range" min="1" max="<?= $instances ?>" oninput="ageOutputId.value = range.value">
-                   <output name="ageOutputName" id="ageOutputId">50</output> (Maximum of Instances in DB)</br></br>
-                   <label for="checkbox">Export all Attributes?</label><br/><br/>
-                   <input type="checkbox" id="checkbox"> yes</br></br>
-                   <label for="checkbox">Select Data Format</label><br/><br/>
-                   <input type="checkbox" id="checkbox"> XES   <input type="checkbox" id="checkbox"> CSV</br></br>
+                   <output name="ageOutputName" id="ageOutputId">50</output> (# of Instances selected)</br></br>
+                   <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                   <label for="filled-in-box">Export all attributes?</label><br/><br>
+
+                   <!-- Switch -->
+                   <label>Select export format:</label>
+                   <div class="switch">
+                       XES
+                       <label>
+                           No
+                           <input type="checkbox">
+                           <span class="lever"></span>
+                           Yes
+                       </label>
+                   </div>
+                   <div class="switch">
+                       CSV
+                       <label>
+                           No
+                           <input type="checkbox">
+                           <span class="lever"></span>
+                           Yes
+                       </label>
+                   </div>
                    <button>Export</button><!--Functionality must be implemented-->
                </form>
 
@@ -85,5 +106,7 @@
         </div>
     </div>
 </body>
+<script type="text/javascript">
 
+</script>
 </html>
