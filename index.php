@@ -86,6 +86,21 @@
                 <div class = "rightContentHeading">Data <span class="highlight">Overview</span></div>
             </div>
             <div class = "box">
+                <div class="chartDiv">
+                    <ul class="chart">
+
+                        <li>
+                            <span style="height:<?=$instancesHeight?>%" title="Instances"></span>
+                        </li>
+                        <li>
+                            <span style="height:<?=$activitiesHeight?>%" title="Activities"></span>
+                        </li>
+                        <li>
+                            <span style="height:<?=$attributesHeight?>%" title="Attributes"></span>
+                        </li>
+                    </ul>
+                </div>
+
                 <h3>Process instances in the database</h3>
                 <span class="automaticNumberCounter" action="yourPhpScript" value='<?= $instances ?>'><?= $instances ?></span>
                 <h3>Activities in the database</h3>

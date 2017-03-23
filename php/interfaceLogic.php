@@ -21,7 +21,9 @@ $activities = $dbi->getLastActivityID();
 $attributes = $dbi->getLastAttributeID();
 $oldest = $dbi->getDateOfFirstInstance();
 $newest = $dbi->getDateOfLastInstance();
-
+$instancesHeight = ($instances/($attributes*1.2))*100;
+$activitiesHeight = ($activities/($attributes*1.2))*100;
+$attributesHeight = ($attributes/($attributes*1.2))*100;
 //Upload the given files
 if(isset($_POST['submit'])){
     $count = 0;

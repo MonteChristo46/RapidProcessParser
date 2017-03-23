@@ -123,8 +123,6 @@ h3{
     width: 100%;
     padding-right: 30px;
     padding-bottom: 30px;
-    /*border: solid 1px red;*/
-    color: black
 }
 .automaticNumberCounter{
     font-size: 24px;
@@ -220,4 +218,49 @@ input[type=text], input[type=date] {
 .switch{
     margin-top: 15px;
     margin-bottom: 15px;
+}
+
+.chart {
+    font-size: 14px;
+    display: table;
+    table-layout: fixed;
+    width: 60%;
+    max-width: 700px;
+    height: 200px;
+    margin: 0 auto;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1) 2%, rgba(0, 0, 0, 0) 2%);
+    background-size: 100% 50px;
+    background-position: left top;
+}
+.chart li {
+    position: relative;
+    display: table-cell;
+    vertical-align: bottom;
+    height: 200px;
+}
+.chart span {
+    margin: 0 1em;
+    display: block;
+    background-color: #00678F;
+    animation: draw 1s ease-in-out;
+}
+.chart span:before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    padding: 5px 1em 0;
+    display: block;
+    text-align: center;
+    content: attr(title);
+    word-wrap: break-word;
+}
+
+.chartDiv{
+    margin-bottom: 20px;
+}
+@keyframes draw {
+    0% {
+        height: 0;
+    }
 }
