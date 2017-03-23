@@ -21,57 +21,19 @@
             </div>
             <div id="uploadForm">
                 <form action="" enctype="multipart/form-data" method="post">
-
                     <div>
-                        <input id='upload' name="upload[]" type="file" multiple="multiple" />
+                        <!--<input class="fileUpload" id='upload' name="upload[]" type="file" multiple="multiple" />-->
+                        <label class="fileContainer" for="file" id="label"><i style = "margin-right: 5px;"class="fa fa-upload" aria-hidden="true"></i>Choose files</label><br/><br/>
+                        <input type="file" name="upload[]" id="file" class="inputfile" multiple="multiple"/>
+                        <button id="submitLabel" type="submit" value="Submit" name="submit">Submit</button>
                     </div>
-
-                    <p><input type="submit" name="submit" value="Submit"></p>
-
                 </form>
             </div>
-
-            <!--<button id="buttonUpload">upload you file here</button>-->
         </div>
     </div>
-    <?php
-        function alert($message){
-            echo '<script type="text/javascript" language="Javascript">';
-            echo 'alert("'.$message.'");';
-            echo '</script>';
-        }
-
-        require_once ("php/InParser.php");
-
-        if(isset($_POST['submit'])){
-            $count = 0;
-            $uploadedFiles = count($_FILES['upload']['name']);
-
-            if($uploadedFiles > 0){
-                for($i=0; $i<count($_FILES['upload']['name']); $i++) {
-                    $tmpFilePath = $_FILES['upload']['tmp_name'][$i];
-                    if($tmpFilePath != ""){
-
-                        $shortname = $_FILES['upload']['name'][$i];
-                        $filePath = "upload/" .$_FILES['upload']['name'][$i];
-
-                        if(move_uploaded_file($tmpFilePath, $filePath)) {
-
-                            $files[] = $shortname;
-                            $count += 1;
-                            $parser = new inParser($filePath);
-                            $parser->parseInDatabase();//Anpassen wenn Abstrakte Klasse fertig!
-                        }
-                    }
-                }
-            }
-            if($count == $uploadedFiles){
-                alert("Success: Uploaded and stored ".$count." File(s) in Database!");
-            }
-        }
-    ?>
+    <?php include("php/interfaceLogic.php"); ?>
     <div id =  "rightContent">
-        <div id = "rightContentTop" onclick="expandDiv(this)" >
+        <div id = "rightContentTop" onclick="expandDiv(this)">
             <div class = "rightContentWrapper" >
                 <div class = "icon" ><i class="fa fa-filter" aria-hidden="true"></i></div>
                 <div class = "rightContentHeading"><span class="highlight">Select </span> Data</div>
@@ -79,17 +41,21 @@
             <div class = "box" onclick=" event.stopImmediatePropagation();">
                 <h2>Filter Box</h2>
                 </br>
-               <form action = "yourPHPFile">
-                   <label for="startDate ">Start Date </label>
-                   <input type="date" id = "startDate "> </br>
-                   <label for="endDate">End Date </label>
+               <form action = "yourPHPFile" id="filterForm">
+                   <label for="startDate ">Start Date </label><br/>
+                   <input type="date" id = "startDate "> </br><br/>
+                   <label for="endDate">End Date </label><br/>
                    <input type="date" id="endDate"></br></br>
-                   <label for="range">Select the amount of data you want to export</label>
-                   <input type="range" id="range"></br></br>
-                   <label for="checkbox">Export all Attributes?</label>
-                   <input type="checkbox" id="checkbox"></br></br>
-                   <button>Select all</button>
+                   <label for="range">Select the amount of data you want to export</label><br/><br/>
+                   <input type="range" name="ageInputName" id="range" min="1" max="<?= $instances ?>" oninput="ageOutputId.value = range.value">
+                   <output name="ageOutputName" id="ageOutputId">50</output> (Maximum of Instances in DB)</br></br>
+                   <label for="checkbox">Export all Attributes?</label><br/><br/>
+                   <input type="checkbox" id="checkbox"> yes</br></br>
+                   <label for="checkbox">Select Data Format</label><br/><br/>
+                   <input type="checkbox" id="checkbox"> XES   <input type="checkbox" id="checkbox"> CSV</br></br>
+                   <button>Export</button><!--Functionality must be implemented-->
                </form>
+
             </div>
         </div>
         <div id = "rightContentMiddle" onclick="toDo(this)">
@@ -99,9 +65,11 @@
             </div>
             <div class = "box">
                 <h3>Process instances in the database</h3>
-                <span class="automaticNumberCounter" action="yourPhpScript" value='19000'>19000</span>
+                <span class="automaticNumberCounter" action="yourPhpScript" value='<?= $instances ?>'><?= $instances ?></span>
                 <h3>Activities in the database</h3>
-                <span class="automaticNumberCounter" value='90000'>90000</span>
+                <span class="automaticNumberCounter" value='<?= $activities ?>'><?= $activities ?></span>
+                <h3>Attributes in the database</h3>
+                <span class="automaticNumberCounter" value='<?= $attributes ?>'><?= $attributes ?></span>
             </div>
         </div>
         <div id = "rightContentBottom" onclick="expandDiv(this)">
@@ -110,9 +78,8 @@
                 <div class = "rightContentHeading"><span class="highlight">About</span> the Project</div>
             </div>
             <div class = "box">
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                The whole Software Development Process is documented on GitHub. You can view it by following this link:
+                <a href="https://github.com/MonteChristo46/RapidProcessParser">GitHub RapidProcessParser</a><br/>
             </div>
         </div>
     </div>

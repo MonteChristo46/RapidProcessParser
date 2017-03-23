@@ -59,6 +59,21 @@ class DataBaseInterface
         return $result['max(Attr_ID)'];
     }
 
+    public function getDateOfFirstInstance(){
+        $sql = "SELECT min(Date) FROM `Process_Instance`";
+        $query = mysqli_query($this->db, $sql) or die("Request failed:".mysqli_error());
+        $result = mysqli_fetch_assoc($query);
+        return $result['min(Date)'];
+    }
+
+    public function getDateOfLastInstance(){
+        $sql = "SELECT max(Date) FROM `Process_Instance`";
+        $query = mysqli_query($this->db, $sql) or die("Request failed:".mysqli_error());
+        $result = mysqli_fetch_assoc($query);
+        return $result['max(Date)'];
+    }
+
+
     public function uploadSingleProcessInstanceToDatabase(){
         /*To-Dos*/
     }
