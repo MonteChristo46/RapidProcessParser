@@ -57,20 +57,20 @@ h3{
     cursor: pointer;
 
     /*For zoom out and in */
-    /*transition: all 1s ease;
+    transition: all 1s ease;
     -moz-transition: all 1s ease;
     -ms-transition: all 1s ease;
     -webkit-transition: all 1s ease;
-    -o-transition: all 1s ease;*/
+    -o-transition: all 1s ease;
 }
-/*
+
 #rightContentTop:hover, #rightContentMiddle:hover, #rightContentBottom:hover{
     transform: scale(1.02);
     -moz-transform: scale(1.02);
     -webkit-transform: scale(1.02);
     -o-transform: scale(1.02);
     -ms-transform: scale(1.02);
-}*/
+}
 /*#leftContentTop{
     background-image: url("../content/images/placeholder_mac.png");
     background-repeat: no-repeat;
