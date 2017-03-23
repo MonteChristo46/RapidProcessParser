@@ -57,19 +57,20 @@ h3{
     cursor: pointer;
 
     /*For zoom out and in */
-    transition: all 1s ease;
+    /*transition: all 1s ease;
     -moz-transition: all 1s ease;
     -ms-transition: all 1s ease;
     -webkit-transition: all 1s ease;
-    -o-transition: all 1s ease;
+    -o-transition: all 1s ease;*/
 }
+/*
 #rightContentTop:hover, #rightContentMiddle:hover, #rightContentBottom:hover{
     transform: scale(1.02);
     -moz-transform: scale(1.02);
     -webkit-transform: scale(1.02);
     -o-transform: scale(1.02);
     -ms-transform: scale(1.02);
-}
+}*/
 /*#leftContentTop{
     background-image: url("../content/images/placeholder_mac.png");
     background-repeat: no-repeat;
@@ -160,19 +161,6 @@ h3{
     box-shadow: 5px 5px 10px #bdc3c7;
 }
 
-#startWithLastXml a{
-    color: white;
-    text-decoration: none;
-}
-#startWithLastXml a:visited{
-    color: white;
-}
-#startWithLastXml a:hover{
-    color: white;
-}
-#startWithLastXml a:active{
-    color: white;
-}
 
 #submitLabel, #filterForm > button{
     font-family: inherit;
@@ -199,5 +187,29 @@ input[type=text], input[type=date] {
 #filterForm {
     font-size: 14px;
 }
+/*
+#rightContentTop:hover, #rightContentMiddle:hover, #rightContentBottom:hover{
+    -webkit-animation-name: rotation;
+    -webkit-animation-duration: 4s ;
+    -webkit-animation-iteration-count: infinite;
+    animation-name: rotation;
+    animation-duration: 3s ;
+    animation-iteration-count: 1;
+    transform-origin: 0% 100%;
+    -webkit-transform-origin: 0% 100%;
+    -ms-transform-origin: 0% 100%;
+}
 
+@-webkit-keyframes rotation {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(180deg);}
+}
+@keyframes rotation {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(180deg);}
+}
 
+.box{
+    display: none;
+}
+*/
