@@ -120,10 +120,11 @@ h3{
     clear:both;
     display: none;
     height: 100%;
-    width: 90%;
-    margin-left: 10%;
+    width: 100%;
+    padding-right: 30px;
+    padding-bottom: 30px;
     /*border: solid 1px red;*/
-    color: #black
+    color: black
 }
 .automaticNumberCounter{
     font-size: 24px;
