@@ -10,7 +10,7 @@ function expandDiv(object){
         var rightContent = $(object);
         var heading = rightContent.find(".rightContentHeading");
         var rightContentTopHeight = Math.round((rightContent.height()/bodyHeight)*100);
-        var newHeight = 0.666; // in percentage //Bei 33.3 sollte das schon mehr als 0.6 sein...
+        var newHeight = 0.67; // in percentage //Bei 33.3 sollte das schon mehr als 0.6 sein...
         if(rightContentTopHeight/100 < newHeight){
             //heading.css("display", "none");
             rightContent.height(newHeight*bodyHeight);
