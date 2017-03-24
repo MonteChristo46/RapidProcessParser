@@ -25,6 +25,7 @@ function expandDiv(object){
     });
 
 
+
 }
 
 function countNumbers(object) {
