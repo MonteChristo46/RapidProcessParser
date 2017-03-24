@@ -3,13 +3,14 @@ function toDo(obj){
     countNumbers(obj);
 }
 
+//Die Drecksrundungsfehler müssen ausgebessert werden. WIe runded Math.round??
 function expandDiv(object){
     $(object).find(".box").slideToggle('slow', function(){
         var bodyHeight = $('body').height();
         var rightContent = $(object);
         var heading = rightContent.find(".rightContentHeading");
         var rightContentTopHeight = Math.round((rightContent.height()/bodyHeight)*100);
-        var newHeight = 0.6; // in percentage
+        var newHeight = 0.65; // in percentage //Bei 33.3 sollte das schon mehr als 0.6 sein...
         if(rightContentTopHeight/100 < newHeight){
             //heading.css("display", "none");
             rightContent.height(newHeight*bodyHeight);
@@ -38,7 +39,6 @@ function countNumbers(object) {
     if(opened) {
         $('.automaticNumberCounter').each(function () {
             var $this = $(this);
-            //Value anstelle von text(), da der Counter den Text verändert
             jQuery({Counter: 0}).animate({Counter: $this.attr('value')}, {
                 duration: 2000,
                 easing: 'swing',

@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Rapid Miner Process Parser</title>
-    <link rel="stylesheet" href="extensions/materialize/css/materialize.min.css">
-    <link rel="stylesheet" href="extensions/noUiSlider-master/distribute/nouislider.min.css">
+    <!--Warum materialize? Sieht genau so ohne aus. -->
+    <!--<link rel="stylesheet" href="extensions/materialize/css/materialize.min.css">
+    <!-- Useless ohne die Datei dazu-->
+    <!--<link rel="stylesheet" href="extensions/noUiSlider-master/distribute/nouislider.min.css">-->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="extensions/noUiSlider-master/distribute/nouislider.min.js"></script>
@@ -16,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
+<?php require_once("php/interfaceLogic.php") ?>
     <div id = "leftContent">
         <div id = "welcomeTextWrapper">
             <div id = "welcomeText">
@@ -26,7 +29,8 @@
                 <form action="" enctype="multipart/form-data" method="post">
                     <div>
                         <!--<input class="fileUpload" id='upload' name="upload[]" type="file" multiple="multiple" />-->
-                        <label class="fileContainer" for="file" id="label"><i style = "margin-right: 5px;"class="fa fa-upload" aria-hidden="true"></i>Choose files</label><br/><br/>
+                        <label class="fileContainer" for="file" id="label"><i style = "margin-right: 5px;"class="fa fa-upload" aria-hidden="true"></i>Choose files</label>
+                        <br/><br/>
                         <input type="file" name="upload[]" id="file" class="inputfile" multiple="multiple"/>
                         <button id="submitLabel" type="submit" value="Submit" name="submit">Submit</button>
                     </div>
@@ -34,7 +38,6 @@
             </div>
         </div>
     </div>
-    <?php include("php/interfaceLogic.php"); ?>
     <div id =  "rightContent">
         <div id = "rightContentTop" onclick="expandDiv(this)">
             <div class = "rightContentWrapper" >
@@ -45,36 +48,40 @@
                 <h2>Filter Box</h2>
                 </br>
                <form action = "yourPHPFile" id="filterForm">
-                   <label for="startDate ">Start Date </label><br/>
-                   <input type="date" id = "startDate" class="datepicker"></br><br/>
-                   <label for="endDate">End Date </label><br/>
-                   <input type="date" id="endDate"></br></br>
-                   <label for="range">Select the amount of data you want to export</label><br/><br/>
-                   <input type="range" name="ageInputName" id="range" min="1" max="<?= $instances ?>" oninput="ageOutputId.value = range.value">
-                   <output name="ageOutputName" id="ageOutputId">50</output> (# of Instances selected)</br></br>
-                   <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
-                   <label for="filled-in-box">Export all attributes?</label><br/><br>
+                   <div id = "formData">
+                       <label for="startDate ">Start Date </label><br/>
+                       <input type="date" id = "startDate" class="datePicker"></br><br/>
+                       <label for="endDate">End Date </label><br/>
+                       <input type="date" class="datePicker">
+                   </div>
+                   <div id="formData">
+                       <label for="range">Select the amount of data you want to export</label><br/><br/>
+                       <input type="range" name="ageInputName" id="range" min="1" max="<?= $instances ?>" oninput="ageOutputId.value = range.value">
+                       <output name="ageOutputName" id="ageOutputId">50</output>
+                       <div>(# of Instances selected)</div>
+                   </div>
+                   <div class="formData">
+                       <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                       <label for="filled-in-box">Export all attributes?</label><br/><br>
+                   </div>
+                  <div class="formData">
+                       <label>Select export format:</label>
+                       <div class="switch">
+                           XES
+                           <label>
+                               <input type="checkbox">
+                               <span class="lever"></span>
+                           </label>
+                       </div>
+                       <div class="switch">
+                           CSV
+                           <label>
+                               <input type="checkbox">
+                               <span class="lever"></span>
+                           </label>
+                       </div>
+                  </div>
 
-                   <!-- Switch -->
-                   <label>Select export format:</label>
-                   <div class="switch">
-                       XES
-                       <label>
-                           No
-                           <input type="checkbox">
-                           <span class="lever"></span>
-                           Yes
-                       </label>
-                   </div>
-                   <div class="switch">
-                       CSV
-                       <label>
-                           No
-                           <input type="checkbox">
-                           <span class="lever"></span>
-                           Yes
-                       </label>
-                   </div>
                    <button>Export</button><!--Functionality must be implemented-->
                </form>
 
@@ -121,7 +128,4 @@
         </div>
     </div>
 </body>
-<script type="text/javascript">
-
-</script>
 </html>

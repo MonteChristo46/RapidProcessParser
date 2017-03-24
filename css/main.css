@@ -17,6 +17,7 @@ h3{
     font-size: 20px;
     padding: 8px;
     padding-left: 0px;
+    font-weight: bold;
 }
 
 .highlight{
@@ -25,7 +26,7 @@ h3{
 
 #leftContent{
     height: 100%;
-    width: 50%;
+    width: 49%;
     border: solid #ccc 1px;
     /*background-image: url("../content/images/placeholder.png");*/
     background-color: #7f8c8d;
@@ -178,14 +179,7 @@ h3{
     color: white;
     line-height: 30px;
     border: none;
-}
-
-input[type=text], input[type=date] {
-    border: none;
-    height: 40px;
-    border-bottom: 1px solid #26a69a;
-    background-color: transparent;
-    color: white;
+    margin-top: 20px;
 }
 
 #filterForm {
@@ -240,4 +234,75 @@ input[type=text], input[type=date] {
     0% {
         height: 0;
     }
+}
+
+/*Added by Daniel*/
+#formData{
+    margin-bottom: 10%;
+}
+.datePicker{
+    width: 80%;
+    border: none;
+    height: 40px;
+    border-bottom: 1px solid #26a69a;
+    background-color: transparent;
+    color: grey;
+}
+#range{
+    width: 80%;
+}
+.switch label .lever{
+    content: "";
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 15px;
+    background-color: #818181;
+    border-radius: 15px;
+    margin-right: 10px;
+    transition: background 0.3s ease;
+    vertical-align: middle;
+    margin: 0 16px;
+    cursor: pointer;
+}
+/*Copied Styles from Materialize*/
+.switch label .lever::after{
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    background-color: #F1F1F1;
+    border-radius: 21px;
+    box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4);
+    left: -5px;
+    top: -3px;
+    transition: left 0.3s ease, background .3s ease, box-shadow 0.1s ease;
+}
+switch label .lever::before{
+    content: "";
+    rigth: 5px;
+}
+.switch input[type=checkbox]:checked + label {
+    left: 43px;
+}
+.switch input[type=checkbox] {
+    visibility: hidden;
+}
+.switch label input[type=checkbox]:checked+.lever:after {
+    background-color: #26a69a;
+    left: 24px;
+}
+.switch label .lever::after{
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    background-color: #F1F1F1;
+    border-radius: 21px;
+    box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4);
+    left: -5px;
+    top: -3px;
+    transition: left 0.3s ease, background .3s ease, box-shadow 0.1s ease;
 }
