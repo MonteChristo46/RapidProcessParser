@@ -28,7 +28,7 @@ h3{
     height: 100%;
     width: 49%;
     border: solid #ccc 1px;
-    background-image: url("../content/images/geometric shape wallpaper 2015 - Grasscloth Wallpaper.jpg");
+    background-image: url("../content/images/leftContentBack.jpg");
     /*background-color: #7f8c8d;*/
     background-repeat: no-repeat;
     float: left;
@@ -51,7 +51,7 @@ h3{
     height: 33.3%;
     width: 100%;
     border: solid darkgray 1px;
-    background-image: url("../content/images/Black triangle.png");
+    background-image: url("../content/images/rightContentBack3.png");
     background-repeat: no-repeat;
     /*background-color: #EEEEEE;*/
     background-size: 100%;
