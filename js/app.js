@@ -4,7 +4,8 @@ function toDo(obj){
 }
 
 //Die Drecksrundungsfehler müssen ausgebessert werden. WIe runded Math.round??
-function expandDiv(object){
+/*
+function expandDiv2(object){
     $(object).find(".box").slideToggle('slow', function(){
         var bodyHeight = $('body').height();
         var rightContent = $(object);
@@ -23,8 +24,43 @@ function expandDiv(object){
             rightContent.siblings().attr("onclick","expandDiv(this)");
         }
     });
+}
+*/
+function expandDiv(object){
+    $(object).find('.box').slideToggle('slow', function(){
+        var bodyHeight = $('body').height();
+        var rightContentBox = $(object);
+        var newHeight = 0.8;
 
+        if(rightContentBox.hasClass("normal") || rightContentBox.hasClass("closed")){
+            rightContentBox.height(newHeight*bodyHeight);
+            rightContentBox.siblings().height((bodyHeight-(newHeight*bodyHeight))/2);
 
+            var boxClass = rightContentBox.attr("class");
+            rightContentBox.removeClass(boxClass);
+            rightContentBox.addClass('expanded');
+
+            var siblingClass = rightContentBox.siblings().attr("class");
+            rightContentBox.siblings().removeClass(siblingClass);
+            rightContentBox.siblings().addClass('closed');
+
+            rightContentBox.siblings().attr("onclick", "expandDiv(this)");
+            rightContentBox.siblings().find('.box').css("display", "none");
+
+        }else if(rightContentBox.hasClass("expanded")){
+            rightContentBox.siblings().height((1/3)*100+"%");
+            rightContentBox.height((1/3)*100+"%");
+            rightContentBox.siblings().attr("onclick", "expandDiv(this)");
+
+            var currentClass = rightContentBox.attr("class");
+            rightContentBox.removeClass(currentClass);
+            rightContentBox.addClass('normal');
+
+            var sibClass = rightContentBox.siblings().attr("class");
+            rightContentBox.siblings().removeClass(sibClass);
+            rightContentBox.siblings().addClass('normal');
+        }
+    });
 
 }
 

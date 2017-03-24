@@ -34,7 +34,7 @@
         </div>
     </div>
     <div id =  "rightContent">
-        <div id = "rightContentTop" onclick="expandDiv(this)">
+        <div id = "rightContentTop" class="normal" onclick="expandDiv(this)">
             <div class = "rightContentWrapper" >
                 <div class = "icon" ><i class="fa fa-filter" aria-hidden="true"></i></div>
                 <div class = "rightContentHeading"><span class="highlight">Select </span> Data</div>
@@ -82,7 +82,7 @@
 
             </div>
         </div>
-        <div id = "rightContentMiddle" onclick="toDo(this)">
+        <div id = "rightContentMiddle" class="normal" onclick="toDo(this)">
             <div class = "rightContentWrapper">
                 <div class = "icon"><i class="fa fa-database" aria-hidden="true"></i></div>
                 <div class = "rightContentHeading">Data <span class="highlight">Overview</span></div>
@@ -111,7 +111,7 @@
                 <span class="automaticNumberCounter" value='<?= $attributes ?>'><?= $attributes ?></span>
             </div>
         </div>
-        <div id = "rightContentBottom" onclick="expandDiv(this)">
+        <div id = "rightContentBottom" class="normal" onclick="expandDiv(this)">
             <div class = "rightContentWrapper">
                 <div class = "icon"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
                 <div class = "rightContentHeading"><span class="highlight">About</span> the Project</div>
