@@ -26,11 +26,11 @@ h3{
 
 #leftContent{
     height: 100%;
-    width: 49%;
+    width: 49.7%;
     border: solid #ccc 1px;
-    /*background-image: url("../content/images/placeholder.png");*/
-    background-color: #7f8c8d;
-    background-size: 50%;
+    background-image: url("../content/images/leftContentBack.jpg");
+    /*background-color: #7f8c8d;*/
+    background-repeat: no-repeat;
     float: left;
     display: table;
 }
@@ -44,16 +44,17 @@ h3{
 #rightContent{
     height: 100%;
     width: 50%;
-    border: solid #eee 1px;
+    /*border: solid #eee 1px;*/
     float: left;
 }
 #rightContentTop,#rightContentMiddle,#rightContentBottom{
     height: 33.3%;
     width: 100%;
     border: solid darkgray 1px;
-    /*background-image: url("../content/images/placeholder_2.jpg");*/
-    background-color: #EEEEEE;
-    background-size: 50%;
+    background-image: url("../content/images/rightContentBack3.png");
+    background-repeat: no-repeat;
+    /*background-color: #EEEEEE;*/
+    background-size: 100%;
     display:table;
     cursor: pointer;
 
@@ -159,7 +160,6 @@ h3{
     color: white;
     line-height: 30px;
     border: none;
-
 }
 
 #label:hover, #submitLabel:hover{

@@ -3,13 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Rapid Miner Process Parser</title>
-    <!--Warum materialize? Sieht genau so ohne aus. -->
-    <!--<link rel="stylesheet" href="extensions/materialize/css/materialize.min.css">
-    <!-- Useless ohne die Datei dazu-->
-    <!--<link rel="stylesheet" href="extensions/noUiSlider-master/distribute/nouislider.min.css">-->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
-    <script src="extensions/noUiSlider-master/distribute/nouislider.min.js"></script>
     <script src="extensions/jquery-3.2.0.min.js"></script>
     <script src="js/app.js"></script>
     <link rel="stylesheet" href="extensions/font-awesome-4.7.0/css/font-awesome.css">
