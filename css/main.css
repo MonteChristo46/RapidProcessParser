@@ -44,7 +44,7 @@ h3{
 #rightContent{
     height: 100%;
     width: 50%;
-    border: solid #eee 1px;
+    /*border: solid #eee 1px;*/
     float: left;
 }
 #rightContentTop,#rightContentMiddle,#rightContentBottom{
