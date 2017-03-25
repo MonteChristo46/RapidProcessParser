@@ -72,7 +72,7 @@ function countNumbers(object) {
     console.log(actualHeight);
     var startingHeight = 33;
     if(actualHeight <= startingHeight){
-        var opened = true;
+        opened = true;
     }
     if(opened) {
         $('.automaticNumberCounter').each(function () {

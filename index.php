@@ -77,8 +77,10 @@
                        </div>
                   </div>
 
-                   <button>Export</button><!--Functionality must be implemented-->
+                   <!--Functionality must be implemented-->
+                   <button>Export</button>
                </form>
+
 
             </div>
         </div>
@@ -118,7 +120,7 @@
             </div>
             <div class = "box">
                 The whole Software Development Process is documented on GitHub. You can view it by following this link:
-                <a href="https://github.com/MonteChristo46/RapidProcessParser">GitHub RapidProcessParser</a><br/>
+                <a href="https://github.com/MonteChristo46/RapidProcessParser" target="_blank">GitHub RapidProcessParser</a><br/>
             </div>
         </div>
     </div>

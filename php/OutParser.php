@@ -43,7 +43,8 @@ class outParser extends Parser
                 $sqlForAttributes = "SELECT `Attr_Name`, `Attr_Value` FROM `Attribute` WHERE `A_ID` = '$activityID'";
                 $resultForAttributes = mysqli_query($this->db, $sqlForAttributes);
                 while($at =  mysqli_fetch_array($resultForAttributes, MYSQLI_ASSOC)){
-                    $activity->addAttribute($at["Attr_Name"], $at["Attr_Value"]);
+                    $attribute = new Attribute($at["Attr_Name"], $at["Attr_Value"]);
+                    $activity->addAttribute($attribute);
                 }
                 $processInstance->addActivity($activity);
             }
@@ -75,13 +76,14 @@ class outParser extends Parser
                     $stringName->setAttribute("value",$activity->getName());
                 $eventTag->appendChild($stringName);
                 $attributes = $activity->getAttributes();
-                /*foreach($attributes as $arr){
+                for($i=0; $i<count($attributes); $i++) {
+                    $arr = $attributes[$i];
                     $stringAttribute = $dom->createElement("string");
-                    echo($arr->getValue());
-                       // $stringAttribute->setAttribute("key", "$attribute->getName()");
-                        //$stringAttribute->setAttribute("value","$attribute->getValue()");
+                    //echo($arr->getValue());q
+                    $stringAttribute->setAttribute("key", $arr->getName());
+                    $stringAttribute->setAttribute("value",$arr->getValue());
                     $eventTag->appendChild($stringAttribute);
-                }*/
+                }
 
             }
 
@@ -105,17 +107,10 @@ class outParser extends Parser
                 $dataSet = array();
                 array_push($dataSet, $i);
                 array_push($dataSet, $activities[$j]->getName());
-                /*
-                for($k=0; $k<count($attributes); $k++){
-                    echo gettype($attributes[$k]->getValue());
-                    if(gettype($attributes[$k]->getValue()) == "object"){
-                        array_push($dataSet, $attributes[$k]->getValue());
-                    }else{
-                        array_push($dataset, $attributes[$k], $delimiter);
-                    }
 
-                    echo $k."<br/>";
-                }*/
+                for($k=0; $k<count($attributes); $k++){
+                    array_push($dataSet, $attributes[$k]->getValue());
+                }
             fputcsv($csv, $dataSet, $delimiter);
             }
         }

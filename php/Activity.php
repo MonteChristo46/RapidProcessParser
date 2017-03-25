@@ -15,9 +15,6 @@ class Activity
         $this->name = $name;
     }
 
-
-    //Muss vom Typ Attribute sein --> Drecks untypisierte Scheiße!
-    //Sollte was zurückgeben
     /**
      * @param $attribute Attribute
      */
