@@ -22,7 +22,8 @@ $attributes = $dbi->getLastAttributeID();
 $oldest = $dbi->getDateOfFirstInstance();
 $newest = $dbi->getDateOfLastInstance();
 
-//When Database is empty data should not throw errors
+//When Database is empty data should not throw errors but be set on 0
+//If clause because division by 0 throws errors
 if($instances != 0 && $attributes != 0){
     $instancesHeight = ($instances/($attributes*1.2))*100;
 }else{

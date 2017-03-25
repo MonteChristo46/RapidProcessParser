@@ -97,203 +97,75 @@
 12,"Retrieve Titanic+Data","//Local Repository/data/Titanic+Data"
 12,"Select Attributes",subset,,"Age|No of Parents or Children on Board|Passenger C",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
 12,"Set Role",Survived,label
-12,"Replace Missing Values",false,false,all,,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
-12,"Decision Tree",information_gain,10,true,0.25,false,0.1,2,4,3
-13,Retrieve,"//Local Repository/data/Titanic+Data"
-13,"Data Preparation"
-13,"Select Attributes",subset,,"Age|Survived|Sex|Port of Embarkation|Passenger Far",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
-13,"Set Role",Name,id
-13,"Replace Missing Values",false,false,single,Age,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
-13,"Filter Examples",,custom_filters,false,true,true
-13,"Nominal to Numerical",false,false,all,,,false,nominal,false,file_path,single_value,false,single_value,false,false,"dummy coding",false,"all 0 and warning",false
-13,"Cross Validation",false,false,10,automatic,false,1992,true
-13,"Linear Regression","M5 prime",0.05,10,0.05,0.05,true,0.05,true,1.0E-8
-13,"Apply Model",false
-13,Performance,true
-14,Retrieve,"//Local Repository/data/Titanic+Data"
-14,"Data Preparation"
-14,"Select Attributes",subset,,"Age|Survived|Sex|Port of Embarkation|Passenger Far",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
-14,"Set Role",Name,id
-14,"Replace Missing Values",false,false,single,Age,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
-14,"Filter Examples",,custom_filters,false,true,true
-14,"Cross Validation",false,false,10,automatic,false,1992,true
-14,"Logistic Regression",AUTO,false,4,false,false,0,0.0,true,3,0.001,true,false,true,true,true,MeanImputation,0,0
-14,"Apply Model",false
-14,Performance,true
-15,Retrieve,"//Local Repository/data/Titanic+Data"
-15,"Data Preparation"
-15,"Select Attributes",subset,,"Age|Survived|Sex|Port of Embarkation|Passenger Far",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
-15,"Set Role",Name,id
-15,"Replace Missing Values",false,false,single,Age,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
-15,"Filter Examples",,custom_filters,false,true,true
-15,"Nominal to Numerical",false,false,all,,,false,nominal,false,file_path,single_value,false,single_value,false,false,"dummy coding",false,"all 0 and warning",false
-15,"Cross Validation",false,false,10,automatic,false,1992,true
-15,"Neural Net",500,0.3,0.2,false,true,true,1.0E-5,false,1992
-15,"Apply Model",false
-15,Performance,true
-16,"Retrieve Titanic+Data","//Local Repository/data/Titanic+Data"
-16,"Select Attributes",subset,,"Age|No of Parents or Children on Board|Passenger C",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
-16,"Set Role",Survived,label
-16,"Replace Missing Values",false,false,all,,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
-16,"Decision Tree",information_gain,10,true,0.25,false,0.1,2,4,3
-17,"Retrieve Titanic+Data","//Local Repository/data/Titanic+Data"
-17,"Set Role",Survived,label
-17,"Replace Missing Values",false,false,all,,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
-17,"Decision Tree",gini_index,10,false,0.25,true,0.1,2,4,3
-18,"Retrieve Titanic+Data","//Local Repository/data/Titanic+Data"
-18,"Set Role",Survived,label
-18,"Decision Tree",gain_ratio,20,true,0.25,true,0.1,2,4,3
-19,Retrieve,"//Local Repository/data/Titanic+Data"
-19,"Data Preparation"
-19,"Select Attributes",subset,,"Age|Survived|Sex|Port of Embarkation|Passenger Far",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
-19,"Set Role",Name,id
-19,"Replace Missing Values",false,false,single,Age,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
-19,"Filter Examples",,custom_filters,false,true,true
-19,"Cross Validation",false,false,10,automatic,false,1992,true
-19,"Decision Tree",gain_ratio,20,true,0.25,true,0.1,2,4,3
-19,"Apply Model",false
-19,Performance,true
-20,"Retrieve Titanic+Data","//Local Repository/data/Titanic+Data"
-20,"Select Attributes",subset,,"Age|No of Parents or Children on Board|Passenger C",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
-20,"Set Role",Survived,label
-20,"Decision Tree",information_gain,20,true,0.25,true,0.1,2,4,3
-21,"Retrieve Titanic+Data","//Local Repository/data/Titanic+Data"
-21,"Select Attributes",subset,,"Age|No of Parents or Children on Board|Passenger C",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
-21,"Set Role",Survived,label
-21,"Replace Missing Values",false,false,all,,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
-21,"Decision Tree",information_gain,10,true,0.25,false,0.1,2,4,3
-22,"Retrieve Titanic+Data","//Local Repository/data/Titanic+Data"
-22,"Set Role",Survived,label
-22,"Replace Missing Values",false,false,all,,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
-22,"Decision Tree",gini_index,10,false,0.25,true,0.1,2,4,3
-23,"Retrieve Titanic+Data","//Local Repository/data/Titanic+Data"
-23,"Set Role",Survived,label
-23,"Decision Tree",gain_ratio,20,true,0.25,true,0.1,2,4,3
-24,Retrieve,"//Local Repository/data/Titanic+Data"
-24,"Data Preparation"
-24,"Select Attributes",subset,,"Age|Survived|Sex|Port of Embarkation|Passenger Far",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
-24,"Set Role",Name,id
-24,"Replace Missing Values",false,false,single,Age,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
-24,"Filter Examples",,custom_filters,false,true,true
-24,"Cross Validation",false,false,10,automatic,false,1992,true
-24,"Decision Tree",gain_ratio,20,true,0.25,true,0.1,2,4,3
-24,"Apply Model",false
-24,Performance,true
-25,Retrieve,"//Local Repository/data/Titanic+Data"
-25,"Data Preparation"
-25,"Select Attributes",subset,,"Age|Survived|Sex|Port of Embarkation|Passenger Far",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
-25,"Set Role",Name,id
-25,"Replace Missing Values",false,false,single,Age,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
-25,"Filter Examples",,custom_filters,false,true,true
-25,"Cross Validation",false,false,10,automatic,false,1992,true
-25,"Logistic Regression",AUTO,false,4,false,false,0,0.0,true,3,0.001,true,false,true,true,true,MeanImputation,0,0
-25,"Apply Model",false
-25,Performance,true
-26,Retrieve,"//Local Repository/data/Titanic+Data"
-26,"Data Preparation"
-26,"Select Attributes",subset,,"Age|Survived|Sex|Port of Embarkation|Passenger Far",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
-26,"Set Role",Name,id
-26,"Replace Missing Values",false,false,single,Age,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
-26,"Filter Examples",,custom_filters,false,true,true
-26,"Nominal to Numerical",false,false,all,,,false,nominal,false,file_path,single_value,false,single_value,false,false,"dummy coding",false,"all 0 and warning",false
-26,"Cross Validation",false,false,10,automatic,false,1992,true
-26,"Neural Net",500,0.3,0.2,false,true,true,1.0E-5,false,1992
-26,"Apply Model",false
-26,Performance,true
-27,Retrieve,"//Local Repository/data/Titanic+Data"
-27,"Data Preparation"
-27,"Select Attributes",subset,,"Age|Survived|Sex|Port of Embarkation|Passenger Far",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
-27,"Set Role",Name,id
-27,"Replace Missing Values",false,false,single,Age,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
-27,"Filter Examples",,custom_filters,false,true,true
-27,"Nominal to Numerical",false,false,all,,,false,nominal,false,file_path,single_value,false,single_value,false,false,"dummy coding",false,"all 0 and warning",false
-27,"Cross Validation",false,false,10,automatic,false,1992,true
-27,"Replace Missing Values (2)",false,false,all,,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
-27,SVM,dot,1.0,1.0,0.0,2.0,1.0,2.0,1.0,0.0,200,0.0,0.001,100000,true,true,true,1.0,1.0,0.0,0.0,0.0,false,false,false,false
-27,"Apply Model",false
-27,Performance,true
-28,Retrieve,"//Local Repository/data/Titanic+Data"
-28,"Data Preparation"
-28,"Select Attributes",subset,,"Age|Survived|Sex|Port of Embarkation|Passenger Far",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
-28,"Set Role",Name,id
-28,"Replace Missing Values",false,false,single,Age,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
-28,"Filter Examples",,custom_filters,false,true,true
-28,"Cross Validation",false,false,10,automatic,false,1992,true
-28,"Decision Tree",gain_ratio,20,true,0.25,true,0.1,2,4,3
-28,"Apply Model",false
-28,Performance,true
-29,"Retrieve Titanic+Data","//Local Repository/data/Titanic+Data"
-29,"Select Attributes",subset,,"Age|No of Parents or Children on Board|Passenger C",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
-29,"Set Role",Survived,label
-29,"Decision Tree",information_gain,20,true,0.25,true,0.1,2,4,3
-30,"Retrieve Titanic+Data","//Local Repository/data/Titanic+Data"
-30,"Select Attributes",subset,,"Age|No of Parents or Children on Board|Passenger C",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
-30,"Set Role",Survived,label
-30,"Replace Missing Values",false,false,all,,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
-30,"Decision Tree",information_gain,10,true,0.25,false,0.1,2,4,3
-31,"Retrieve Titanic+Data","//Local Repository/data/Titanic+Data"
-31,"Set Role",Survived,label
-31,"Replace Missing Values",false,false,all,,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
-31,"Decision Tree",gini_index,10,false,0.25,true,0.1,2,4,3
-32,"Retrieve Titanic+Data","//Local Repository/data/Titanic+Data"
-32,"Set Role",Survived,label
-32,"Decision Tree",gain_ratio,20,true,0.25,true,0.1,2,4,3
-33,Retrieve,"//Local Repository/data/Titanic+Data"
-33,"Data Preparation"
-33,"Select Attributes",subset,,"Age|Survived|Sex|Port of Embarkation|Passenger Far",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
-33,"Set Role",Name,id
-33,"Replace Missing Values",false,false,single,Age,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
-33,"Filter Examples",,custom_filters,false,true,true
-33,"Nominal to Numerical",false,false,all,,,false,nominal,false,file_path,single_value,false,single_value,false,false,"dummy coding",false,"all 0 and warning",false
-33,"Cross Validation",false,false,10,automatic,false,1992,true
-33,"Linear Regression","M5 prime",0.05,10,0.05,0.05,true,0.05,true,1.0E-8
-33,"Apply Model",false
-33,Performance,true
-34,Retrieve,"//Local Repository/data/Titanic+Data"
-34,"Data Preparation"
-34,"Select Attributes",subset,,"Age|Survived|Sex|Port of Embarkation|Passenger Far",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
-34,"Set Role",Name,id
-34,"Replace Missing Values",false,false,single,Age,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
-34,"Filter Examples",,custom_filters,false,true,true
-34,"Cross Validation",false,false,10,automatic,false,1992,true
-34,"Logistic Regression",AUTO,false,4,false,false,0,0.0,true,3,0.001,true,false,true,true,true,MeanImputation,0,0
-34,"Apply Model",false
-34,Performance,true
-35,Retrieve,"//Local Repository/data/Titanic+Data"
-35,"Data Preparation"
-35,"Select Attributes",subset,,"Age|Survived|Sex|Port of Embarkation|Passenger Far",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
-35,"Set Role",Name,id
-35,"Replace Missing Values",false,false,single,Age,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
-35,"Filter Examples",,custom_filters,false,true,true
-35,"Nominal to Numerical",false,false,all,,,false,nominal,false,file_path,single_value,false,single_value,false,false,"dummy coding",false,"all 0 and warning",false
-35,"Cross Validation",false,false,10,automatic,false,1992,true
-35,"Neural Net",500,0.3,0.2,false,true,true,1.0E-5,false,1992
-35,"Apply Model",false
-35,Performance,true
-36,"Retrieve Titanic+Data","//Local Repository/data/Titanic+Data"
-36,"Set Role",Survived,label
-36,"Replace Missing Values",false,false,all,,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
-36,"Random Forest",10,information_gain,20,true,0.25,true,0.1,2,4,3,true,0.2,"confidence vote",false,1992
-37,Retrieve,"//Local Repository/data/Titanic+Data"
-37,"Data Preparation"
-37,"Select Attributes",subset,,"Age|Survived|Sex|Port of Embarkation|Passenger Far",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
-37,"Set Role",Name,id
-37,"Replace Missing Values",false,false,single,Age,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
-37,"Filter Examples",,custom_filters,false,true,true
-37,"Nominal to Numerical",false,false,all,,,false,nominal,false,file_path,single_value,false,single_value,false,false,"dummy coding",false,"all 0 and warning",false
-37,"Cross Validation",false,false,10,automatic,false,1992,true
-37,SVM,dot,1.0,1.0,0.0,2.0,1.0,2.0,1.0,0.0,200,0.0,0.001,100000,true,true,true,1.0,1.0,0.0,0.0,0.0,false,false,false,false
-37,"Apply Model",false
-37,Performance,true
-38,Retrieve,"//Local Repository/data/Titanic+Data"
-38,"Data Preparation"
-38,"Select Attributes",subset,,"Age|Survived|Sex|Port of Embarkation|Passenger Far",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
-38,"Set Role",Name,id
-38,"Replace Missing Values",false,false,single,Age,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
-38,"Filter Examples",,custom_filters,false,true,true
-38,"Nominal to Numerical",false,false,all,,,false,nominal,false,file_path,single_value,false,single_value,false,false,"dummy coding",false,"all 0 and warning",false
-38,"Cross Validation",false,false,10,automatic,false,1992,true
-38,"Replace Missing Values (2)",false,false,all,,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
-38,SVM,dot,1.0,1.0,0.0,2.0,1.0,2.0,1.0,0.0,200,0.0,0.001,100000,true,true,true,1.0,1.0,0.0,0.0,0.0,false,false,false,false
-38,"Apply Model",false
-38,Performance,true
+12,"Decision Tree",information_gain,20,true,0.25,true,0.1,2,4,3
+13,"Retrieve Titanic+Data","//Local Repository/data/Titanic+Data"
+13,"Select Attributes",subset,,"Age|No of Parents or Children on Board|Passenger C",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
+13,"Set Role",Survived,label
+13,"Replace Missing Values",false,false,all,,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
+13,"Decision Tree",information_gain,10,true,0.25,false,0.1,2,4,3
+14,"Retrieve Titanic+Data","//Local Repository/data/Titanic+Data"
+14,"Set Role",Survived,label
+14,"Replace Missing Values",false,false,all,,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
+14,"Decision Tree",gini_index,10,false,0.25,true,0.1,2,4,3
+15,"Retrieve Titanic+Data","//Local Repository/data/Titanic+Data"
+15,"Set Role",Survived,label
+15,"Decision Tree",gain_ratio,20,true,0.25,true,0.1,2,4,3
+16,Retrieve,"//Local Repository/data/Titanic+Data"
+16,"Data Preparation"
+16,"Select Attributes",subset,,"Age|Survived|Sex|Port of Embarkation|Passenger Far",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
+16,"Set Role",Name,id
+16,"Replace Missing Values",false,false,single,Age,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
+16,"Filter Examples",,custom_filters,false,true,true
+16,"Nominal to Numerical",false,false,all,,,false,nominal,false,file_path,single_value,false,single_value,false,false,"dummy coding",false,"all 0 and warning",false
+16,"Cross Validation",false,false,10,automatic,false,1992,true
+16,"Linear Regression","M5 prime",0.05,10,0.05,0.05,true,0.05,true,1.0E-8
+16,"Apply Model",false
+16,Performance,true
+17,Retrieve,"//Local Repository/data/Titanic+Data"
+17,"Data Preparation"
+17,"Select Attributes",subset,,"Age|Survived|Sex|Port of Embarkation|Passenger Far",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
+17,"Set Role",Name,id
+17,"Replace Missing Values",false,false,single,Age,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
+17,"Filter Examples",,custom_filters,false,true,true
+17,"Cross Validation",false,false,10,automatic,false,1992,true
+17,"Logistic Regression",AUTO,false,4,false,false,0,0.0,true,3,0.001,true,false,true,true,true,MeanImputation,0,0
+17,"Apply Model",false
+17,Performance,true
+18,Retrieve,"//Local Repository/data/Titanic+Data"
+18,"Data Preparation"
+18,"Select Attributes",subset,,"Age|Survived|Sex|Port of Embarkation|Passenger Far",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
+18,"Set Role",Name,id
+18,"Replace Missing Values",false,false,single,Age,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
+18,"Filter Examples",,custom_filters,false,true,true
+18,"Nominal to Numerical",false,false,all,,,false,nominal,false,file_path,single_value,false,single_value,false,false,"dummy coding",false,"all 0 and warning",false
+18,"Cross Validation",false,false,10,automatic,false,1992,true
+18,"Neural Net",500,0.3,0.2,false,true,true,1.0E-5,false,1992
+18,"Apply Model",false
+18,Performance,true
+19,"Retrieve Titanic+Data","//Local Repository/data/Titanic+Data"
+19,"Set Role",Survived,label
+19,"Replace Missing Values",false,false,all,,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
+19,"Random Forest",10,information_gain,20,true,0.25,true,0.1,2,4,3,true,0.2,"confidence vote",false,1992
+20,Retrieve,"//Local Repository/data/Titanic+Data"
+20,"Data Preparation"
+20,"Select Attributes",subset,,"Age|Survived|Sex|Port of Embarkation|Passenger Far",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
+20,"Set Role",Name,id
+20,"Replace Missing Values",false,false,single,Age,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
+20,"Filter Examples",,custom_filters,false,true,true
+20,"Nominal to Numerical",false,false,all,,,false,nominal,false,file_path,single_value,false,single_value,false,false,"dummy coding",false,"all 0 and warning",false
+20,"Cross Validation",false,false,10,automatic,false,1992,true
+20,SVM,dot,1.0,1.0,0.0,2.0,1.0,2.0,1.0,0.0,200,0.0,0.001,100000,true,true,true,1.0,1.0,0.0,0.0,0.0,false,false,false,false
+20,"Apply Model",false
+20,Performance,true
+21,Retrieve,"//Local Repository/data/Titanic+Data"
+21,"Data Preparation"
+21,"Select Attributes",subset,,"Age|Survived|Sex|Port of Embarkation|Passenger Far",false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false
+21,"Set Role",Name,id
+21,"Replace Missing Values",false,false,single,Age,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
+21,"Filter Examples",,custom_filters,false,true,true
+21,"Nominal to Numerical",false,false,all,,,false,nominal,false,file_path,single_value,false,single_value,false,false,"dummy coding",false,"all 0 and warning",false
+21,"Cross Validation",false,false,10,automatic,false,1992,true
+21,"Replace Missing Values (2)",false,false,all,,,false,attribute_value,false,time,attribute_block,false,value_matrix_row_start,false,false,average
+21,SVM,dot,1.0,1.0,0.0,2.0,1.0,2.0,1.0,0.0,200,0.0,0.001,100000,true,true,true,1.0,1.0,0.0,0.0,0.0,false,false,false,false
+21,"Apply Model",false
+21,Performance,true
