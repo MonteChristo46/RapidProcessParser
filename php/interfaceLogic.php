@@ -11,8 +11,8 @@ function alert($message){
     echo 'alert("'.$message.'");';
     echo '</script>';
 }
-require_once ("php/DataBaseInterface.php");
-require_once ("php/InParser.php");
+require_once ("DataBaseInterface.php");
+require_once ("InParser.php");
 
 //Get relevant numbers for interface
 $dbi = new DataBaseInterface();
@@ -21,9 +21,26 @@ $activities = $dbi->getLastActivityID();
 $attributes = $dbi->getLastAttributeID();
 $oldest = $dbi->getDateOfFirstInstance();
 $newest = $dbi->getDateOfLastInstance();
-$instancesHeight = ($instances/($attributes*1.2))*100;
-$activitiesHeight = ($activities/($attributes*1.2))*100;
-$attributesHeight = ($attributes/($attributes*1.2))*100;
+
+//When Database is empty data should not throw errors
+if($instances != 0 && $attributes != 0){
+    $instancesHeight = ($instances/($attributes*1.2))*100;
+}else{
+    $instancesHeight = 0;
+}
+
+if($activities != 0 && $attributes != 0){
+    $activitiesHeight = ($activities/($attributes*1.2))*100;
+}else{
+    $activitiesHeight = 0;
+}
+
+if($attributes != 0){
+    $attributesHeight = ($attributes/($attributes*1.2))*100;
+}else{
+    $attributesHeight = 0;
+}
+
 
 //Upload the given files
 if(isset($_POST['submit'])){

@@ -96,6 +96,7 @@ class outParser extends Parser
 
         $delimiter = ",";
         $csv = fopen('ProcessData.csv', 'a+');
+        //How to deal with Column Heads?!
         $header = array("Test Spalte 1", "Test Spalte 2", "Test Spalte 3", "Test Spalte 4", "Test Spalte 5");
         fputcsv($csv, $header, $delimiter);
 
