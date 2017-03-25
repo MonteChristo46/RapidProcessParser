@@ -27,12 +27,19 @@ function expandDiv2(object){
 }
 */
 function expandDiv(object){
+    //$(object).find('.rightContentHeading').css("transform", "translateX(-50px) rotate(-90deg) ");
+    //while($(object).hasClass("expanded")){
+    //    $(object).find('.rightContentHeading').css("width", "100%");
+    //}
+    //$(object).find('.rightContentHeading').css("transition", "all 1s");
+
     $(object).find('.box').slideToggle('slow', function(){
         var bodyHeight = $('body').height();
         var rightContentBox = $(object);
         var newHeight = 0.8;
 
         if(rightContentBox.hasClass("normal") || rightContentBox.hasClass("closed")){
+
             rightContentBox.height(newHeight*bodyHeight);
             rightContentBox.siblings().height((bodyHeight-(newHeight*bodyHeight))/2);
 
@@ -46,6 +53,7 @@ function expandDiv(object){
 
             rightContentBox.siblings().attr("onclick", "expandDiv(this)");
             rightContentBox.siblings().find('.box').css("display", "none");
+
 
         }else if(rightContentBox.hasClass("expanded")){
             rightContentBox.siblings().height((1/3)*100+"%");

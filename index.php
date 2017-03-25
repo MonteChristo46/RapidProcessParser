@@ -86,8 +86,8 @@
         </div>
         <div id = "rightContentMiddle" class="normal" onclick="toDo(this)">
             <div class = "rightContentWrapper">
-                <div class = "icon"><i class="fa fa-database" aria-hidden="true"></i></div>
-                <div class = "rightContentHeading">Data <span class="highlight">Overview</span></div>
+                    <div class = "icon"><i class="fa fa-database" aria-hidden="true"></i></div>
+                    <div class = "rightContentHeading">Data <span class="highlight">Overview</span></div>
             </div>
             <div class = "box">
                 <div class="chartDiv">
@@ -115,6 +115,7 @@
         </div>
         <div id = "rightContentBottom" class="normal" onclick="expandDiv(this)">
             <div class = "rightContentWrapper">
+
                 <div class = "icon"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
                 <div class = "rightContentHeading"><span class="highlight">About</span> the Project</div>
             </div>
@@ -141,5 +142,7 @@
             }
         });
     });
+
+
 </script>
 </html>

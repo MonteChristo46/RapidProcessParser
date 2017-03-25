@@ -88,8 +88,8 @@ h3{
 .rightContentWrapper{
     display: table-cell;
     vertical-align: middle;
-
 }
+
 .rightContentHeading, .icon{
     float:left
 }
@@ -106,8 +106,7 @@ h3{
     height: 60px;
     border: solid #eee 0px;
     border-radius: 9999px;
-    background-color: rgba(77, 78, 83, .8) /*rgba becuase of opacity*/
-
+    background-color: rgba(77, 78, 83, .8); /*rgba becuase of opacity*/
 }
 .icon i{
     font-size: 26px;
