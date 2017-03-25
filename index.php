@@ -45,18 +45,18 @@
                <form action = "yourPHPFile" id="filterForm">
                    <div id = "formData">
                        <label for="startDate ">Start Date </label><br/>
-                       <input type="date" id = "startDate" class="datePicker"></br><br/>
+                       <input type="date" id = "startDate" class="datePicker" name="startDate"></br><br/>
                        <label for="endDate">End Date </label><br/>
-                       <input type="date" class="datePicker">
+                       <input type="date" class="datePicker" id="endDate">
                    </div>
                    <div id="formData">
                        <label for="range">Select the amount of data you want to export</label><br/><br/>
-                       <input type="range" name="ageInputName" id="range" min="1" max="<?= $instances ?>" oninput="ageOutputId.value = range.value">
-                       <output name="ageOutputName" id="ageOutputId">50</output>
+                       <input type="range" name="range" id="range" min="1" max="<?= $instances ?>" oninput="rangeOut.value = range.value">
+                       <output name="rangeOut" id="rangeOut"></output>
                        <div>(# of Instances selected)</div>
                    </div>
                    <div class="formData">
-                       <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                       <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" name="checkAllAttr"/>
                        <label for="filled-in-box">Export all attributes?</label><br/><br>
                    </div>
                   <div class="formData">
@@ -64,21 +64,21 @@
                        <div class="switch">
                            XES
                            <label>
-                               <input type="checkbox">
+                               <input type="checkbox" id="xes">
                                <span class="lever"></span>
                            </label>
                        </div>
                        <div class="switch">
                            CSV
                            <label>
-                               <input type="checkbox">
+                               <input type="checkbox" id="csv">
                                <span class="lever"></span>
                            </label>
                        </div>
                   </div>
 
                    <!--Functionality must be implemented-->
-                   <button>Export</button>
+                   <button type="button" id="exportButton">Export</button>
                </form>
 
 
@@ -125,4 +125,21 @@
         </div>
     </div>
 </body>
+<script>
+    $('#exportButton').click(function(){
+        $.ajax({ url: 'php/exportFilter.php',
+            data: { export: true,
+                    range: range.value,
+                    startDate: $('#startDate').val(),
+                    endDate: $('#endDate').val(),
+                    allAttr: $('#filled-in-box').is(":checked"),
+                    xes: $('#xes').is(":checked"),
+                    csv: $('#csv').is(":checked")},
+            type: 'post',
+            success: function(output) {
+                alert(output);
+            }
+        });
+    });
+</script>
 </html>
