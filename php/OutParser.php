@@ -9,6 +9,7 @@ require_once("Parser.php");
 require_once("ProcessInstance.php");
 require_once("Activity.php");
 require_once("Attribute.php");
+
 class outParser extends Parser
 {
     private $db;
@@ -93,12 +94,24 @@ class outParser extends Parser
 
     public function parseDataToCSV(){
         $processInstances = $this->processInstances;
-
         $delimiter = ",";
-        $csv = fopen('ProcessData.csv', 'w');
-        //How to deal with Column Heads?!
-        $header = array("CaseId", "Activity", "Test Spalte 3", "Test Spalte 4", "Test Spalte 5");
-        fputcsv($csv, $header, $delimiter);
+
+        $csv = fopen("ProcessData.csv", "w");
+        $headerValueArray = array("CaseID", "Activity");
+        for($i=0; $i<count($processInstances); $i++){
+            $activities = $processInstances[$i]->getActivities();
+            for($j=0; $j<count($activities); $j++){
+                $attributes = $activities[$j]->getAttributes();
+                for($k=0; $k<count($attributes); $k++){
+                    array_push($headerValueArray, $attributes[$k]->getName());
+                }
+            }
+        }
+        $headerValuesUnIndexed = array_unique($headerValueArray, SORT_STRING);
+        $headerValues = array_values(array_filter($headerValuesUnIndexed)); //Head of CSV
+        fputcsv($csv, $headerValues, $delimiter);
+
+        //Loop through everything again and push data in csv at the right place
 
         for($i=0; $i<count($processInstances); $i++){
             $activities = $processInstances[$i]->getActivities();
@@ -106,16 +119,30 @@ class outParser extends Parser
             for($j=0; $j<count($activities); $j++){
                 $attributes = $activities[$j]->getAttributes();
                 $dataSet = array();
-                array_push($dataSet, $i);
-                array_push($dataSet, $activities[$j]->getName());
-
+                array_push($dataSet, $i); //Case ID
+                array_push($dataSet, $activities[$j]->getName()); //Name
                 for($k=0; $k<count($attributes); $k++){
-                    array_push($dataSet, $attributes[$k]->getValue());
+                    $attr = $attributes[$k];
+                    $attrName = $attr->getName();
+                    $index = array_search($attrName, $headerValues);
+                    if($attr->getValue() != ""){
+                        $dataSet[$index] = $attr->getValue();
+                    }else{
+                        $dataSet[$index] = "not defined";
+                    }
                 }
-            fputcsv($csv, $dataSet, $delimiter);
+
+                //Fill up all other attributes with null
+                for($m=0; $m<count($headerValues); $m++){
+                    $exists = array_key_exists($m, $dataSet);
+                    if(!$exists){
+                        $dataSet[$m] = "not defined";
+                    }
+                }
+                ksort($dataSet);
+                fputcsv($csv, $dataSet, $delimiter);
             }
         }
         fclose($csv);
     }
-
 }
