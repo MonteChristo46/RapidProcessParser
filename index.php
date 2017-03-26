@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
-<?php require_once("php/interfaceLogic.php") ?>
+<?php require_once("php/interfaceLogic.php"); ?>
     <div id = "leftContent">
         <div id = "welcomeTextWrapper">
             <div id = "welcomeText">
@@ -23,10 +23,9 @@
             <div id="uploadForm">
                 <form action="" enctype="multipart/form-data" method="post">
                     <div>
-                        <!--<input class="fileUpload" id='upload' name="upload[]" type="file" multiple="multiple" />-->
-                        <label class="fileContainer" for="file" id="label"><i style = "margin-right: 5px;"class="fa fa-upload" aria-hidden="true"></i>Choose files</label>
+                        <input type="file" name="upload[]" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple/>
+                        <label class="fileContainer" for="file" id="label"><i style = "margin-right: 5px;"class="fa fa-upload" aria-hidden="true"></i><span>Choose files</span></label>
                         <br/><br/>
-                        <input type="file" name="upload[]" id="file" class="inputfile" multiple="multiple"/>
                         <button id="submitLabel" type="submit" value="Submit" name="submit">Submit</button>
                     </div>
                 </form>
@@ -130,6 +129,7 @@
     </div>
 </body>
 <script>
+    //Get Filter expressions
     $('#exportFilterButton').click(function(){
         $.ajax({ url: 'php/exportFilter.php',
             data: { export: true,
@@ -142,6 +142,32 @@
             type: 'post',
             success: function(output) {
                 alert(output);
+            }
+        });
+    });
+
+
+    //Change button value when file is selected
+    var inputs = document.querySelectorAll( '.inputfile' );
+    Array.prototype.forEach.call( inputs, function( input )
+    {
+        console.log(input);
+        var label	 = input.nextElementSibling,
+            labelVal = label.innerHTML;
+        console.log(label);
+        input.addEventListener( 'change', function( e )
+        {
+            var fileName = '';
+            if( this.files && this.files.length > 1 )
+                fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+            else
+                fileName = e.target.value.split( '\\' ).pop();
+
+            if( fileName ) {
+                console.log("here");
+                label.querySelector('span').innerHTML = fileName;
+            }else {
+                label.querySelector('span').innerHTML = labelVal;
             }
         });
     });

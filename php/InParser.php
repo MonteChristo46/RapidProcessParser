@@ -19,15 +19,16 @@ class inParser extends Parser
     {
         $file = $this->loadFile($upload);
         $this->file = $file;
+
     }
 
     public function loadFile($upload){
         if(!file_exists($upload)){
-            return "File not found!";
+            return false;
         }
         $pathParts = pathinfo($upload);
         if(!$pathParts['extension'] == "xml"){
-            return "Please upload a XML File!";
+            return false;
         }
         $doc = new DOMDocument();
         $doc->preserveWhiteSpace = false; //Don't mess with whiteSpace in output

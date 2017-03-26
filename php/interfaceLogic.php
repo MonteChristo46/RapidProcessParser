@@ -46,28 +46,42 @@ if($attributes != 0){
 if(isset($_POST['submit'])){
     $count = 0;
     $uploadedFiles = count($_FILES['upload']['name']);
+    $error = false;
 
-    if($uploadedFiles > 0){
-        for($i=0; $i<count($_FILES['upload']['name']); $i++) {
+    if($uploadedFiles > 0) {
+        for ($i = 0; $i < count($_FILES['upload']['name']); $i++) {
+            $ext = pathinfo($_FILES['upload']['name'][0], PATHINFO_EXTENSION);
+            if ($ext != "xml") {
+                $error = true;
+                alert("File: " . $_FILES['upload']['name'][$i] . " is not of type XML! Please upload XML file(s)!");
+                break;
+            }
+            $tmpFilePath = $_FILES['upload']['tmp_name'][$i];
+            if ($tmpFilePath != "") {
 
-                $tmpFilePath = $_FILES['upload']['tmp_name'][$i];
-                if ($tmpFilePath != "") {
+                $shortname = $_FILES['upload']['name'][$i];
+                $filePath = "upload/" . $_FILES['upload']['name'][$i];
 
-                    $shortname = $_FILES['upload']['name'][$i];
-                    $filePath = "upload/" . $_FILES['upload']['name'][$i];
+                if (move_uploaded_file($tmpFilePath, $filePath)) {
 
-                    if (move_uploaded_file($tmpFilePath, $filePath)) {
-
-                        $files[] = $shortname;
-                        $count += 1;
-                        $parser = new inParser($filePath);
+                    $files[] = $shortname;
+                    $count += 1;
+                    if ($parser = new inParser($filePath)) {
                         $parser->parseInDatabase();//Anpassen wenn Abstrakte Klasse fertig!
+                    } else {
+                        $error = true;
+                        alert("Parsing not successful, please check file format!");
                     }
+                }
             }
         }
-    }
-    if($count == $uploadedFiles){
-        alert("Success: Uploaded and stored ".$count." File(s) in Database!");
+        if(!$error){ //Nur wenn nicht sowieso schon ein Error war
+            if ($count == $uploadedFiles) {
+                alert("Success: Uploaded and stored " . $count . " File(s) in Database!");
+            } else {
+                alert("Upload not successful, please check access rights!");
+            }
+        }
     }
 }
 
