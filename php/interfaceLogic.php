@@ -42,7 +42,6 @@ if($attributes != 0){
     $attributesHeight = 0;
 }
 
-
 //Upload the given files
 if(isset($_POST['submit'])){
     $count = 0;
