@@ -13,6 +13,21 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
+<?php
+//Block Internet Explorer
+
+    $msie = strpos($_SERVER["HTTP_USER_AGENT"], 'MSIE') ? true : false;
+    // IE
+    if ($msie) {
+        //Funktioniert das mit dem CSS?
+        echo 'You are using the Internet Explorer currently. Please use Google Chrome for this page!';
+        echo '<style type="text/css">
+                #leftContent, #rightContent {
+                    display: none;
+                }
+              </style>';
+    }
+?>
 <?php require_once("php/interfaceLogic.php"); ?>
     <div id = "leftContent">
         <div id = "welcomeTextWrapper">
