@@ -5,6 +5,7 @@
  * Date: 25.03.17
  * Time: 11:51
  */
+
 if(isset($_POST['export'])){
     if($_POST['export'] == true){
         createFilterSettings();

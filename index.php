@@ -51,8 +51,8 @@
                    </div>
                    <div id="formData">
                        <label for="range">Select the amount of data you want to export</label><br/><br/>
-                       <input type="range" name="range" id="range" min="1" max="<?= $instances ?>" oninput="rangeOut.value = range.value">
-                       <output name="rangeOut" id="rangeOut"></output>
+                       <input type="range" name="range" value="<?=$instances ?>" id="range" min="1" max="<?= $instances ?>" oninput="rangeOut.value = range.value" >
+                       <output name="rangeOut" id="rangeOut"><?=$instances?></output>
                        <div>(# of Instances selected)</div>
                    </div>
                    <div class="formData">
@@ -78,10 +78,10 @@
                   </div>
 
                    <!--Functionality must be implemented-->
-                   <button type="button" id="exportButton">Export</button>
+                   <button type="button" class="exportButton" id="exportFilterButton">Export w/ filters</button>
+                   <!--SQL Statement "SELECT Name, P_ID, Date FROM Process_Instance WHERE P_ID = MAX(P_ID)-->
+                   <button type="button" class="exportButton" id="exportLastButton">Export last</button>
                </form>
-
-
             </div>
         </div>
         <div id = "rightContentMiddle" class="normal" onclick="toDo(this)">
@@ -92,7 +92,6 @@
             <div class = "box">
                 <div class="chartDiv">
                     <ul class="chart">
-
                         <li>
                             <span style="height:<?=$instancesHeight?>%" title="Instances"></span>
                         </li>
@@ -104,7 +103,6 @@
                         </li>
                     </ul>
                 </div>
-
                 <h3>Process instances in the database</h3>
                 <span class="automaticNumberCounter" action="yourPhpScript" value='<?= $instances ?>'><?= $instances ?></span>
                 <h3>Activities in the database</h3>
@@ -127,7 +125,7 @@
     </div>
 </body>
 <script>
-    $('#exportButton').click(function(){
+    $('#exportFilterButton').click(function(){
         $.ajax({ url: 'php/exportFilter.php',
             data: { export: true,
                     range: range.value,
@@ -142,7 +140,5 @@
             }
         });
     });
-
-
 </script>
 </html>
