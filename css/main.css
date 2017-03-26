@@ -57,7 +57,6 @@ b{
     border: solid darkgray 1px;
     background-image: url("../content/images/rightContentBack3.png");
     background-repeat: no-repeat;
-    /*background-color: #EEEEEE;*/
     background-size: 100%;
     display:table;
     cursor: pointer;
@@ -65,39 +64,26 @@ b{
     /*For zoom out and in */
     transition: all 1s ease;
     -moz-transition: all 1s ease;
-    -ms-transition: all 1s ease;
     -webkit-transition: all 1s ease;
     -o-transition: all 1s ease;
 }
 
-#rightContentTop:hover, #rightContentMiddle:hover, #rightContentBottom:hover{
-    /*transform: scale(1.02);
-    -moz-transform: scale(1.02);
-    -webkit-transform: scale(1.02);
-    -o-transform: scale(1.02);
-    -ms-transform: scale(1.02);*/
-
-}
 .normal:hover, .closed:hover{
     opacity: 0.7;
     transition: opacity 1s;
 }
-/*#leftContentTop{
-    background-image: url("../content/images/placeholder_mac.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
- }*/
+
 .rightContentWrapper{
     display: table-cell;
     vertical-align: middle;
 }
 
 .rightContentHeading, .icon{
-    float:left
+    float:left;
 }
 .rightContentHeading{
     font-size: 22px;
-    color: black;
+    color: white;
     margin-left: 3%;
     padding-top: 15px;
 }
@@ -512,4 +498,3 @@ form p:last-child {
     background-color: #BDBDBD;
     border-color: #BDBDBD;
 }
-

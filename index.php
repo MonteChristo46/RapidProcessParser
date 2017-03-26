@@ -75,7 +75,6 @@
                            </label>
                        </div>
                   </div>
-
                    <!--Functionality must be implemented-->
                    <button type="button" class="exportButton" id="exportFilterButton">Export w/ filters</button>
                    <!--SQL Statement "SELECT Name, P_ID, Date FROM Process_Instance WHERE P_ID = MAX(P_ID)-->
@@ -145,7 +144,6 @@
             }
         });
     });
-
 
     //Change button value when file is selected
     var inputs = document.querySelectorAll( '.inputfile' );

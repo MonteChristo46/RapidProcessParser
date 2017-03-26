@@ -49,6 +49,7 @@ if(isset($_POST['submit'])){
     $error = false;
 
     if($uploadedFiles > 0) {
+        deleteFilesFromDir("upload/");
         for ($i = 0; $i < count($_FILES['upload']['name']); $i++) {
             $ext = pathinfo($_FILES['upload']['name'][0], PATHINFO_EXTENSION);
             if ($ext != "xml") {
@@ -58,7 +59,6 @@ if(isset($_POST['submit'])){
             }
             $tmpFilePath = $_FILES['upload']['tmp_name'][$i];
             if ($tmpFilePath != "") {
-
                 $shortname = $_FILES['upload']['name'][$i];
                 $filePath = "upload/" . $_FILES['upload']['name'][$i];
 
@@ -82,6 +82,24 @@ if(isset($_POST['submit'])){
                 alert("Upload not successful, please check access rights!");
             }
         }
+    }
+}
+
+function deleteFilesFromDir($dir){
+    $allFiles= scandir($dir);
+    $existingFiles = array_diff($allFiles, array('.', '..')); //Skip the parent & current folder and the .DS_Store file
+    foreach($existingFiles as $existingFile){
+        if(is_dir($dir.$existingFile)){
+            deleteFilesFromDir($dir.$existingFile."/"); //Problem mit Permissions!!! Neue Unterordner müssen immer neue Permissions gesetzt bekkommen...
+            rmdir($dir.$existingFile);
+        }else{
+            unlink($dir.$existingFile); //Delete every file
+        }
+    }
+    if(count(scandir($dir)) == 0){
+        return true;
+    }else{
+        return false;
     }
 }
 
