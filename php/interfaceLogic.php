@@ -96,6 +96,7 @@ function deleteFilesFromDir($dir){
             unlink($dir.$existingFile); //Delete every file
         }
     }
+
     if(count(scandir($dir)) == 0){
         return true;
     }else{

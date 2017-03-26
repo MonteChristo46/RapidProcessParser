@@ -162,24 +162,23 @@
 
     //Change button value when file is selected
     var inputs = document.querySelectorAll( '.inputfile' );
-    Array.prototype.forEach.call( inputs, function( input )
+    Array.prototype.forEach.call(inputs, function( input )
     {
         console.log(input);
-        var label	 = input.nextElementSibling,
-            labelVal = label.innerHTML;
-        console.log(label);
-        input.addEventListener( 'change', function( e )
-        {
-            var fileName = '';
-            if( this.files && this.files.length > 1 )
-                fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
-            else
-                fileName = e.target.value.split( '\\' ).pop();
+        var label	 = input.nextElementSibling;
+        var labelVal = label.innerHTML;
 
-            if( fileName ) {
-                console.log("here");
-                label.querySelector('span').innerHTML = fileName;
+        console.log(label);
+        input.addEventListener('change', function(e){
+            var fileName = '';
+            if( this.files && this.files.length > 1 ) {
+                fileName = (this.getAttribute('data-multiple-caption') || '' ).replace('{count}', this.files.length);
             }else {
+                fileName = e.target.value.split('\\').pop();
+            }
+            if(fileName) {
+                label.querySelector('span').innerHTML = fileName;
+            }else{
                 label.querySelector('span').innerHTML = labelVal;
             }
         });
