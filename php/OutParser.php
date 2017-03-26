@@ -128,7 +128,7 @@ class outParser extends Parser
                     if($attr->getValue() != ""){
                         $dataSet[$index] = $attr->getValue();
                     }else{
-                        $dataSet[$index] = "not defined";
+                        $dataSet[$index] = "";
                     }
                 }
 
@@ -136,7 +136,7 @@ class outParser extends Parser
                 for($m=0; $m<count($headerValues); $m++){
                     $exists = array_key_exists($m, $dataSet);
                     if(!$exists){
-                        $dataSet[$m] = "not defined";
+                        $dataSet[$m] = "";
                     }
                 }
                 ksort($dataSet);
