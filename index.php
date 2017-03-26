@@ -103,6 +103,7 @@
                         </li>
                     </ul>
                 </div>
+
                 <h3>Process instances in the database</h3>
                 <span class="automaticNumberCounter" action="yourPhpScript" value='<?= $instances ?>'><?= $instances ?></span>
                 <h3>Activities in the database</h3>
@@ -117,9 +118,13 @@
                 <div class = "icon"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
                 <div class = "rightContentHeading"><span class="highlight">About</span> the Project</div>
             </div>
-            <div class = "box">
-                The whole Software Development Process is documented on GitHub. You can view it by following this link:
-                <a href="https://github.com/MonteChristo46/RapidProcessParser" target="_blank">GitHub RapidProcessParser</a><br/>
+            <div class = "box" id="aboutText">
+                <p>This software provides you with the possibility to upload <span class="highlight">XML files of Rapid Miner processes</span> and store these data inside a <span class="highlight">mySQL database</span>.
+                    Furthermore, you can <span class="highlight">export</span> the whole database with filter settings, like "# of instances", in the box <span class="highlight">"Select data"</span> up top.<br/><br/>
+                    The exported file is parsed for the usage in terms of <span class="highlight">Process Mining</span>. Because of that, you can choose whether to export the data
+                    in the <span class="highlight">XES</span> or the <span class="highlight">CSV</span> format to ensure usage in different Process Mining Tools.<br/>
+                <br/>The whole Software Development Process is documented on GitHub. You can view it by following this link:
+                <a href="https://github.com/MonteChristo46/RapidProcessParser" target="_blank">GitHub RapidProcessParser</a><br/></p>
             </div>
         </div>
     </div>
@@ -128,12 +133,12 @@
     $('#exportFilterButton').click(function(){
         $.ajax({ url: 'php/exportFilter.php',
             data: { export: true,
-                    range: range.value,
-                    startDate: $('#startDate').val(),
-                    endDate: $('#endDate').val(),
-                    allAttr: $('#filled-in-box').is(":checked"),
-                    xes: $('#xes').is(":checked"),
-                    csv: $('#csv').is(":checked")},
+                range: range.value,
+                startDate: $('#startDate').val(),
+                endDate: $('#endDate').val(),
+                allAttr: $('#filled-in-box').is(":checked"),
+                xes: $('#xes').is(":checked"),
+                csv: $('#csv').is(":checked")},
             type: 'post',
             success: function(output) {
                 alert(output);

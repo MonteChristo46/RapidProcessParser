@@ -1,7 +1,7 @@
 html, body{
     height: 100%;
     font-family: 'Open Sans', sans-serif;
-
+    overflow: hidden;
 }
 
 h1{
@@ -20,7 +20,9 @@ h3{
     padding-left: 0px;
     font-weight: bold;
 }
-
+b{
+    font-weight: bold;
+}
 .highlight{
     color: #DB0A5B;
 }
@@ -128,9 +130,14 @@ h3{
     width: 100%;
     padding: 30px 30px 30px 0px;
 }
+
 #rightContentBottom .box{
-    line-height: 20px;
+    line-height: 1.7em;
+    font-size: 17px;
     font-weight: 100;
+    width: 90%;
+    float: right;
+    text-align: justify;
 }
 .automaticNumberCounter{
     font-size: 24px;
@@ -231,7 +238,7 @@ h3{
 }
 
 .chartDiv{
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 @keyframes draw {
     0% {
