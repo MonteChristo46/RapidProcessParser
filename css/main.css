@@ -8,6 +8,7 @@ h1{
     font-size: 34px;
     padding: 10px;
     padding-left: 0px;
+    color: white;
 }
 h2{
     font-size: 24px;
@@ -31,7 +32,7 @@ b{
     height: 100%;
     width: 49.7%;
     border: solid #ccc 1px;
-    background-image: url("../content/images/leftContentBack.jpg");
+    background-image: url("../content/images/background_left.svg");
     /*background-color: #7f8c8d;*/
     background-repeat: no-repeat;
     float: left;
@@ -42,6 +43,7 @@ b{
     display: table-cell;
     vertical-align: middle;
     text-align: center;
+
 }
 
 #rightContent{
@@ -55,7 +57,7 @@ b{
     height: 33.3%;
     width: 100%;
     border: solid darkgray 1px;
-    background-image: url("../content/images/rightContentBack3.png");
+    background-image: url("../content/images/rightContentTop.svg");
     background-repeat: no-repeat;
     background-size: 100%;
     display:table;
@@ -67,7 +69,12 @@ b{
     -webkit-transition: all 1s ease;
     -o-transition: all 1s ease;
 }
-
+#rightContentMiddle{
+    background-image: url("../content/images/rightContentMiddle.svg");
+}
+#rightContentBottom{
+    background-image: url("../content/images/rightContentBottom.svg");
+}
 .normal:hover, .closed:hover{
     opacity: 0.7;
     transition: opacity 1s;
@@ -497,3 +504,6 @@ form p:last-child {
     background-color: #BDBDBD;
     border-color: #BDBDBD;
 }
+
+
+

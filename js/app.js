@@ -12,13 +12,13 @@ function expandDiv2(object){
         var rightContent = $(object);
         var heading = rightContent.find(".rightContentHeading");
         var rightContentTopHeight = Math.round((rightContent.height()/bodyHeight)*100);
-        var newHeight = 0.67; // in percentage //Bei 33.3 sollte das schon mehr als 0.6 sein...
+        var newHeight = 0.8; // in percentage //Bei 33.3 sollte das schon mehr als 0.6 sein...
         if(rightContentTopHeight/100 < newHeight){
             //heading.css("display", "none");
             rightContent.height(newHeight*bodyHeight);
             rightContent.siblings().height(Math.round(((1-newHeight)/2)*100)+"%");
             rightContent.siblings().attr("onclick","");
-        }else if(rightContentTopHeight/100 == newHeight){
+        }else if(rightContentTopHeight/100 >= newHeight){
             //heading.css("display", "block");
             rightContent.height(33.3+"%"); // Height of rightContentTop
             rightContent.siblings().height(33.3+"%");

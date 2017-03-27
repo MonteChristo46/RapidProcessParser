@@ -26,8 +26,43 @@ class outParser extends Parser
     }
 
     public function getDataFromDatabase(){
-        //First query the processInstances
+        $parameters  =  func_get_args();
+        $numberOfParameters = func_num_args();
+
+        $readAttributes = true;
         $sqlForProcessInstances = "SELECT `P_ID`,`Name`,`Date` FROM `Process_Instance`";
+
+        if($numberOfParameters == 3 && is_string( $parameters [1])){
+            //echo("First Case");
+            $startDate =  $parameters [0];
+            $endDate =  $parameters [1];
+            $allAttributesBoolean =  $parameters [2];
+            $sqlForProcessInstances =  $sqlDate = "SELECT * FROM `Process_Instance` WHERE `Date` BETWEEN '$startDate' AND '$endDate'";
+            if($allAttributesBoolean == false){
+                $readAttributes = false;
+            }
+        }else if($numberOfParameters == 2 && (bool)strtotime($parameters[0]) == true && (bool)strtotime($parameters[1]) == true){
+            //echo("Second Case - Just Dates and Attribute are displayed");
+            $startDate =  $parameters [0];
+            $endDate =  $parameters [1];
+            $sqlForProcessInstances =  $sqlDate = "SELECT * FROM `Process_Instance` WHERE `Date` BETWEEN '$startDate' AND '$endDate'";
+
+        }else if($numberOfParameters == 2 && gettype($parameters[0]) == "integer" && gettype($parameters[1]) == "boolean"){
+            //echo("Hello");
+            $sqlForProcessInstances = "SELECT * FROM `Process_Instance` WHERE `P_ID` <= '$parameters[0]'";
+            $readAttributes = false;
+        }else if($numberOfParameters == 1){
+            if(gettype($parameters[0]) == "boolean"){
+                $readAttributes = false;
+            }
+            if(gettype($parameters[0])== "integer"){
+                $sqlForProcessInstances = "SELECT * FROM `Process_Instance` WHERE `P_ID` <= '$parameters[0]'";
+            }
+        }
+
+
+
+        //First query the processInstances
         $resultForProcessInstances = mysqli_query($this->db, $sqlForProcessInstances);
         while($pi =  mysqli_fetch_array($resultForProcessInstances, MYSQLI_ASSOC)){
             $processInstance = new ProcessInstance($pi["Name"]);
@@ -43,9 +78,11 @@ class outParser extends Parser
                 //Get Corresponding Attributes to Activity
                 $sqlForAttributes = "SELECT `Attr_Name`, `Attr_Value` FROM `Attribute` WHERE `A_ID` = '$activityID'";
                 $resultForAttributes = mysqli_query($this->db, $sqlForAttributes);
-                while($at =  mysqli_fetch_array($resultForAttributes, MYSQLI_ASSOC)){
-                    $attribute = new Attribute($at["Attr_Name"], $at["Attr_Value"]);
-                    $activity->addAttribute($attribute);
+                if($readAttributes == true) {
+                    while ($at = mysqli_fetch_array($resultForAttributes, MYSQLI_ASSOC)) {
+                        $attribute = new Attribute($at["Attr_Name"], $at["Attr_Value"]);
+                        $activity->addAttribute($attribute);
+                    }
                 }
                 $processInstance->addActivity($activity);
             }
@@ -55,41 +92,42 @@ class outParser extends Parser
     }
 
     public function parseDataToXES(){
-        $processInstances =  $this->processInstances;
-
         $dom = new DOMDocument("1.0", "UTF-8");
-        $dom->preserveWhiteSpace = false;
-        $dom->formatOutput = true;
-        $root = $dom->createElement("log");
+            $dom->preserveWhiteSpace = false;
+            $dom->formatOutput = true;
+            $root = $dom->createElement("log");
             $root->setAttribute("xmlns", "http://code.deckfour.org/xes");
             $root->setAttribute("xes.version", "2.0");
             $root->setAttribute("xes.creator", "RapidMiner Parser");
-        $dom->appendChild($root);
-        foreach($processInstances as $processInstance){
-            $trace = $dom->createElement("trace");
-            $root->appendChild($trace);
-            $activities = $processInstance->getActivities();
-            foreach($activities as $activity){
-                $eventTag = $dom->createElement("event");
-                $trace->appendChild($eventTag);
-                $stringName = $dom->createElement("string");
-                    $stringName->setAttribute("key","concept:name");
-                    $stringName->setAttribute("value",$activity->getName());
-                $eventTag->appendChild($stringName);
-                $attributes = $activity->getAttributes();
-                for($i=0; $i<count($attributes); $i++) {
-                    $arr = $attributes[$i];
-                    $stringAttribute = $dom->createElement("string");
-                    //echo($arr->getValue());q
-                    $stringAttribute->setAttribute("key", $arr->getName());
-                    $stringAttribute->setAttribute("value",$arr->getValue());
-                    $eventTag->appendChild($stringAttribute);
+            $dom->appendChild($root);
+        if($this->processInstances != NULL){
+            $processInstances =  $this->processInstances;
+            foreach($processInstances as $processInstance) {
+                $trace = $dom->createElement("trace");
+                $root->appendChild($trace);
+                $activities = $processInstance->getActivities();
+                foreach ($activities as $activity) {
+                    $eventTag = $dom->createElement("event");
+                    $trace->appendChild($eventTag);
+                    $stringName = $dom->createElement("string");
+                    $stringName->setAttribute("key", "concept:name");
+                    $stringName->setAttribute("value", $activity->getName());
+                    $eventTag->appendChild($stringName);
+                    $attributes = $activity->getAttributes();
+                    for ($i = 0; $i < count($attributes); $i++) {
+                        $arr = $attributes[$i];
+                        $stringAttribute = $dom->createElement("string");
+                        //echo($arr->getValue());q
+                        $stringAttribute->setAttribute("key", $arr->getName());
+                        $stringAttribute->setAttribute("value", $arr->getValue());
+                        $eventTag->appendChild($stringAttribute);
+                    }
+
                 }
-
             }
-
         }
         $dom->save("ProcessData.xes");
+
     }
 
     public function parseDataToCSV(){

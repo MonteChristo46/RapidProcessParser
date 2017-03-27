@@ -145,18 +145,27 @@
 <script>
     //Get Filter expressions
     $('#exportFilterButton').click(function(){
-        $.ajax({ url: 'php/exportFilter.php',
-            data: { export: true,
+        console.log("Button wurde geklickt");
+        var test = $('#filled-in-box').is(":checked");
+        $.ajax({
+            type: 'POST',
+            //dataType:'json',
+            url: 'php/outParserHandler.php',
+            data: {
                 range: range.value,
                 startDate: $('#startDate').val(),
                 endDate: $('#endDate').val(),
-                allAttr: $('#filled-in-box').is(":checked"),
+                allAttr: test,
                 xes: $('#xes').is(":checked"),
-                csv: $('#csv').is(":checked")},
-            type: 'post',
-            success: function(output) {
-                alert(output);
-            }
+                csv: $('#csv').is(":checked")
+            },
+            success: function(data) {
+                alert(data);
+            },
+            error: function (request, error) {
+                console.log(arguments);
+                alert(" Can't do because: " + error);
+            },
         });
     });
 
