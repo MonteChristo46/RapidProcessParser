@@ -18,8 +18,8 @@ if(!empty($_POST)){
     }
 
     var_dump($_POST);
-    $startDate = $_POST['startDate'];
-    $endDate = $_POST['endDate'];
+    $startDate = new DateTime($_POST['startDate']);
+    $endDate = new DateTime($_POST['endDate']);
     $range = (int)$_POST['range'];
     $allAttr = convertingToBoolean($_POST['allAttr']);
     $xes = convertingToBoolean($_POST['xes']);
@@ -28,15 +28,13 @@ if(!empty($_POST)){
 
 
     //Transforming Dates
-    $startDateNew = new DateTime($startDate);
-    $startDateNew->format('d.m.Y');
-    $endDateNew = new DateTime($startDate);
-    $endDateNew->format('d.m.Y');
+    $startDateNew = $startDate->format('d.m.Y');
+    $endDateNew = $endDate->format('d.m.Y');
 
 
     $outParser = new OutParser();
     if($startDate != "" || $endDate != ""){
-        $outParser->getDataFromDatabase($startDateNew, $endDateNew, $allAttr);
+        $outParser->getDataFromDatabase( $startDateNew, $endDateNew, $allAttr);
         if($xes){
             $outParser->parseDataToXES();
         }
