@@ -84,7 +84,7 @@
                        <div class="switch">
                            XES
                            <label>
-                               <input class="switchDownloadType" type="checkbox" id="xes">
+                               <input class="switchDownloadType" type="checkbox" id="xes" checked>
                                <span class="lever"></span>
                            </label>
                        </div>
@@ -150,6 +150,7 @@
 <iframe id="test" src=""></iframe>
 </body>
 <script>
+    //Make Ruler unavailable if date is picked
     $(".datePicker").change(function(){
         var value = $(this).val();
         console.log(value);
@@ -171,6 +172,7 @@
             }
         }
     });
+
     //Make inputs inactive
     $('.switchDownloadType').click(function(){
         var object = $(this);
@@ -240,12 +242,13 @@
     var inputs = document.querySelectorAll( '.inputfile' );
     Array.prototype.forEach.call(inputs, function( input )
     {
-        console.log(input);
+        //console.log(input);
         var label	 = input.nextElementSibling;
         var labelVal = label.innerHTML;
 
-        console.log(label);
+        //console.log(label);
         input.addEventListener('change', function(e){
+
             var fileName = '';
             if( this.files && this.files.length > 1 ) {
                 fileName = (this.getAttribute('data-multiple-caption') || '' ).replace('{count}', this.files.length);
