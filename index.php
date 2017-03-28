@@ -84,14 +84,14 @@
                        <div class="switch">
                            XES
                            <label>
-                               <input type="checkbox" id="xes">
+                               <input class="switchDownloadType" type="checkbox" id="xes">
                                <span class="lever"></span>
                            </label>
                        </div>
                        <div class="switch">
                            CSV
                            <label>
-                               <input type="checkbox" id="csv">
+                               <input class="switchDownloadType" type="checkbox" id="csv">
                                <span class="lever"></span>
                            </label>
                        </div>
@@ -150,12 +150,47 @@
 <iframe id="test" src=""></iframe>
 </body>
 <script>
-    //Make inputs inactive
-    /*$('.switch').click(function(event){
-        var objects = $(this);
-        console.log(event);
+    $(".datePicker").change(function(){
+        var value = $(this).val();
+        console.log(value);
 
-    });*/
+        if(value != ""){//If date was set
+            $('#range').attr('disabled', 'disabled');
+        }else{
+            var currentValues = $('.datePicker');
+            var remove = true;
+
+            $.each(currentValues, function(){
+                console.log($(this).val());
+                if($(this).val() != ""){
+                    remove = false;
+                }
+            });
+            if(remove){
+                $('#range').removeAttr('disabled');
+            }
+        }
+    });
+    //Make inputs inactive
+    $('.switchDownloadType').click(function(){
+        var object = $(this);
+        var id = object.attr('id');
+        var value = object.is(":checked");
+
+        if(value){
+            if(id == "csv"){
+                $('#xes').attr('disabled', 'disabled');
+            }else if(id == "xes") {
+                $('#csv').attr('disabled', 'disabled');
+            }
+        }else if(!value){
+            if(id == "csv"){
+                $('#xes').removeAttr('disabled');
+            }else if(id == "xes") {
+                $('#csv').removeAttr('disabled');
+            }
+        }
+    });
 
     //Get Filter expressions and start download of parsed data
     $('#exportFilterButton').click(function(){
