@@ -3,7 +3,6 @@ function toDo(obj){
     countNumbers(obj);
 }
 
-
 //Die Drecksrundungsfehler müssen ausgebessert werden. WIe runded Math.round??
 /*
 function expandDiv2(object){

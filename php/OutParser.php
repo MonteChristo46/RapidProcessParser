@@ -128,7 +128,8 @@ class outParser extends Parser
             }
         }
         $dom->save("ProcessData.xes");
-
+        $response = "ProcessData.xes";
+        echo $response;
     }
 
     public function parseDataToCSV(){
@@ -183,5 +184,8 @@ class outParser extends Parser
             }
         }
         fclose($csv);
+        $response = "ProcessData.csv";
+        echo $response;
     }
+
 }

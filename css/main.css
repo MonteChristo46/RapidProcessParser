@@ -26,7 +26,11 @@ b{
 }
 .highlight{
     /*color: #DB0A5B;*/
-    color: #08B3AA;
+    /*color: #08B3AA;*/
+    /*color: #ef4836;*/
+    /*color: #FFA500; --> Light Orange*/
+    color: #FF8C00;
+
 }
 
 #leftContent{
@@ -156,7 +160,10 @@ b{
     font-size: 18px;
     font-weight: bold;
     /*background-color: #DB0A5B;*/
-    background-color: #08B3AA;
+    /*background-color: #08B3AA;*/
+    /*background-color: #ef4836;*/
+    /*background-color: #FFA500;*/
+    background-color: #FF8C00;
     padding: 10px 30px;
     width: 150px;
     height: 75px;
@@ -177,7 +184,10 @@ b{
     font-size: 18px;
     font-weight: bold;
     /*background-color: #DB0A5B;*/
-    background-color: #08B3AA;
+    /*background-color: #08B3AA;*/
+    /*background-color: #ef4836;*/
+    /*background-color: #FFA500;*/
+    background-color: #FF8C00;
     width: 150px;
     height: 40px;
     border-radius: 2px;
@@ -509,5 +519,12 @@ form p:last-child {
     border-color: #BDBDBD;
 }
 
-
-
+.leftInput{
+    padding: 0.85em 1.5em;
+    margin-bottom: 5px;
+    border-radius: 2em;
+    border: 1px solid grey;
+    line-height: normal;
+    font-size: 100%;
+    width: 130px;
+}

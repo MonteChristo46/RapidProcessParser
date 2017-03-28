@@ -67,7 +67,14 @@ if(isset($_POST['submit'])){
                     $files[] = $shortname;
                     $count += 1;
                     if ($parser = new inParser($filePath)) {
-                        $parser->parseInDatabase();//Anpassen wenn Abstrakte Klasse fertig!
+                        $label1Val = $_POST['label1']; //Is null when not entered
+                        $label2Val = $_POST['label2'];
+                        $label3Val = $_POST['label3'];
+                        $label4Val = $_POST['label4'];
+                        $label5Val = $_POST['label5'];
+
+                        $parser->parseInDatabase($label1Val, $label2Val, $label3Val, $label4Val, $label5Val);//Anpassen wenn Abstrakte Klasse fertig!
+                        //
                     } else {
                         $error = true;
                         alert("Parsing not successful, please check file format!");

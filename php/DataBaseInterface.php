@@ -113,10 +113,27 @@ class DataBaseInterface
                     }
                 }
             }
+            //Label part
+            $labels = $processInstance->getLabels();
+            $status = true;
+            //Check if all values in array are null --> If yes, don't push to database
+            $countedValues = array_count_values($labels);
+            if(array_key_exists(null, $countedValues)){
+                if($countedValues[null] == 5){
+                    $status = false;
+                }
+            }
 
+            if($status){
+                $sqlForAddingLabels = "INSERT INTO `Label`(`P_ID`, `Label_1`, `Label_2`, `Label_3`, `Label_4`, `Label_5`)
+                                    VALUES ($instanceId, '$labels[0]', '$labels[1]', '$labels[2]', '$labels[3]', '$labels[4]')";
+
+                mysqli_query($this->db, $sqlForAddingLabels) or die("Request failed: ".mysqli_error());
+            }
+            /*
+             *Labels always has a length of 5 because $_GET gives back null when not entered..
+             * --> When ever more labels are needed just a new $_GET statement has to putted in
+             */
         }
     }
-
-
-
 }

@@ -92,6 +92,7 @@ class inParser extends Parser
 
     public function parseInDatabase()
     {
+        $parameters  =  func_get_args();
         $xml = $this->file;
         if(!$xml){
             return "No XML available for parsing!";
@@ -109,6 +110,7 @@ class inParser extends Parser
 
         //Add all Activities to ProcessInstance and upload it to database
         $instance->addActivities($result);
+        $instance->addLabels($parameters);
         $dbi = new DataBaseInterface();
         $dbi->addProcessInstance($instance);
         $dbi->uploadProcessInstancesToDatabase();

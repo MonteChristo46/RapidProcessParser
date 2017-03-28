@@ -17,7 +17,7 @@ if(!empty($_POST)){
         }
     }
 
-    var_dump($_POST);
+    //var_dump($_POST);
     $startDate = $_POST['startDate'];
     $endDate = $_POST['endDate'];
     $range = (int)$_POST['range'];
@@ -31,7 +31,7 @@ if(!empty($_POST)){
     $startDateNew = new DateTime($startDate);
     $endDateNew = new DateTime($endDate);
 
-    echo($startDate);
+    //echo($startDate);
 
     $outParser = new OutParser();
     if($startDate != "" || $endDate != ""){

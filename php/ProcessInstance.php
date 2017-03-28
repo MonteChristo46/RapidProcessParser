@@ -11,6 +11,7 @@ class ProcessInstance
     private $name;
     private $date;
     private $activities; // List of all activities
+    private $labels;
     private $id;
 
     public function __construct($name){
@@ -35,6 +36,19 @@ class ProcessInstance
         }
     }
 
+    public function getLabels(){
+        return $this->labels;
+    }
+
+    public function addLabel($label){
+        $this->labels[] = $label;
+    }
+
+    public function addLabels($array){
+        foreach($array as $label){
+            $this->labels[] = $label;
+        }
+    }
     /**
      * @return mixed
      */

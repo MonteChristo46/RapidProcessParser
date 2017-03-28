@@ -35,9 +35,15 @@
                 <h1>Hello, Please Upload your </br>
                 <span class="highlight">Rapid Miner</span> File!</h1>
             </div>
+
             <div id="uploadForm">
                 <form action="" enctype="multipart/form-data" method="post">
                     <div>
+                        <input type="text" class="leftInput" name="label1" id="label1" placeholder="Name of Dataset"/>
+                        <input type="text" class="leftInput" name="label2" id="label2" placeholder="Classification"/><br/>
+                        <input type="text" class="leftInput" name="label3" id="label3" placeholder="Please add Label"/>
+                        <input type="text" class="leftInput" name="label4" id="label4" placeholder="Please add Label"/><br/>
+                        <input type="text" class="leftInput" name="label5" id="label5" placeholder="Please add Label"/><br/><br/>
                         <input type="file" name="upload[]" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple/>
                         <label class="fileContainer" for="file" id="label"><i style = "margin-right: 5px;"class="fa fa-upload" aria-hidden="true"></i><span>Choose files</span></label>
                         <br/><br/>
@@ -141,9 +147,17 @@
             </div>
         </div>
     </div>
+<iframe id="test" src=""></iframe>
 </body>
 <script>
-    //Get Filter expressions
+    //Make inputs inactive
+    /*$('.switch').click(function(event){
+        var objects = $(this);
+        console.log(event);
+
+    });*/
+
+    //Get Filter expressions and start download of parsed data
     $('#exportFilterButton').click(function(){
         console.log("Button wurde geklickt");
         var test = $('#filled-in-box').is(":checked");
@@ -159,13 +173,31 @@
                 xes: $('#xes').is(":checked"),
                 csv: $('#csv').is(":checked")
             },
-            success: function(data) {
-                alert(data);
+            success: function(url) {
+                console.log("php/"+url);
+                var req = new XMLHttpRequest();
+
+                req.open("GET", "php/"+url, true);
+                req.responseType = "blob";
+                req.onload = function (event) {
+                    var blob = req.response;
+                    var fileName = url;//req.getResponseHeader(url) //if you have the fileName header available
+                    var link=document.createElement('a');
+                    link.href=window.URL.createObjectURL(blob);
+                    link.download=fileName;
+                    link.click();
+                };
+
+                req.send();
+                //$("#test").attr('src', "php/"+url);
+                //window.location = "php/"+url;
+                //var ifrm = document.getElementById("test");
+                //ifrm.src = "php/"+url;
             },
             error: function (request, error) {
                 console.log(arguments);
                 alert(" Can't do because: " + error);
-            },
+            }
         });
     });
 
