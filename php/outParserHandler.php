@@ -7,12 +7,13 @@
  */
 require_once("OutParser.php");
 
-if(!empty($_POST)){
+if(!empty($_POST)) {
     //Converting Strings to boolean
-    function convertingToBoolean($string){
-        if($string === "false"){
+    function convertingToBoolean($string)
+    {
+        if ($string === "false") {
             return false;
-        }else if($string === "true") {
+        } else if ($string === "true") {
             return true;
         }
     }
@@ -25,8 +26,9 @@ if(!empty($_POST)){
     $xes = convertingToBoolean($_POST['xes']);
     $csv = convertingToBoolean($_POST['csv']);
 
-
-
+    echo($startDate);
+}
+/*
     //Transforming Dates
     $startDateNew = new DateTime($startDate);
     $endDateNew = new DateTime($endDate);

@@ -97,7 +97,7 @@ function deleteFilesFromDir($dir){
     $existingFiles = array_diff($allFiles, array('.', '..')); //Skip the parent & current folder and the .DS_Store file
     foreach($existingFiles as $existingFile){
         if(is_dir($dir.$existingFile)){
-            deleteFilesFromDir($dir.$existingFile."/"); //Problem mit Permissions!!! Neue Unterordner müssen immer neue Permissions gesetzt bekkommen...
+            deleteFilesFromDir($dir.$existingFile."/");
             rmdir($dir.$existingFile);
         }else{
             unlink($dir.$existingFile); //Delete every file
@@ -108,6 +108,22 @@ function deleteFilesFromDir($dir){
         return true;
     }else{
         return false;
+    }
+}
+
+function createLabelSelectionForDataList(){
+    $databaseInterface = new DataBaseInterface();
+    $labels = $databaseInterface->getAllLabels();
+    foreach($labels as $label){
+        echo("<option value = '$label'>");
+    }
+}
+
+function createUseCaseSelectionForDataList(){
+    $databaseInterface = new DataBaseInterface();
+    $names = $databaseInterface->getAllUseCaseNames();
+    foreach($names as $name){
+        echo("<option value = '$name'>");
     }
 }
 

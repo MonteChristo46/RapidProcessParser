@@ -16,7 +16,7 @@ echo("<h1>This is just a test and a example</h1>");
 echo("<h3>Heute Abend mach ich es dann fertig - bugt noch mit der Zuordnung der IDs</h3>");
 
 //Aktivitäten anlegen
-$activityStart = new Activity("Start");
+/*$activityStart = new Activity("Start");
 $activityEnd = new Activity("Ende");
 
 //Attribute erstellen
@@ -36,16 +36,18 @@ $processInstance = new ProcessInstance("Prozessinstanz 1");
 $processInstance->addActivity($activityStart);
 $processInstance->addActivity($activityEnd);
 
-
+*/
 //Prozessinstanzen der Datenbankschnitstelle zuweisen und upload. Auch hier gibt es noch andere Methoden
 $databaseInterface = new DataBaseInterface();
-$databaseInterface->addProcessInstance($processInstance); // Auch hier gibt es den Plural der Methode
-$databaseInterface->uploadProcessInstancesToDatabase(); //Lädt alle Prozessinstanzen im databaseInterface object in die DB
+//$databaseInterface->addProcessInstance($processInstance); // Auch hier gibt es den Plural der Methode
+//$databaseInterface->uploadProcessInstancesToDatabase(); //Lädt alle Prozessinstanzen im databaseInterface object in die DB
 
 //Auslesen der letzten IDs in der Datenbank
 $lastInstanceID = $databaseInterface->getLastInstanceID();
 $lastActivityID = $databaseInterface->getLastActivityID();
 $lastAttrID = $databaseInterface->getLastAttributeID();
+
+
 
 //Die Objekte zum Anschauen --> Achtung ich muss noch date fixen
 echo "Status:"."<br/>";
@@ -53,9 +55,13 @@ echo "Last InstanceID: ".$lastInstanceID."<br/>";
 echo "Last ActivityID: ".$lastActivityID."<br/>";
 echo "Last AttributeID: ".$lastAttrID."<br/>";
 
+echo("Labels Test");
+print_r($databaseInterface->getAllLabels());
+print_r($databaseInterface->getAllUseCaseNames());
+/*
 echo("<pre>");
 print_r($processInstance);
 echo("<pre>");
-print_r($databaseInterface);
+print_r($databaseInterface);*/
 
 
