@@ -75,6 +75,17 @@
                        <output name="rangeOut" id="rangeOut"><?=$instances?></output>
                        <div>(# of Instances selected)</div>
                    </div>
+                   <div id = "formData">
+                       <label for="authors">Type authors from favorite to least favorite</label>
+                       <input type="text" list="names-list" id="authors" value="" size="50" name="authors" placeholder="Type author names">
+                       <datalist id="names-list">
+                           <option value="Albert Camus">
+                           <option value="Alexandre Dumas">
+                           <option value="C. S. Lewis">
+                           <option value="Charles Dickens">
+                           <option value="Dante Alighieri">
+                       </datalist>
+                   </div>
                    <div class="formData">
                        <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" name="checkAllAttr"/>
                        <label for="filled-in-box">Export all attributes?</label><br/><br>
@@ -259,6 +270,40 @@
                 label.querySelector('span').innerHTML = labelVal;
             }
         });
+    });
+
+    //Extern from https://codepen.io/anavicente/pen/JGaobW
+    var datalist = jQuery('datalist');
+    var options = jQuery('datalist option');
+    var optionsarray = jQuery.map(options ,function(option) {
+        return option.value;
+    });
+    var input = jQuery('input[list]');
+    var inputcommas = (input.val().match(/,/g)||[]).length;
+    var separator = ',';
+
+    function filldatalist(prefix) {
+        if (input.val().indexOf(separator) > -1 && options.length > 0) {
+            datalist.empty();
+            for (i=0; i < optionsarray.length; i++ ) {
+                if (prefix.indexOf(optionsarray[i]) < 0 ) {
+                    datalist.append('<option value="'+prefix+optionsarray[i]+'">');
+                }
+            }
+        }
+    }
+    input.bind("change paste keyup",function() {
+        var inputtrim = input.val().replace(/^\s+|\s+$/g, "");
+        var currentcommas = (input.val().match(/,/g)||[]).length;
+        if (inputtrim != input.val()) {
+            if (inputcommas != currentcommas) {
+                var lsIndex = inputtrim.lastIndexOf(separator);
+                var str = (lsIndex != -1) ? inputtrim.substr(0, lsIndex)+", " : "";
+                filldatalist(str);
+                inputcommas = currentcommas;
+            }
+            input.val(inputtrim);
+        }
     });
 </script>
 </html>
