@@ -39,9 +39,7 @@ class outParser extends Parser
             $endDate =  $parameters [1];
             $allAttributesBoolean =  $parameters [2];
             $sqlForProcessInstances =  $sqlDate = "SELECT * FROM `Process_Instance` WHERE `Date` BETWEEN '$startDate' AND '$endDate'";
-            if($allAttributesBoolean == false){
-                $readAttributes = false;
-            }
+            $readAttributes = $allAttributesBoolean;
         }else if($numberOfParameters == 2 && (bool)strtotime($parameters[0]) == true && (bool)strtotime($parameters[1]) == true){
             //echo("Second Case - Just Dates and Attribute are displayed");
             $startDate =  $parameters [0];
@@ -49,9 +47,8 @@ class outParser extends Parser
             $sqlForProcessInstances =  $sqlDate = "SELECT * FROM `Process_Instance` WHERE `Date` BETWEEN '$startDate' AND '$endDate'";
 
         }else if($numberOfParameters == 2 && gettype($parameters[0]) == "integer" && gettype($parameters[1]) == "boolean"){
-            //echo("Hello");
             $sqlForProcessInstances = "SELECT * FROM `Process_Instance` WHERE `P_ID` <= '$parameters[0]'";
-            $readAttributes = false;
+            $readAttributes = $parameters[1];
         }else if($numberOfParameters == 1){
             if(gettype($parameters[0]) == "boolean"){
                 $readAttributes = false;

@@ -7,7 +7,9 @@
  */
 require_once("OutParser.php");
 echo("<h1>This is a test </h1>");
+$varBoolean = true;
+echo("VarBoolean: ".$varBoolean ? 'true' : 'false');
 $outParser = new outParser();
-$outParser->getDataFromDatabase("25.03.2017","25.03.2017", true);
+$outParser->getDataFromDatabase(5, $varBoolean);
 $outParser->parseDataToXES();
 //$outParser->parseDataToCSV();

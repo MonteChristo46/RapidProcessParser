@@ -31,8 +31,6 @@ if(!empty($_POST)){
     $startDateNew = new DateTime($startDate);
     $endDateNew = new DateTime($endDate);
 
-    //echo($startDate);
-
     $outParser = new OutParser();
     if($startDate != "" || $endDate != ""){
         $outParser->getDataFromDatabase( $startDateNew->format('d.m.Y'), $endDateNew->format('d.m.Y'), $allAttr);
