@@ -230,7 +230,7 @@
                 req.responseType = "blob";
                 req.onload = function (event) {
                     var blob = req.response;
-                    var fileName = file;//req.getResponseHeader(url) //if you have the fileName header available
+                    var fileName = file;
                     var link=document.createElement('a');
                     link.href=window.URL.createObjectURL(blob);
                     link.download=fileName;
