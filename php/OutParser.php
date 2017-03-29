@@ -63,7 +63,7 @@ class outParser extends Parser
         //First query the processInstances
         $resultForProcessInstances = mysqli_query($this->db, $sqlForProcessInstances);
         while($pi =  mysqli_fetch_array($resultForProcessInstances, MYSQLI_ASSOC)){
-            $processInstance = new ProcessInstance($pi["Name"]);
+            $processInstance = new ProcessInstance($pi["UseCase"]);
             $processInstance->setId($pi["P_ID"]);
             $processInstance->setDate($pi["Date"]);
             $processInstanceID = $pi["P_ID"];
@@ -125,8 +125,6 @@ class outParser extends Parser
             }
         }
         $dom->save("ProcessData.xes");
-        $response = "ProcessData.xes";
-        echo $response;
     }
 
     public function parseDataToCSV(){
@@ -181,8 +179,6 @@ class outParser extends Parser
             }
         }
         fclose($csv);
-        $response = "ProcessData.csv";
-        echo $response;
     }
 
 }

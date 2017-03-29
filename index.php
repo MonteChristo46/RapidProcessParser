@@ -186,6 +186,7 @@
     });
 
     //Make inputs inactive
+    /*
     $('.switchDownloadType').click(function(){
         var object = $(this);
         var id = object.attr('id');
@@ -204,7 +205,7 @@
                 $('#csv').removeAttr('disabled');
             }
         }
-    });
+    });*/
 
     //Get Filter expressions and start download of parsed data
     $('#exportFilterButton').click(function(){
@@ -212,7 +213,7 @@
         var test = $('#filled-in-box').is(":checked");
         $.ajax({
             type: 'POST',
-            //dataType:'json',
+            dataType:'json',
             url: 'php/outParserHandler.php',
             data: {
                 range: range.value,
@@ -223,21 +224,18 @@
                 csv: $('#csv').is(":checked")
             },
             success: function(url) {
-                console.log("php/"+url);
-
                 var req = new XMLHttpRequest();
-
-                req.open("GET", "php/"+url, true);
+                var file = url.a;
+                req.open("GET", "php/"+file, true);
                 req.responseType = "blob";
                 req.onload = function (event) {
                     var blob = req.response;
-                    var fileName = url;//req.getResponseHeader(url) //if you have the fileName header available
+                    var fileName = file;//req.getResponseHeader(url) //if you have the fileName header available
                     var link=document.createElement('a');
                     link.href=window.URL.createObjectURL(blob);
                     link.download=fileName;
                     link.click();
                 };
-
                 req.send();
             },
             error: function (request, error) {

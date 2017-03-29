@@ -34,21 +34,47 @@ if(!empty($_POST)){
     $outParser = new OutParser();
     if($startDate != "" || $endDate != ""){
         $outParser->getDataFromDatabase( $startDateNew->format('d.m.Y'), $endDateNew->format('d.m.Y'), $allAttr);
-        if($xes){
-            $outParser->parseDataToXES();
-        }
-        if($csv){
+        if($xes && $csv){
             $outParser->parseDataToCSV();
+            $outParser->parseDataToXES();
+            createZipFile(array("ProcessData.csv", "ProcessData.xes"));
+            echo json_encode(array("a"=>"ProcessData.zip"));
+        }else if($xes){
+            $outParser->parseDataToXES();
+            echo json_encode(array("a" => "ProcessData.xes"));
+        }else if($csv){
+            $outParser->parseDataToCSV();
+            echo json_encode(array("a" => "ProcessData.csv"));
         }
     }else if($range > 0){
         $outParser->getDataFromDatabase($range, $allAttr);
-        if($xes){
-            $outParser->parseDataToXES();
-        }
-        if($csv){
+        if($xes && $csv){
             $outParser->parseDataToCSV();
+            $outParser->parseDataToXES();
+            createZipFile(array("ProcessData.csv", "ProcessData.xes"));
+            echo json_encode(array("a"=>"ProcessData.zip"));
+        }else if($xes){
+            $outParser->parseDataToXES();
+            echo json_encode(array("a" => "ProcessData.xes"));
+        }else if($csv){
+            $outParser->parseDataToCSV();
+            echo json_encode(array("a" => "ProcessData.csv"));
         }
+
     }else{
         echo("Please adjust the range");
     }
+}
+//Multidownload only possible with Zip file
+function createZipFile($files){
+    $zip = new ZipArchive();
+    $fileName = "ProcessData.zip";
+    if(file_exists($fileName)){
+        unlink($fileName);
+    }
+    $zip->open("ProcessData.zip", ZipArchive::CREATE);
+    foreach($files as $file){
+        $zip->addFile($file);
+    }
+    $zip->close();
 }
