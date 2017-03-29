@@ -31,7 +31,7 @@ class outParser extends Parser
         $numberOfParameters = func_num_args();
 
         $readAttributes = true;
-        $sqlForProcessInstances = "SELECT `P_ID`,`Name`,`Date` FROM `Process_Instance`";
+        $sqlForProcessInstances = "SELECT `P_ID`,`UseCase`,`Date` FROM `Process_Instance`";
 
         if($numberOfParameters == 3 && is_string( $parameters [1])){
             //echo("First Case");

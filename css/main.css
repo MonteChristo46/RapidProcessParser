@@ -24,13 +24,31 @@ h3{
 b{
     font-weight: bold;
 }
+a:link {
+    color: #FF8C00;
+}
+
+/* visited link */
+a:visited {
+    color: #FF8C00;
+}
+
+/* mouse over link */
+a:hover {
+    color: white;
+}
+
+/* selected link */
+a:active {
+    color: #FF8C00;
+}
+
 .highlight{
     /*color: #DB0A5B;*/
     /*color: #08B3AA;*/
     /*color: #ef4836;*/
     /*color: #FFA500; --> Light Orange*/
     color: #FF8C00;
-
 }
 
 #leftContent{
@@ -195,7 +213,6 @@ b{
     color: white;
     line-height: 30px;
     border: none;
-    margin-top: 20px;
 }
 
 #filterForm {
@@ -521,10 +538,16 @@ form p:last-child {
 
 .leftInput{
     padding: 0.85em 1.5em;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     border-radius: 2em;
     border: 1px solid grey;
     line-height: normal;
     font-size: 100%;
     width: 130px;
+}
+#useCaseLabel{
+    width: 310px;
+}
+#label3, #label4{
+    margin-bottom: 20px;
 }

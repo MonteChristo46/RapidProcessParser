@@ -93,12 +93,14 @@ class inParser extends Parser
     public function parseInDatabase()
     {
         $parameters  =  func_get_args();
+
         $xml = $this->file;
         if(!$xml){
             return "No XML available for parsing!";
         }
         //Welcher Name soll hier gesetzt werden?
-        $instance = new ProcessInstance("Process Instance 2");
+        $instance = new ProcessInstance($parameters[0]);
+        unset($parameters[0]);
 
         //Get Process Tag as StartPoint
         $xPathToProcess = new DOMXPath($xml);

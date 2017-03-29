@@ -67,13 +67,13 @@ if(isset($_POST['submit'])){
                     $files[] = $shortname;
                     $count += 1;
                     if ($parser = new inParser($filePath)) {
+                        $useCase = $_POST['useCaseLabel'];
                         $label1Val = $_POST['label1']; //Is null when not entered
                         $label2Val = $_POST['label2'];
                         $label3Val = $_POST['label3'];
                         $label4Val = $_POST['label4'];
-                        $label5Val = $_POST['label5'];
 
-                        $parser->parseInDatabase($label1Val, $label2Val, $label3Val, $label4Val, $label5Val);//Anpassen wenn Abstrakte Klasse fertig!
+                        $parser->parseInDatabase($useCase, $label1Val, $label2Val, $label3Val, $label4Val);//Anpassen wenn Abstrakte Klasse fertig!
                         //
                     } else {
                         $error = true;

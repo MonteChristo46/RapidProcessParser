@@ -39,11 +39,11 @@
             <div id="uploadForm">
                 <form action="" enctype="multipart/form-data" method="post">
                     <div>
+                        <input type="text" class="leftInput" name="useCaseLabel" id="useCaseLabel" placeholder="Please add Use Case name" required/><br/>
                         <input type="text" class="leftInput" name="label1" id="label1" placeholder="Name of Dataset"/>
                         <input type="text" class="leftInput" name="label2" id="label2" placeholder="Classification"/><br/>
                         <input type="text" class="leftInput" name="label3" id="label3" placeholder="Please add Label"/>
                         <input type="text" class="leftInput" name="label4" id="label4" placeholder="Please add Label"/><br/>
-                        <input type="text" class="leftInput" name="label5" id="label5" placeholder="Please add Label"/><br/><br/>
                         <input type="file" name="upload[]" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple/>
                         <label class="fileContainer" for="file" id="label"><i style = "margin-right: 5px;"class="fa fa-upload" aria-hidden="true"></i><span>Choose files</span></label>
                         <br/><br/>
@@ -65,9 +65,9 @@
                <form action = "yourPHPFile" id="filterForm">
                    <div id = "formData">
                        <label for="startDate ">Start Date </label><br/>
-                       <input type="date" id = "startDate" class="datePicker" name="startDate"></br><br/>
+                       <input type="date" id = "startDate" class="datePicker" name="startDate" placeholder="dd.mm.yyyy"></br><br/>
                        <label for="endDate">End Date </label><br/>
-                       <input type="date" class="datePicker" id="endDate">
+                       <input type="date" class="datePicker" id="endDate" placeholder="dd.mm.yyyy">
                    </div>
                    <div id="formData">
                        <label for="range">Select the amount of data you want to export</label><br/><br/>
@@ -150,6 +150,7 @@
 <iframe id="test" src=""></iframe>
 </body>
 <script>
+
     //Make Ruler unavailable if date is picked
     $(".datePicker").change(function(){
         var value = $(this).val();
@@ -226,10 +227,6 @@
                 };
 
                 req.send();
-                //$("#test").attr('src', "php/"+url);
-                //window.location = "php/"+url;
-                //var ifrm = document.getElementById("test");
-                //ifrm.src = "php/"+url;
             },
             error: function (request, error) {
                 console.log(arguments);
