@@ -172,7 +172,7 @@ class outParser extends Parser
                     }
                 }
 
-                //Fill up all other attributes with null
+                //Fill up other attributes with null
                 for($m=0; $m<count($headerValues); $m++){
                     $exists = array_key_exists($m, $dataSet);
                     if(!$exists){
