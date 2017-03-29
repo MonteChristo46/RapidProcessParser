@@ -27,8 +27,8 @@ if(!empty($_POST)) {
     $csv = convertingToBoolean($_POST['csv']);
 
     echo($startDate);
-}
-/*
+
+
     //Transforming Dates
     $startDateNew = new DateTime($startDate);
     $endDateNew = new DateTime($endDate);
