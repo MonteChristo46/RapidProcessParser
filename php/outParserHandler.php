@@ -67,6 +67,7 @@ if(!empty($_POST)) {
         echo("Please adjust the range");
     }
 }
+
 //Multidownload only possible with Zip file
 function createZipFile($files){
     $zip = new ZipArchive();
