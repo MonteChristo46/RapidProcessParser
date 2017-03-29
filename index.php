@@ -213,6 +213,7 @@
             },
             success: function(url) {
                 console.log("php/"+url);
+
                 var req = new XMLHttpRequest();
 
                 req.open("GET", "php/"+url, true);
