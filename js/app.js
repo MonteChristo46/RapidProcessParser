@@ -27,11 +27,6 @@ function expandDiv2(object){
 }
 */
 function expandDiv(object){
-    //$(object).find('.rightContentHeading').css("transform", "translateX(-50px) rotate(-90deg) ");
-    //while($(object).hasClass("expanded")){
-    //    $(object).find('.rightContentHeading').css("width", "100%");
-    //}
-    //$(object).find('.rightContentHeading').css("transition", "all 1s");
 
     $(object).find('.box').slideToggle('slow', function(){
         var bodyHeight = $('body').height();

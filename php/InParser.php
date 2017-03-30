@@ -40,16 +40,31 @@ class inParser extends Parser
 
     private function readParameters($xml, $operator){
         //Read Parameters of an Operator and push in Database as Attributes
-        $parameterXPath = new DOMXPath($xml);
-        $parameterQuery = "parameter";
-        $parameters = $parameterXPath->query($parameterQuery, $operator);
+        //$parameterXPath = new DOMXPath($xml);
+        //$parameterQuery = "parameter";
+        //$parameters = $parameterXPath->query($parameterQuery, $operator);
+        $childs = $operator->childNodes;
+        echo "<pre>";
+        print_r($childs);
         $attributeArray = array();
 
-        foreach($parameters as $parameter){
-            $attribute = new Attribute($parameter->getAttribute("key"), $parameter->getAttribute("value"));
-            array_push($attributeArray, $attribute);
+        foreach($childs as $child){
+            echo $child->tagName;
+            if($child->tagName == "parameter"){
+                $attribute = new Attribute($child->getAttribute("key"), $child->getAttribute("value"));
+                array_push($attributeArray, $attribute);
+            }else if($child->tagName == "list"){
+                $listElements = $child->childNodes;
+                echo "<pre>";
+                print_r($listElements);
+                foreach($listElements as $listElement){
+                    $attribute = new Attribute($listElement->getAttribute("key"), $listElement->getAttribute("value"));
+                    array_push($attributeArray, $attribute);
+                }
+            }else if($child->tagName == "process"){
+                $this->readProcess($xml, $child);
+            }
         }
-
         return $attributeArray;
     }
 
@@ -57,6 +72,15 @@ class inParser extends Parser
         $subprocesses = $operator->getElementsByTagName("process");
         if($subprocesses->length > 0){
             return $subprocesses;
+        }else{
+            return null;
+        }
+    }
+
+    private function hasList($operator){
+        $lists = $operator->getElementsByTagName("list");
+        if($lists->length > 0){
+            return $lists;
         }else{
             return null;
         }
@@ -79,13 +103,6 @@ class inParser extends Parser
             //Add Attributes to activity
             $activity->addAttributes($attributes);
             $activityArray[] =  $activity;
-
-            $subprocesses = $this->hasSubprocess($operator);
-            if ($subprocesses) {
-                foreach ($subprocesses as $subprocess) {
-                    $this->readProcess($xml, $subprocess);
-                }
-            }
         }
         return $activityArray;
     }

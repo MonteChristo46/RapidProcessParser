@@ -63,7 +63,7 @@
                 <h2>Filter Box</h2>
                 </br>
                <form action = "yourPHPFile" id="filterForm">
-                   <div id = "formData">
+                   <div class = "formData">
                       <form>
                        <label for="startDate ">Start Date </label><br/>
                        <input type="date" id = "startDate" class="datePicker" name="startDate" placeholder="dd.mm.yyyy"></br><br/>
@@ -71,7 +71,7 @@
                        <input type="date" class="datePicker" id="endDate" placeholder="dd.mm.yyyy">
                       </form>
                    </div>
-                   <div id="formData">
+                   <div class="formData">
                        <form>
                        <label for="range">Select the amount of data you want to export</label><br/><br/>
                        <input type="range"  value="<?=$instances ?>" id="range" min="1" max="<?= $instances ?>" oninput="rangeOut.value = range.value" >
@@ -79,7 +79,7 @@
                        <div>(# of Instances selected)</div>
                        </form>
                    </div>
-                   <div id = "formData">
+                   <div class = "formData">
                        <table>
                            <tr>
                                <td>
@@ -88,7 +88,7 @@
                                    </br>
                                    <div class = "selectedValues" style="font-size: 10px">Selected Labels: <span style="font-size: 10px" id="selectedValuesLabels"></span></div>
                                    </br>
-                                   <input style="width: 95%" type="text" list="labelsList" id="labelsInput" value="" size="50"  placeholder="Type labels" onsubmit="">
+                                   <input style="width: 95%" type="text" list="labelsList" id="labelsInput" value="" size="50"  placeholder="  Type labels" onsubmit="">
                                    <datalist id="labelsList">
                                        <?php createLabelSelectionForDataList() ?>
                                    </datalist>
@@ -100,7 +100,7 @@
                                    </br>
                                    <div class = "selectedValues" style="font-size: 10px">Selected Names: <span style="font-size: 10px" id="selectedValuesUseCase"></span></div>
                                    </br>
-                                   <input style="width: 95%" type="text" list="useCaseList" id="useCaseInput" value="" size="50"  placeholder="Type Names" onsubmit="">
+                                   <input style="width: 95%" type="text" list="useCaseList" id="useCaseInput" value="" size="50"  placeholder="  Type Names" onsubmit="">
                                    <datalist id = "useCaseList">
                                        <?php createUseCaseSelectionForDataList() ?>
                                    </datalist>
@@ -108,7 +108,6 @@
                                </td>
                            </tr>
                        </table>
-
                    </div>
                    <div class="formData">
                        <form>
@@ -135,9 +134,7 @@
                        </div>
                       </form>
                   </div>
-                   <!--Functionality must be implemented-->
                    <button type="button" class="exportButton" id="exportFilterButton">Export w/ filters</button>
-                   <!--SQL Statement "SELECT Name, P_ID, Date FROM Process_Instance WHERE P_ID = MAX(P_ID)-->
                    <button type="button" class="exportButton" id="exportLastButton">Export last</button>
                </form>
             </div>

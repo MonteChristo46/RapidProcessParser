@@ -9,8 +9,8 @@
 require_once("OutParser.php");
 require_once("InParser.php");
 
-$inParser = new inParser("../Beispiele Rapidminer/Decision Tree 1.xml");
-$root = $inParser->parseInDatabase();
+$inParser = new inParser("../Beispiele Rapidminer/NeuralNet 1.xml");
+$root = $inParser->parseInDatabase("UseCase 1", "", "", "", "");
 
 echo "<pre>";
 print_r($root);

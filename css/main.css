@@ -197,7 +197,7 @@ a:active {
     box-shadow: 5px 5px 10px #bdc3c7;
 }
 
-#submitLabel, #filterForm > button{
+#submitLabel, #exportFilterButton, #exportLastButton{
     font-family: inherit;
     font-size: 18px;
     font-weight: bold;
@@ -270,8 +270,8 @@ a:active {
 }
 
 /*Added by Daniel*/
-#formData{
-    margin-bottom: 10%;
+.formData{
+    margin-bottom: 6%;
 }
 .datePicker{
     width: 80%;
@@ -550,4 +550,10 @@ form p:last-child {
 }
 #label3, #label4{
     margin-bottom: 20px;
+}
+
+#labelsInput, #useCaseInput{
+    border-radius: 2em;
+    line-height: 2em;
+    border: 1px solid grey;
 }
