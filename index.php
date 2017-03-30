@@ -236,7 +236,6 @@
                     link.download=fileName;
                     link.click();
                 };
-
                 req.send();
             },
             error: function (request, error) {
