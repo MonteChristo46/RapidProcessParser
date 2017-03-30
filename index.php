@@ -79,7 +79,7 @@
                        <div>(# of Instances selected)</div>
                        </form>
                    </div>
-                   <div class = "formData">
+                   <div class = "formData" id="labelSelectors">
                        <table>
                            <tr>
                                <td>
@@ -186,7 +186,9 @@
 <iframe id="test" src=""></iframe>
 </body>
 <script>
-
+    $("#labelSelectors").submit(function(e) {
+        e.preventDefault();
+    });
     //Make Ruler unavailable if date is picked
     $(".datePicker").change(function(){
         var value = $(this).val();
