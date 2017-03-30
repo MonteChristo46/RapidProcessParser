@@ -11,6 +11,7 @@ class DataBaseInterface
 {
     private $db;
     private $processInstances; //List of processInstances
+    private $labels;
 
     public function __construct(){
         include_once("config.php");
@@ -73,6 +74,31 @@ class DataBaseInterface
         return $result['max(Date)'];
     }
 
+    public function getAllLabels(){
+        $sql = "SELECT DISTINCT `Label_1`, `Label_2`, `Label_3`, `Label_4` FROM `Label`";
+        $query = mysqli_query($this->db, $sql) or die("Request failed:".mysqli_error());
+        $labels = array();
+        while($value = mysqli_fetch_assoc($query)){
+            $labels[] = $value['Label_1'];
+            $labels[] = $value['Label_2'];
+            $labels[] = $value['Label_3'];
+            $labels[] = $value['Label_4'];
+        }
+        $result = array_filter(array_unique($labels));
+        return $result;
+    }
+
+    public function getAllUseCaseNames(){
+        $sql = "SELECT DISTINCT `UseCase` FROM `Process_Instance` ";
+        $query = mysqli_query($this->db, $sql) or die("Request failed:".mysqli_error());
+        $names = array();
+        while($value = mysqli_fetch_assoc($query)){
+            $names[] = $value['UseCase'];
+        }
+        $result = array_filter(array_unique($names));
+        return $result;
+    }
+
 
     public function uploadSingleProcessInstanceToDatabase(){
         /*To-Dos*/
@@ -122,9 +148,6 @@ class DataBaseInterface
                     $status = false;
                 }
             }
-            //echo "<pre>";
-            //print_r($labels);
-
             if($status){
                 $sqlForAddingLabels = "INSERT INTO `Label`(`P_ID`, `Label_1`, `Label_2`, `Label_3`, `Label_4`)
                                     VALUES ($instanceId, '$labels[0]', '$labels[1]', '$labels[2]', '$labels[3]')";

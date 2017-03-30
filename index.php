@@ -64,33 +64,60 @@
                 </br>
                <form action = "yourPHPFile" id="filterForm">
                    <div id = "formData">
+                      <form>
                        <label for="startDate ">Start Date </label><br/>
                        <input type="date" id = "startDate" class="datePicker" name="startDate" placeholder="dd.mm.yyyy"></br><br/>
                        <label for="endDate">End Date </label><br/>
                        <input type="date" class="datePicker" id="endDate" placeholder="dd.mm.yyyy">
+                      </form>
                    </div>
                    <div id="formData">
+                       <form>
                        <label for="range">Select the amount of data you want to export</label><br/><br/>
-                       <input type="range" name="range" value="<?=$instances ?>" id="range" min="1" max="<?= $instances ?>" oninput="rangeOut.value = range.value" >
+                       <input type="range"  value="<?=$instances ?>" id="range" min="1" max="<?= $instances ?>" oninput="rangeOut.value = range.value" >
                        <output name="rangeOut" id="rangeOut"><?=$instances?></output>
                        <div>(# of Instances selected)</div>
+                       </form>
                    </div>
                    <div id = "formData">
-                       <label for="authors">Type authors from favorite to least favorite</label>
-                       <input type="text" list="names-list" id="authors" value="" size="50" name="authors" placeholder="Type author names">
-                       <datalist id="names-list">
-                           <option value="Albert Camus">
-                           <option value="Alexandre Dumas">
-                           <option value="C. S. Lewis">
-                           <option value="Charles Dickens">
-                           <option value="Dante Alighieri">
-                       </datalist>
+                       <table>
+                           <tr>
+                               <td>
+                                   <form>
+                                   <label for="labelsInput">Labels</label>
+                                   </br>
+                                   <div class = "selectedValues" style="font-size: 10px">Selected Labels: <span style="font-size: 10px" id="selectedValuesLabels"></span></div>
+                                   </br>
+                                   <input style="width: 95%" type="text" list="labelsList" id="labelsInput" value="" size="50"  placeholder="Type labels" onsubmit="">
+                                   <datalist id="labelsList">
+                                       <?php createLabelSelectionForDataList() ?>
+                                   </datalist>
+                                   </form>
+                               </td>
+                               <td>
+                                   <form>
+                                   <label for="labelsInput">Use Case Name</label>
+                                   </br>
+                                   <div class = "selectedValues" style="font-size: 10px">Selected Names: <span style="font-size: 10px" id="selectedValuesUseCase"></span></div>
+                                   </br>
+                                   <input style="width: 95%" type="text" list="useCaseList" id="useCaseInput" value="" size="50"  placeholder="Type Names" onsubmit="">
+                                   <datalist id = "useCaseList">
+                                       <?php createUseCaseSelectionForDataList() ?>
+                                   </datalist>
+                                   </form>
+                               </td>
+                           </tr>
+                       </table>
+
                    </div>
                    <div class="formData">
+                       <form>
                        <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" name="checkAllAttr"/>
                        <label for="filled-in-box">Export all attributes?</label><br/><br>
+                       </form>
                    </div>
                   <div class="formData">
+                      <form>
                        <label>Select export format:</label>
                        <div class="switch">
                            XES
@@ -106,6 +133,7 @@
                                <span class="lever"></span>
                            </label>
                        </div>
+                      </form>
                   </div>
                    <!--Functionality must be implemented-->
                    <button type="button" class="exportButton" id="exportFilterButton">Export w/ filters</button>
@@ -161,7 +189,9 @@
 <iframe id="test" src=""></iframe>
 </body>
 <script>
-
+    $("form").submit(function(e) {
+        e.preventDefault();
+    });
     //Make Ruler unavailable if date is picked
     $(".datePicker").change(function(){
         var value = $(this).val();
@@ -181,6 +211,64 @@
             });
             if(remove){
                 $('#range').removeAttr('disabled');
+            }
+        }
+    });
+
+    /*Eigentlich muss hier eine Funktion stehen - aber ich habe kein Bock mehr. Mach ich noch*/
+
+    //Variablen --> Müssen an outParserHandler Übergeben werden.
+    var selectedLabels = new Array();
+    var selectedNames = new Array();
+    //LabelSelection
+    $("#labelsInput").keypress(function(e) {
+        //13 is equal to enter
+        if (e.which == 13) {
+            var valueOfInput = $("#labelsInput").val();
+            var options = $("#labelsList").children();
+            var values = [];
+            for(var i = 0; i<options.length; i++){
+                var value = options[i].getAttribute("value");
+                values.push(value);
+            }
+            if(values.includes(valueOfInput) == false){
+                alert("Your Label: "+valueOfInput+" doesn't exist or you already selected it.");
+            }else{
+                for(var i = 0; i<options.length; i++){
+                    if($(options[i]).attr("value") == valueOfInput){
+                        options[i].remove();
+                    }
+                }
+                $("#selectedValuesLabels").append(valueOfInput+", ");
+                selectedLabels.push(valueOfInput);
+                $("#labelsInput").val("");
+
+            }
+        }
+    });
+    //Use Case Selection
+    $("#useCaseInput").keypress(function(e) {
+        //13 is equal to enter
+        if (e.which == 13) {
+            var valueOfInput = $("#useCaseInput").val();
+            var options = $("#useCaseList").children();
+            var values = [];
+            for(var i = 0; i<options.length; i++){
+                var value = options[i].getAttribute("value");
+                values.push(value);
+            }
+            if(values.includes(valueOfInput) == false){
+                alert("The Name: "+valueOfInput+" doesn't exist or you already selected it.");
+            }else{
+                for(var i = 0; i<options.length; i++){
+                    if($(options[i]).attr("value") == valueOfInput){
+                        options[i].remove();
+                    }
+                }
+                $("#selectedValuesUseCase").append(valueOfInput+", ");
+                selectedNames.push(valueOfInput);
+                $("#useCaseInput").val("");
+
             }
         }
     });
@@ -270,38 +358,6 @@
         });
     });
 
-    //Extern from https://codepen.io/anavicente/pen/JGaobW
-    var datalist = jQuery('datalist');
-    var options = jQuery('datalist option');
-    var optionsarray = jQuery.map(options ,function(option) {
-        return option.value;
-    });
-    var input = jQuery('input[list]');
-    var inputcommas = (input.val().match(/,/g)||[]).length;
-    var separator = ',';
 
-    function filldatalist(prefix) {
-        if (input.val().indexOf(separator) > -1 && options.length > 0) {
-            datalist.empty();
-            for (i=0; i < optionsarray.length; i++ ) {
-                if (prefix.indexOf(optionsarray[i]) < 0 ) {
-                    datalist.append('<option value="'+prefix+optionsarray[i]+'">');
-                }
-            }
-        }
-    }
-    input.bind("change paste keyup",function() {
-        var inputtrim = input.val().replace(/^\s+|\s+$/g, "");
-        var currentcommas = (input.val().match(/,/g)||[]).length;
-        if (inputtrim != input.val()) {
-            if (inputcommas != currentcommas) {
-                var lsIndex = inputtrim.lastIndexOf(separator);
-                var str = (lsIndex != -1) ? inputtrim.substr(0, lsIndex)+", " : "";
-                filldatalist(str);
-                inputcommas = currentcommas;
-            }
-            input.val(inputtrim);
-        }
-    });
 </script>
 </html>
