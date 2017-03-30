@@ -56,10 +56,10 @@
     <div id =  "rightContent">
         <div id = "rightContentTop" class="normal" onclick="expandDiv(this)">
             <div class = "rightContentWrapper" >
-                <div class = "icon" ><i class="fa fa-filter" aria-hidden="true"></i></div>
+                <div class = "icon circle" ><i class="fa fa-filter" aria-hidden="true"></i></div>
                 <div class = "rightContentHeading"><span class="highlight">Select </span> Data</div>
             </div>
-            <div class = "box" onclick=" event.stopImmediatePropagation();">
+            <div class = "box" id="filterBox" onclick=" event.stopImmediatePropagation();">
                 <h2>Filter Box</h2>
                 </br>
                <form action = "yourPHPFile" id="filterForm">
@@ -141,7 +141,7 @@
         </div>
         <div id = "rightContentMiddle" class="normal" onclick="toDo(this)">
             <div class = "rightContentWrapper">
-                    <div class = "icon"><i class="fa fa-database" aria-hidden="true"></i></div>
+                    <div class = "icon circle"><i class="fa fa-database" aria-hidden="true"></i></div>
                     <div class = "rightContentHeading">Data <span class="highlight">Overview</span></div>
             </div>
             <div class = "box">
@@ -170,7 +170,7 @@
         <div id = "rightContentBottom" class="normal" onclick="expandDiv(this)">
             <div class = "rightContentWrapper">
 
-                <div class = "icon"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
+                <div class = "icon circle"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
                 <div class = "rightContentHeading"><span class="highlight">About</span> the Project</div>
             </div>
             <div class = "box" id="aboutText">
