@@ -44,19 +44,14 @@ class inParser extends Parser
         //$parameterQuery = "parameter";
         //$parameters = $parameterXPath->query($parameterQuery, $operator);
         $childs = $operator->childNodes;
-        echo "<pre>";
-        print_r($childs);
         $attributeArray = array();
 
         foreach($childs as $child){
-            echo $child->tagName;
             if($child->tagName == "parameter"){
                 $attribute = new Attribute($child->getAttribute("key"), $child->getAttribute("value"));
                 array_push($attributeArray, $attribute);
             }else if($child->tagName == "list"){
                 $listElements = $child->childNodes;
-                echo "<pre>";
-                print_r($listElements);
                 foreach($listElements as $listElement){
                     $attribute = new Attribute($listElement->getAttribute("key"), $listElement->getAttribute("value"));
                     array_push($attributeArray, $attribute);
@@ -66,15 +61,6 @@ class inParser extends Parser
             }
         }
         return $attributeArray;
-    }
-
-    private function hasSubprocess($operator){
-        $subprocesses = $operator->getElementsByTagName("process");
-        if($subprocesses->length > 0){
-            return $subprocesses;
-        }else{
-            return null;
-        }
     }
 
     private function hasList($operator){

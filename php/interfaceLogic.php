@@ -14,34 +14,6 @@ function alert($message){
 require_once ("DataBaseInterface.php");
 require_once ("InParser.php");
 
-//Get relevant numbers for interface
-$dbi = new DataBaseInterface();
-$instances = $dbi->getLastInstanceID();
-$activities = $dbi->getLastActivityID();
-$attributes = $dbi->getLastAttributeID();
-$oldest = $dbi->getDateOfFirstInstance();
-$newest = $dbi->getDateOfLastInstance();
-
-//When Database is empty data should not throw errors but be set on 0
-//If clause because division by 0 throws errors
-if($instances != 0 && $attributes != 0){
-    $instancesHeight = ($instances/($attributes*1.2))*100;
-}else{
-    $instancesHeight = 0;
-}
-
-if($activities != 0 && $attributes != 0){
-    $activitiesHeight = ($activities/($attributes*1.2))*100;
-}else{
-    $activitiesHeight = 0;
-}
-
-if($attributes != 0){
-    $attributesHeight = ($attributes/($attributes*1.2))*100;
-}else{
-    $attributesHeight = 0;
-}
-
 //Upload the given files
 if(isset($_POST['submit'])){
     $count = 0;
@@ -91,6 +63,37 @@ if(isset($_POST['submit'])){
         }
     }
 }
+
+
+//Get relevant numbers for interface
+$dbi = new DataBaseInterface();
+$instances = $dbi->getLastInstanceID();
+$activities = $dbi->getLastActivityID();
+$attributes = $dbi->getLastAttributeID();
+$oldest = $dbi->getDateOfFirstInstance();
+$newest = $dbi->getDateOfLastInstance();
+
+//When Database is empty data should not throw errors but be set on 0
+//If clause because division by 0 throws errors
+if($instances != 0 && $attributes != 0){
+    $instancesHeight = ($instances/($attributes*1.2))*100;
+}else{
+    $instancesHeight = 0;
+}
+
+if($activities != 0 && $attributes != 0){
+    $activitiesHeight = ($activities/($attributes*1.2))*100;
+}else{
+    $activitiesHeight = 0;
+}
+
+if($attributes != 0){
+    $attributesHeight = ($attributes/($attributes*1.2))*100;
+}else{
+    $attributesHeight = 0;
+}
+
+
 
 function deleteFilesFromDir($dir){
     $allFiles= scandir($dir);

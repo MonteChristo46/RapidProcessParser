@@ -186,9 +186,7 @@
 <iframe id="test" src=""></iframe>
 </body>
 <script>
-    $("form").submit(function(e) {
-        e.preventDefault();
-    });
+
     //Make Ruler unavailable if date is picked
     $(".datePicker").change(function(){
         var value = $(this).val();
