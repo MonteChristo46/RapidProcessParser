@@ -22,6 +22,7 @@ if(isset($_POST['submit'])){
 
     if($uploadedFiles > 0) {
         deleteFilesFromDir("upload/");
+        $allFilesForParse = array();
         for ($i = 0; $i < count($_FILES['upload']['name']); $i++) {
             $ext = pathinfo($_FILES['upload']['name'][0], PATHINFO_EXTENSION);
             if ($ext != "xml") {
@@ -33,27 +34,28 @@ if(isset($_POST['submit'])){
             if ($tmpFilePath != "") {
                 $shortname = $_FILES['upload']['name'][$i];
                 $filePath = "upload/" . $_FILES['upload']['name'][$i];
-
+                array_push($allFilesForParse, $filePath);
                 if (move_uploaded_file($tmpFilePath, $filePath)) {
 
                     $files[] = $shortname;
                     $count += 1;
-                    if ($parser = new inParser($filePath)) {
-                        $useCase = $_POST['useCaseLabel'];
-                        $label1Val = $_POST['label1']; //Is null when not entered
-                        $label2Val = $_POST['label2'];
-                        $label3Val = $_POST['label3'];
-                        $label4Val = $_POST['label4'];
-
-                        $parser->parseInDatabase($useCase, $label1Val, $label2Val, $label3Val, $label4Val);//Anpassen wenn Abstrakte Klasse fertig!
-                        //
-                    } else {
-                        $error = true;
-                        alert("Parsing not successful, please check file format!");
-                    }
                 }
             }
         }
+        if ($parser = new inParser($allFilesForParse)) {
+            $useCase = $_POST['useCaseLabel'];
+            $label1Val = $_POST['label1']; //Is null when not entered
+            $label2Val = $_POST['label2'];
+            $label3Val = $_POST['label3'];
+            $label4Val = $_POST['label4'];
+
+            $parser->parseInDatabase($useCase, $label1Val, $label2Val, $label3Val, $label4Val);//Anpassen wenn Abstrakte Klasse fertig!
+            //
+        } else {
+            $error = true;
+            alert("Parsing not successful, please check file format!");
+        }
+
         if(!$error){ //Nur wenn nicht sowieso schon ein Error war
             if ($count == $uploadedFiles) {
                 alert("Success: Uploaded and stored " . $count . " File(s) in Database!");
@@ -97,7 +99,7 @@ if($attributes != 0){
 
 function deleteFilesFromDir($dir){
     $allFiles= scandir($dir);
-    $existingFiles = array_diff($allFiles, array('.', '..')); //Skip the parent & current folder and the .DS_Store file
+    $existingFiles = array_diff($allFiles, array('.', '..', '.DS_Store')); //Skip the parent & current folder and the .DS_Store file
     foreach($existingFiles as $existingFile){
         if(is_dir($dir.$existingFile)){
             deleteFilesFromDir($dir.$existingFile."/");

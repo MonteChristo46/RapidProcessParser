@@ -181,4 +181,7 @@ class outParser extends Parser
         fclose($csv);
     }
 
+    public function setProcessInstances($processInstanceArray){
+        $this->processInstances = $processInstanceArray;
+    }
 }

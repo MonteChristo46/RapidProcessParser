@@ -13,13 +13,14 @@ require_once ("DataBaseInterface.php");
 
 class inParser extends Parser
 {
-    public $file;
+    public $files;
 
-    public function __construct($upload)
+    public function __construct($uploads)
     {
-        $file = $this->loadFile($upload);
-        $this->file = $file;
-
+        foreach($uploads as $upload){
+            $file = $this->loadFile($upload);
+            $this->files[] = $file;
+        }
     }
 
     public function loadFile($upload){
@@ -96,30 +97,62 @@ class inParser extends Parser
     public function parseInDatabase()
     {
         $parameters  =  func_get_args();
-
-        $xml = $this->file;
-        if(!$xml){
-            return "No XML available for parsing!";
-        }
-        //Welcher Name soll hier gesetzt werden?
-        $instance = new ProcessInstance($parameters[0]);
+        $useCase = $parameters[0];
         unset($parameters[0]);
 
-        //Get Process Tag as StartPoint
-        $xPathToProcess = new DOMXPath($xml);
-        $pathToProcess = "/process/operator/process";
-        $processTag= $xPathToProcess->query($pathToProcess);
+        $instanceArray = array();
+        $xmls = $this->files;
+        if(!$xmls){
+            return "No XMLs available for parsing!";
+        }
+        foreach($xmls as $xml){
+            //Welcher Name soll hier gesetzt werden?
+            $instance = new ProcessInstance($useCase);
 
-        //Get complete Activities of process
-        $result = $this->readProcess($xml, $processTag);
+            //Get Process Tag as StartPoint
+            $xPathToProcess = new DOMXPath($xml);
+            $pathToProcess = "/process/operator/process";
+            $processTag= $xPathToProcess->query($pathToProcess);
 
-        //Add all Activities to ProcessInstance and upload it to database
-        $instance->addActivities($result);
-        $instance->addLabels($parameters);
+            //Get complete Activities of process
+            $result = $this->readProcess($xml, $processTag);
+
+            //Add all Activities to ProcessInstance and upload it to database
+            $instance->addActivities($result);
+            $instance->addLabels($parameters);
+            array_push($instanceArray, $instance);
+        }
+
         $dbi = new DataBaseInterface();
-        $dbi->addProcessInstance($instance);
+        $dbi->addProcessInstances($instanceArray);
         $dbi->uploadProcessInstancesToDatabase();
-        return $instance;
+        return $instanceArray;
+    }
+
+    public function parseToProcess()
+    {
+        $instanceArray = array();
+        $xmls = $this->files;
+        if(!$xmls){
+            return "No XMLs available for parsing!";
+        }
+        foreach($xmls as $xml){
+            //Welcher Name soll hier gesetzt werden?
+            $instance = new ProcessInstance("directParse");
+
+            //Get Process Tag as StartPoint
+            $xPathToProcess = new DOMXPath($xml);
+            $pathToProcess = "/process/operator/process";
+            $processTag= $xPathToProcess->query($pathToProcess);
+
+            //Get complete Activities of process
+            $result = $this->readProcess($xml, $processTag);
+
+            //Add all Activities to ProcessInstance and upload it to database
+            $instance->addActivities($result);
+            array_push($instanceArray, $instance);
+        }
+        return $instanceArray;
     }
 
     /**
@@ -127,7 +160,7 @@ class inParser extends Parser
      */
     public function getFile()
     {
-        return $this->file;
+        return $this->files;
     }
 
 }

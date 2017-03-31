@@ -192,7 +192,7 @@
     //Make Ruler unavailable if date is picked
     $(".datePicker").change(function(){
         var value = $(this).val();
-        console.log(value);
+        //console.log(value);
 
         if(value != ""){//If date was set
             $('#range').attr('disabled', 'disabled');
@@ -293,24 +293,26 @@
     });*/
 
     //Get Filter expressions and start download of parsed data
-    $('#exportFilterButton').click(function(){
-        console.log("Button wurde geklickt");
-        var test = $('#filled-in-box').is(":checked");
+    $('.exportButton').click(function(){
+        //console.log("Button wurde geklickt");
         $.ajax({
             type: 'POST',
             dataType:'json',
             url: 'php/outParserHandler.php',
             data: {
+                type: $(this).attr('id'),
                 range: range.value,
                 startDate: $('#startDate').val(),
                 endDate: $('#endDate').val(),
-                allAttr: test,
+                allAttr: $('#filled-in-box').is(":checked"),
                 xes: $('#xes').is(":checked"),
                 csv: $('#csv').is(":checked")
             },
             success: function(url) {
                 var req = new XMLHttpRequest();
                 var file = url.a;
+                console.log(url);
+                console.log(url.a);
                 req.open("GET", "php/"+file, true);
                 req.responseType = "blob";
                 req.onload = function (event) {
