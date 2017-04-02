@@ -625,3 +625,22 @@ form p:last-child {
     transition: transform 0.4s linear 0s, border-left-width 0s linear 0.35s;
     transition: transform 0.4s linear 0s, border-left-width 0s linear 0.35s, -webkit-transform 0.4s linear 0s;
 }
+
+
+.axis--x text{
+      fill: #ECECEC;
+  }
+.axis--y text{
+    fill: #ECECEC;
+}
+.axis--y line, path{
+    stroke: #ECECEC;
+}
+
+.axis--x  line, path{
+   stroke: #ECECEC;
+}
+.bar:hover{
+opacity: 0.6;
+}
+

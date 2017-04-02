@@ -67,13 +67,20 @@ if(isset($_POST['submit'])){
 }
 
 
+
+
 //Get relevant numbers for interface
 $dbi = new DataBaseInterface();
+$fProcess = $dbi->getMostFrequentlyProcessUseCase();
+$fActivity = $dbi->getMostFrequentlyActivity();
+$fAttr = $dbi->getMostFrequentlyAttributes();
 $instances = $dbi->getLastInstanceID();
+/*
 $activities = $dbi->getLastActivityID();
 $attributes = $dbi->getLastAttributeID();
 $oldest = $dbi->getDateOfFirstInstance();
 $newest = $dbi->getDateOfLastInstance();
+
 
 //When Database is empty data should not throw errors but be set on 0
 //If clause because division by 0 throws errors
@@ -93,7 +100,7 @@ if($attributes != 0){
     $attributesHeight = ($attributes/($attributes*1.2))*100;
 }else{
     $attributesHeight = 0;
-}
+}*/
 
 
 

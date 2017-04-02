@@ -106,9 +106,7 @@ class inParser extends Parser
             return "No XMLs available for parsing!";
         }
         foreach($xmls as $xml){
-            //Welcher Name soll hier gesetzt werden?
             $instance = new ProcessInstance($useCase);
-
             //Get Process Tag as StartPoint
             $xPathToProcess = new DOMXPath($xml);
             $pathToProcess = "/process/operator/process";

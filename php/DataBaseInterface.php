@@ -99,6 +99,57 @@ class DataBaseInterface
         return $result;
     }
 
+    public function getNumberOfAttributes(){
+        $sql = "SELECT COUNT(`Attr_Name`) FROM `Attribute`";
+        $query = mysqli_query($this->db, $sql) or die("Request failed:".mysqli_error());
+        $result = mysqli_fetch_assoc($query);
+        return $result["COUNT(`Attr_Name`)"];
+    }
+    public function getNumberOfActivities(){
+        $sql = "SELECT COUNT(`Activity_name`) FROM `Activity`";
+        $query = mysqli_query($this->db, $sql) or die("Request failed:".mysqli_error());
+        $result = mysqli_fetch_assoc($query);
+        return $result["COUNT(`Activity_name`)"];
+    }
+    public function getNumberOfProcessInstances(){
+        $sql = " SELECT COUNT(`P_ID`) FROM `Process_Instance`";
+        $query = mysqli_query($this->db, $sql) or die("Request failed:".mysqli_error());
+        $result = mysqli_fetch_assoc($query);
+        return $result["COUNT(`P_ID`)"];
+
+    }
+    public function getMostFrequentlyAttributes(){
+        $sql = "SELECT `Attr_Name`, COUNT(`Attr_Name`) as aNum
+                FROM `Attribute`
+                GROUP BY `Attr_Name`
+                ORDER BY aNum DESC
+                LIMIT 1";
+        $query = mysqli_query($this->db, $sql) or die("Request failed:".mysqli_error());
+        $result = mysqli_fetch_assoc($query);
+        return $result["Attr_Name"];
+    }
+    public function getMostFrequentlyActivity(){
+        $sql = "SELECT `Activity_name`, COUNT(`Activity_name`) as aNum
+                FROM `Activity`
+                GROUP BY `Activity_name`
+                ORDER BY aNum DESC
+                LIMIT 1";
+        $query = mysqli_query($this->db, $sql) or die("Request failed:".mysqli_error());
+        $result = mysqli_fetch_assoc($query);
+        return $result["Activity_name"];
+
+    }
+    public function getMostFrequentlyProcessUseCase(){
+        $sql = "SELECT `UseCase`, COUNT(`UseCase`) as uNum
+                FROM `Process_Instance`
+                GROUP BY `UseCase`
+                ORDER BY uNum DESC
+                LIMIT 1";
+        $query = mysqli_query($this->db, $sql) or die("Request failed:".mysqli_error());
+        $result = mysqli_fetch_assoc($query);
+        return $result["UseCase"];
+    }
+
 
     public function uploadSingleProcessInstanceToDatabase(){
         /*To-Dos*/

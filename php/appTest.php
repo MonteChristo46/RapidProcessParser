@@ -46,18 +46,48 @@ $databaseInterface = new DataBaseInterface();
 $lastInstanceID = $databaseInterface->getLastInstanceID();
 $lastActivityID = $databaseInterface->getLastActivityID();
 $lastAttrID = $databaseInterface->getLastAttributeID();
+$numberOfActivities = $databaseInterface->getNumberOfActivities();
+$numberOfAttributes = $databaseInterface->getNumberOfAttributes();
+$numberOfProcessInstances = $databaseInterface->getNumberOfProcessInstances();
+$fActivity = $databaseInterface->getMostFrequentlyActivity();
+$fAttr = $databaseInterface->getMostFrequentlyAttributes();
+$fProcess = $databaseInterface->getMostFrequentlyProcessUseCase();
 
 
 
-//Die Objekte zum Anschauen --> Achtung ich muss noch date fixen
 echo "Status:"."<br/>";
 echo "Last InstanceID: ".$lastInstanceID."<br/>";
 echo "Last ActivityID: ".$lastActivityID."<br/>";
 echo "Last AttributeID: ".$lastAttrID."<br/>";
+echo "Activity Numbers: ".$numberOfActivities."<br/>";
+echo "Attribut Numbers: ".$numberOfAttributes."<br/>";
+echo "Process Instance Numbers: ".$numberOfProcessInstances."<br/>";
+echo "Frequently Activity: ".$fActivity."<br/>";
+echo "Frequently Attr: ".$fAttr."<br/>";
+echo "Frequently ProcessU: ".$fProcess."<br/>";
 
-echo("Labels Test");
+function createJson(){
+    $databaseInterface = new DataBaseInterface();
+    $numberAttributes = $databaseInterface->getNumberOfAttributes();
+    $numberActivities = $databaseInterface->getNumberOfActivities();
+    $numberProcesses = $databaseInterface->getNumberOfProcessInstances();
+
+    $forJson = array(
+        array( 'name' => 'Processes', 'number' => $numberProcesses),
+        array( 'name' => 'Activities', 'number' => $numberActivities),
+        array( 'label' => 'Attributes', 'number' => $numberAttributes),
+    );
+    $jsonData =  json_encode($forJson);
+    file_put_contents('myfile.json', $jsonData);
+}
+
+createJson();
+
+
+
+/*echo("Labels Test");
 print_r($databaseInterface->getAllLabels());
-print_r($databaseInterface->getAllUseCaseNames());
+print_r($databaseInterface->getAllUseCaseNames());*/
 /*
 echo("<pre>");
 print_r($processInstance);

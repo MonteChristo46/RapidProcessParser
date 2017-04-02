@@ -1,2 +1,1 @@
 # RapidProcessParser
-Hallo Freunde!

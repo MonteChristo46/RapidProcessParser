@@ -1,0 +1,1283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/index.php" description="Data Overview" line="149" mnemonic="1" />
+    <bookmark url="file://$PROJECT_DIR$/index.php" description="Ajax Call Export" line="310" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="193f55ea-677d-44c7-82a1-57b9cecb9100" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/getJSON.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/content/images/psd/BackgroundLeft.afdesign" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/content/images/psd/backgroundBottomRight.afdesign" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/content/images/psd/backgroundLeft.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/content/images/psd/backgroundLeftTop.afdesign" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/content/images/psd/backgroundMiddleRight.afdesign" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/content/images/psd/left.afdesign" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/content/images/psd/rightContentBottom.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/content/images/rightContentBottom.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/content/images/rightContentMiddle.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/content/images/rightContentMiddle2.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/content/images/rightContentTop.svg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/images/rightContentMiddle.jpg" afterPath="$PROJECT_DIR$/content/images/rightContentMiddle.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/ProcessData.zip" afterPath="$PROJECT_DIR$/php/ProcessData.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/DataBaseInterface.php" afterPath="$PROJECT_DIR$/php/DataBaseInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/InParser.php" afterPath="$PROJECT_DIR$/php/InParser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/OutParser.php" afterPath="$PROJECT_DIR$/php/OutParser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/ProcessData.csv" afterPath="$PROJECT_DIR$/php/ProcessData.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/ProcessData.xes" afterPath="$PROJECT_DIR$/php/ProcessData.xes" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/appTest.php" afterPath="$PROJECT_DIR$/php/appTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/interfaceLogic.php" afterPath="$PROJECT_DIR$/php/interfaceLogic.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/outParserHandler.php" afterPath="$PROJECT_DIR$/php/outParserHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/outParserTest.php" afterPath="$PROJECT_DIR$/php/outParserTest.php" />
+    </list>
+    <ignored path="RapidProcessParser.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="DatabaseView">
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="RapidProcessParser" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="InParser.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/InParser.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-278">
+              <caret line="75" column="32" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProcessInstance.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/ProcessInstance.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Activity.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/Activity.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="127">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Attribute.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/Attribute.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataBaseInterface.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/DataBaseInterface.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2190">
+              <caret line="146" column="25" selection-start-line="146" selection-start-column="25" selection-end-line="146" selection-end-column="25" />
+              <folding>
+                <element signature="e#7#95#0#PHP" expanded="true" />
+                <marker date="1490993759000" expanded="true" signature="1054:1094" ph="SELECT max(P... Process_Instance" />
+                <marker date="1490993759000" expanded="true" signature="1357:1389" ph="SELECT max(A... Activity" />
+                <marker date="1490993759000" expanded="true" signature="1715:1751" ph="SELECT max(A... Attribute" />
+                <marker date="1490993759000" expanded="true" signature="2010:2050" ph="SELECT min(D... Process_Instance" />
+                <marker date="1490993759000" expanded="true" signature="2293:2333" ph="SELECT max(D... Process_Instance" />
+                <marker date="1490993759000" expanded="true" signature="2567:2638" ph="SELECT DISTI... Label" />
+                <marker date="1490993759000" expanded="true" signature="3135:3184" ph="SELECT DISTI... Process_Instance" />
+                <marker date="1490993759000" expanded="true" signature="3553:3595" ph="SELECT COUNT... Attribute" />
+                <marker date="1490993759000" expanded="true" signature="3846:3891" ph="SELECT COUNT... Activity" />
+                <marker date="1490993759000" expanded="true" signature="4153:4197" ph="SELECT COUNT... Process_Instance" />
+                <marker date="1490993759000" expanded="true" signature="4450:4625" ph="SELECT `Attr... Attribute" />
+                <marker date="1490993759000" expanded="true" signature="4871:5057" ph="SELECT `Acti... Activity" />
+                <marker date="1490993759000" expanded="true" signature="5314:5490" ph="SELECT `UseC... Process_Instance" />
+                <marker date="1490993759000" expanded="true" signature="6085:6210" ph="INSERT INTO `Process_Instance`... " />
+                <marker date="1490993759000" expanded="true" signature="6610:6736" ph="INSERT INTO `Activity`... " />
+                <marker date="1490993759000" expanded="true" signature="7281:7444" ph="INSERT INTO `Attribute`... " />
+                <marker date="1490993759000" expanded="true" signature="8034:8218" ph="INSERT INTO `Label`... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getJSON.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/getJSON.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="interfaceLogic.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/interfaceLogic.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-353">
+              <caret line="81" column="40" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OutParser.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/php/OutParser.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4455">
+              <caret line="297" column="34" selection-start-line="297" selection-start-column="20" selection-end-line="297" selection-end-column="34" />
+              <folding>
+                <marker date="1491072513000" expanded="true" signature="3092:3404" ph="SELECT Proce... Process_Instance" />
+                <marker date="1491072513000" expanded="true" signature="3644:3715" ph="SELECT `P_ID... Process_Instance" />
+                <marker date="1491072513000" expanded="true" signature="10757:10838" ph="SELECT * FRO... Process_Instance" />
+                <marker date="1491072513000" expanded="true" signature="11304:11385" ph="SELECT * FRO... Process_Instance" />
+                <marker date="1491072513000" expanded="true" signature="11604:11669" ph="SELECT * FRO... Process_Instance" />
+                <marker date="1491072513000" expanded="true" signature="12040:12105" ph="SELECT * FRO... Process_Instance" />
+                <marker date="1491072513000" expanded="true" signature="12818:12900" ph="SELECT `Acti... Activity" />
+                <marker date="1491072513000" expanded="true" signature="13266:13344" ph="SELECT `Attr... Attribute" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="outParserTest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/outParserTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="72" selection-start-line="17" selection-start-column="72" selection-end-line="17" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/php/outParser.php" />
+        <option value="$PROJECT_DIR$/Beispiele Rapidminer/Decision Tree 1.xml" />
+        <option value="$PROJECT_DIR$/php/inParser.php" />
+        <option value="$PROJECT_DIR$/php/Parser.php" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/php/upload.php" />
+        <option value="$PROJECT_DIR$/php/interfaceParseOut.php" />
+        <option value="$PROJECT_DIR$/php/Activity.php" />
+        <option value="$PROJECT_DIR$/php/Attribute.php" />
+        <option value="$PROJECT_DIR$/php/exportFilter.php" />
+        <option value="$PROJECT_DIR$/php/ProcessInstance.php" />
+        <option value="$PROJECT_DIR$/php/ProcessData.csv" />
+        <option value="$PROJECT_DIR$/js/app.js" />
+        <option value="$PROJECT_DIR$/Beispiele Rapidminer/Decision Tree 2.xml" />
+        <option value="$PROJECT_DIR$/php/parserTest.php" />
+        <option value="$PROJECT_DIR$/Beispiele Rapidminer/NeuralNet 1.xml" />
+        <option value="$PROJECT_DIR$/php/appTest.php" />
+        <option value="$PROJECT_DIR$/php/getJSON.php" />
+        <option value="$PROJECT_DIR$/php/interfaceLogic.php" />
+        <option value="$PROJECT_DIR$/css/main.css" />
+        <option value="$PROJECT_DIR$/php/ProcessData.xes" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/php/outParserHandler.php" />
+        <option value="$PROJECT_DIR$/php/outParserTest.php" />
+        <option value="$PROJECT_DIR$/php/InParser.php" />
+        <option value="$PROJECT_DIR$/php/OutParser.php" />
+        <option value="$PROJECT_DIR$/php/DataBaseInterface.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP XAMPP" />
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RapidProcessParser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RapidProcessParser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RapidProcessParser" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RapidProcessParser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RapidProcessParser" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FullScreen" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/extensions" />
+      <recent name="$PROJECT_DIR$/backup" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="193f55ea-677d-44c7-82a1-57b9cecb9100" name="Default" comment="" />
+      <created>1489939980094</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1489939980094</updated>
+      <workItem from="1489939981979" duration="6811000" />
+      <workItem from="1490035727422" duration="54200000" />
+      <workItem from="1490275756294" duration="47816000" />
+      <workItem from="1490532138216" duration="40882000" />
+      <workItem from="1490794366918" duration="18013000" />
+      <workItem from="1490990494080" duration="38551000" />
+      <workItem from="1491086890563" duration="7000" />
+      <workItem from="1491120106754" duration="5894000" />
+    </task>
+    <task id="LOCAL-00026" summary="Update Parser:&#10;&#10;--&gt; CSV Export working w/o Attributes">
+      <created>1490199945203</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1490199945203</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Update Parser:&#10;&#10;--&gt; Handling of multiple files fixed">
+      <created>1490204096497</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1490204096497</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Update Parser:&#10;&#10;--&gt; Handling of multiple files fixed">
+      <created>1490204911385</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1490204911385</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Update Parser:&#10;&#10;--&gt; Small interface changes">
+      <created>1490278865777</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1490278865777</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Update Parser:&#10;&#10;--&gt; Small interface changes">
+      <created>1490284609484</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1490284609484</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Update Parser:&#10;&#10;--&gt; Small interface changes">
+      <created>1490284638440</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1490284638440</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Update Parser:&#10;&#10;--&gt; Form changes (Background needs to be ajusted and function &quot;expandDiv&quot; is not working properly">
+      <created>1490289506248</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1490289506248</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Update Parser:&#10;&#10;--&gt; Form changes (Background needs to be ajusted and function &quot;expandDiv&quot; is not working properly)">
+      <created>1490289642440</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1490289642440</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Update Parser:&#10;&#10;--&gt; Form changes (Background needs to be ajusted and function &quot;expandDiv&quot; is not working properly)">
+      <created>1490289881198</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1490289881198</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Update Parser:&#10;&#10;--&gt; Form changes (Background needs to be ajusted and function &quot;expandDiv&quot; is not working properly)&#10;--&gt; Chart in Data Overview">
+      <created>1490290882331</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1490290882331</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Update Parser:&#10;&#10;--&gt; Form changes (Background needs to be ajusted and function &quot;expandDiv&quot; is not working properly)&#10;--&gt; Chart in Data Overview">
+      <created>1490290962286</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1490290962286</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Update Parser:&#10;&#10;--&gt; Form changes (Background needs to be ajusted and function &quot;expandDiv&quot; is not working properly)&#10;--&gt; Chart in Data Overview">
+      <created>1490291053507</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1490291053507</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Update Parser:&#10;&#10;--&gt; Form changes (Background needs to be ajusted and function &quot;expandDiv&quot; is not working properly)&#10;--&gt; Chart in Data Overview">
+      <created>1490291355292</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1490291355292</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Update Parser:&#10;&#10;--&gt; Chart in Data overview and deleted useless imports">
+      <created>1490371445900</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1490371445900</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Update Parser:&#10;&#10;--&gt; Chart in Data overview and deleted useless imports">
+      <created>1490372916865</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1490372916865</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Added Wallpaper options">
+      <created>1490373342464</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1490373342464</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Added Wallpaper options">
+      <created>1490373398113</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1490373398113</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Added Wallpaper options &amp; expandDiv function">
+      <created>1490376091272</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1490376091272</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Fixed issue with expanding div boxes.">
+      <created>1490381850269</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1490381850269</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Fixed Attribute issue! CSV and XES outParsing working">
+      <created>1490431348867</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1490431348867</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Fixed Attribute issue! CSV and XES outParsing working">
+      <created>1490432653589</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1490432653589</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Fixed Attribute issue! CSV and XES outParsing working">
+      <created>1490434317433</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1490434317433</updated>
+    </task>
+    <task id="LOCAL-00048" summary="First Try Filter">
+      <created>1490441728593</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1490441728593</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Css hover style opacity instead of scaling. Behaves more straight">
+      <created>1490444824894</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1490444824894</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Css hover style opacity instead of scaling. Behaves more straight">
+      <created>1490450020830</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1490450020834</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Issue with slider solved. Filter is saved in array in exportFilter.php">
+      <created>1490514560057</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1490514560057</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Issue with slider solved. Filter is saved in array in exportFilter.php">
+      <created>1490522031714</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1490522031715</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Issue with slider solved. Filter is saved in array in exportFilter.php">
+      <created>1490522232534</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1490522232534</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Improved upload functionality">
+      <created>1490527738274</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1490527738274</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Improved upload functionality and delete content of upload folder every time">
+      <created>1490532527282</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1490532527284</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Update">
+      <created>1490538756707</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1490538756707</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Update">
+      <created>1490538949188</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1490538949188</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Recode outParser CSV">
+      <created>1490546556904</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1490546556904</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Recode outParser CSV">
+      <created>1490548322948</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1490548322949</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Labels implemented. Color change">
+      <created>1490708720576</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1490708720576</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Filter are blocked when selecting the corresponding element">
+      <created>1490711098008</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1490711098008</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Index">
+      <created>1490721931100</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1490721931101</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Changed label input">
+      <created>1490782760723</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1490782760723</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Changed label input">
+      <created>1490783812140</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1490783812140</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Changed label input">
+      <created>1490785161123</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1490785161124</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Multiple File download">
+      <created>1490797323382</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1490797323383</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Multiple File download">
+      <created>1490797348341</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1490797348341</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Multiple File download">
+      <created>1490817829333</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1490817829333</updated>
+    </task>
+    <task id="LOCAL-00069" summary="Multiple File download">
+      <created>1490883467260</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1490883467260</updated>
+    </task>
+    <task id="LOCAL-00070" summary="Update inParser">
+      <created>1490892071556</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1490892071556</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Update inParser">
+      <created>1490892585387</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1490892585387</updated>
+    </task>
+    <task id="LOCAL-00072" summary="Update inParser">
+      <created>1490892748853</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1490892748853</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Update inParser">
+      <created>1490899862722</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1490899862722</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Update inParser &amp; last Export">
+      <created>1490987821494</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1490987821494</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="212174000" />
+  </component>
+  <component name="TodoView" selected-index="4">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20113085" sideWeight="0.4715909" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14701131" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4249668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.4943182" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20113085" sideWeight="0.52840906" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4249668" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19789983" sideWeight="0.48295453" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14701131" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.4943182" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19789983" sideWeight="0.51704544" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update Parser:&#10;&#10;--&gt; CSV Export working w/o Attributes" />
+    <MESSAGE value="Update Parser:&#10;&#10;--&gt; Handling of multiple files fixed" />
+    <MESSAGE value="Update Parser:&#10;&#10;--&gt; Small interface changes" />
+    <MESSAGE value="Update Parser:&#10;&#10;--&gt; Form changes (Background needs to be ajusted and function &quot;expandDiv&quot; is not working properly" />
+    <MESSAGE value="Update Parser:&#10;&#10;--&gt; Form changes (Background needs to be ajusted and function &quot;expandDiv&quot; is not working properly)" />
+    <MESSAGE value="Update Parser:&#10;&#10;--&gt; Form changes (Background needs to be ajusted and function &quot;expandDiv&quot; is not working properly)&#10;--&gt; Chart in Data Overview" />
+    <MESSAGE value="Update Parser:&#10;&#10;--&gt; Chart in Data overview and deleted useless imports" />
+    <MESSAGE value="Added Wallpaper options" />
+    <MESSAGE value="Added Wallpaper options &amp; expandDiv function" />
+    <MESSAGE value="Fixed issue with expanding div boxes." />
+    <MESSAGE value="Fixed Attribute issue! CSV and XES outParsing working" />
+    <MESSAGE value="First Try Filter" />
+    <MESSAGE value="Css hover style opacity instead of scaling. Behaves more straight" />
+    <MESSAGE value="Issue with slider solved. Filter is saved in array in exportFilter.php" />
+    <MESSAGE value="Improved upload functionality" />
+    <MESSAGE value="Improved upload functionality and delete content of upload folder every time" />
+    <MESSAGE value="Update" />
+    <MESSAGE value="Recode outParser CSV" />
+    <MESSAGE value="Labels implemented. Color change" />
+    <MESSAGE value="Filter are blocked when selecting the corresponding element" />
+    <MESSAGE value="Index" />
+    <MESSAGE value="Changed label input" />
+    <MESSAGE value="Multiple File download" />
+    <MESSAGE value="Update inParser" />
+    <MESSAGE value="Update inParser &amp; last Export" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update inParser &amp; last Export" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/php/DataBaseInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1110">
+          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding>
+            <element signature="e#7#95#0#PHP" expanded="true" />
+            <marker date="1490993759000" expanded="true" signature="1054:1094" ph="SELECT max(P... Process_Instance" />
+            <marker date="1490993759000" expanded="true" signature="1357:1389" ph="SELECT max(A... Activity" />
+            <marker date="1490993759000" expanded="true" signature="1715:1751" ph="SELECT max(A... Attribute" />
+            <marker date="1490993759000" expanded="true" signature="2010:2050" ph="SELECT min(D... Process_Instance" />
+            <marker date="1490993759000" expanded="true" signature="2293:2333" ph="SELECT max(D... Process_Instance" />
+            <marker date="1490993759000" expanded="true" signature="2567:2638" ph="SELECT DISTI... Label" />
+            <marker date="1490993759000" expanded="true" signature="3135:3184" ph="SELECT DISTI... Process_Instance" />
+            <marker date="1490993759000" expanded="true" signature="3553:3595" ph="SELECT COUNT... Attribute" />
+            <marker date="1490993759000" expanded="true" signature="3846:3891" ph="SELECT COUNT... Activity" />
+            <marker date="1490993759000" expanded="true" signature="4153:4197" ph="SELECT COUNT... Process_Instance" />
+            <marker date="1490993759000" expanded="true" signature="4450:4625" ph="SELECT `Attr... Attribute" />
+            <marker date="1490993759000" expanded="true" signature="4871:5057" ph="SELECT `Acti... Activity" />
+            <marker date="1490993759000" expanded="true" signature="5314:5490" ph="SELECT `UseC... Process_Instance" />
+            <marker date="1490993759000" expanded="true" signature="6085:6210" ph="INSERT INTO `Process_Instance`... " />
+            <marker date="1490993759000" expanded="true" signature="6610:6736" ph="INSERT INTO `Activity`... " />
+            <marker date="1490993759000" expanded="true" signature="7281:7444" ph="INSERT INTO `Attribute`... " />
+            <marker date="1490993759000" expanded="true" signature="8034:8218" ph="INSERT INTO `Label`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/exportFilter.php" />
+    <entry file="file://$PROJECT_DIR$/php/OutParser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="55" column="37" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
+          <folding>
+            <marker date="1491072513000" expanded="true" signature="3092:3404" ph="SELECT Proce... Process_Instance" />
+            <marker date="1491072513000" expanded="true" signature="3644:3715" ph="SELECT `P_ID... Process_Instance" />
+            <marker date="1491072513000" expanded="true" signature="10757:10838" ph="SELECT * FRO... Process_Instance" />
+            <marker date="1491072513000" expanded="true" signature="11304:11385" ph="SELECT * FRO... Process_Instance" />
+            <marker date="1491072513000" expanded="true" signature="11604:11669" ph="SELECT * FRO... Process_Instance" />
+            <marker date="1491072513000" expanded="true" signature="12040:12105" ph="SELECT * FRO... Process_Instance" />
+            <marker date="1491072513000" expanded="true" signature="12818:12900" ph="SELECT `Acti... Activity" />
+            <marker date="1491072513000" expanded="true" signature="13266:13344" ph="SELECT `Attr... Attribute" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#702#1025#0#PHP" expanded="false" />
+            <marker date="1491069121000" expanded="true" signature="894:1016" ph="..." />
+            <marker date="1491069121000" expanded="true" signature="940:994" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1995">
+          <caret line="133" column="1" selection-start-line="133" selection-start-column="1" selection-end-line="133" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/DataBaseInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1095">
+          <caret line="73" column="5" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
+          <folding>
+            <element signature="e#7#95#0#PHP" expanded="true" />
+            <marker date="1490993759000" expanded="true" signature="1054:1094" ph="SELECT max(P... Process_Instance" />
+            <marker date="1490993759000" expanded="true" signature="1357:1389" ph="SELECT max(A... Activity" />
+            <marker date="1490993759000" expanded="true" signature="1715:1751" ph="SELECT max(A... Attribute" />
+            <marker date="1490993759000" expanded="true" signature="2010:2050" ph="SELECT min(D... Process_Instance" />
+            <marker date="1490993759000" expanded="true" signature="2293:2333" ph="SELECT max(D... Process_Instance" />
+            <marker date="1490993759000" expanded="true" signature="2567:2638" ph="SELECT DISTI... Label" />
+            <marker date="1490993759000" expanded="true" signature="3135:3184" ph="SELECT DISTI... Process_Instance" />
+            <marker date="1490993759000" expanded="true" signature="3553:3595" ph="SELECT COUNT... Attribute" />
+            <marker date="1490993759000" expanded="true" signature="3846:3891" ph="SELECT COUNT... Activity" />
+            <marker date="1490993759000" expanded="true" signature="4153:4197" ph="SELECT COUNT... Process_Instance" />
+            <marker date="1490993759000" expanded="true" signature="4450:4625" ph="SELECT `Attr... Attribute" />
+            <marker date="1490993759000" expanded="true" signature="4871:5057" ph="SELECT `Acti... Activity" />
+            <marker date="1490993759000" expanded="true" signature="5314:5490" ph="SELECT `UseC... Process_Instance" />
+            <marker date="1490993759000" expanded="true" signature="6085:6210" ph="INSERT INTO `Process_Instance`... " />
+            <marker date="1490993759000" expanded="true" signature="6610:6736" ph="INSERT INTO `Activity`... " />
+            <marker date="1490993759000" expanded="true" signature="7281:7444" ph="INSERT INTO `Attribute`... " />
+            <marker date="1490993759000" expanded="true" signature="8034:8218" ph="INSERT INTO `Label`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backup/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="60" selection-start-line="30" selection-start-column="60" selection-end-line="30" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Beispiele Rapidminer/Decision Tree 1.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1875">
+          <caret line="125" column="17" selection-start-line="125" selection-start-column="17" selection-end-line="125" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/Activity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/Attribute.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/appTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/DataBaseInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="64" column="32" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
+          <folding>
+            <element signature="e#7#95#0#PHP" expanded="true" />
+            <marker date="1490993759000" expanded="true" signature="1054:1094" ph="SELECT max(P... Process_Instance" />
+            <marker date="1490993759000" expanded="true" signature="1357:1389" ph="SELECT max(A... Activity" />
+            <marker date="1490993759000" expanded="true" signature="1715:1751" ph="SELECT max(A... Attribute" />
+            <marker date="1490993759000" expanded="true" signature="2010:2050" ph="SELECT min(D... Process_Instance" />
+            <marker date="1490993759000" expanded="true" signature="2293:2333" ph="SELECT max(D... Process_Instance" />
+            <marker date="1490993759000" expanded="true" signature="2567:2638" ph="SELECT DISTI... Label" />
+            <marker date="1490993759000" expanded="true" signature="3135:3184" ph="SELECT DISTI... Process_Instance" />
+            <marker date="1490993759000" expanded="true" signature="3553:3595" ph="SELECT COUNT... Attribute" />
+            <marker date="1490993759000" expanded="true" signature="3846:3891" ph="SELECT COUNT... Activity" />
+            <marker date="1490993759000" expanded="true" signature="4153:4197" ph="SELECT COUNT... Process_Instance" />
+            <marker date="1490993759000" expanded="true" signature="4450:4625" ph="SELECT `Attr... Attribute" />
+            <marker date="1490993759000" expanded="true" signature="4871:5057" ph="SELECT `Acti... Activity" />
+            <marker date="1490993759000" expanded="true" signature="5314:5490" ph="SELECT `UseC... Process_Instance" />
+            <marker date="1490993759000" expanded="true" signature="6085:6210" ph="INSERT INTO `Process_Instance`... " />
+            <marker date="1490993759000" expanded="true" signature="6610:6736" ph="INSERT INTO `Activity`... " />
+            <marker date="1490993759000" expanded="true" signature="7281:7444" ph="INSERT INTO `Attribute`... " />
+            <marker date="1490993759000" expanded="true" signature="8034:8218" ph="INSERT INTO `Label`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/ProcessInstance.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1740">
+          <caret line="116" column="12" selection-start-line="116" selection-start-column="12" selection-end-line="116" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Beispiele Rapidminer/Decision Tree 1.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="112" column="55" selection-start-line="112" selection-start-column="44" selection-end-line="112" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/interfaceParseOut.php" />
+    <entry file="file://$PROJECT_DIR$/extensions/materialize/css/materialize.css" />
+    <entry file="file://$PROJECT_DIR$/extensions/jquery-3.2.0.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="3" column="16220" selection-start-line="3" selection-start-column="16220" selection-end-line="3" selection-end-column="16220" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backup/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backup/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload/Decision Tree 4.xml" />
+    <entry file="file://$PROJECT_DIR$/upload/Decision Tree 3.xml" />
+    <entry file="file://$PROJECT_DIR$/php/exportFilter.php" />
+    <entry file="file://$PROJECT_DIR$/php/ProcessData.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19695">
+          <caret line="1313" column="56" selection-start-line="1313" selection-start-column="56" selection-end-line="1313" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Beispiele Rapidminer/Decision Tree 2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="41" column="51" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Beispiele Rapidminer/Decision Tree 3.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Beispiele Rapidminer/Decision Tree 4.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-64">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Beispiele Rapidminer/Decision Tree 5.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Beispiele Rapidminer/NeuralNet 1.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/parserTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="11" column="61" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extensions/d3.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6225">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/myfile.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/appTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="83" column="13" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/Parser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9690">
+          <caret line="646" column="0" selection-start-line="646" selection-start-column="0" selection-end-line="646" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/ProcessData.xes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207495">
+          <caret line="13833" column="0" selection-start-line="13833" selection-start-column="0" selection-end-line="13833" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4845">
+          <caret line="331" column="44" selection-start-line="331" selection-start-column="44" selection-end-line="331" selection-end-column="44" />
+          <folding>
+            <element signature="e#702#1025#0#PHP" expanded="false" />
+            <marker date="1491069121000" expanded="true" signature="894:1016" ph="..." />
+            <marker date="1491069121000" expanded="true" signature="940:994" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/outParserHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1605">
+          <caret line="107" column="9" selection-start-line="107" selection-start-column="9" selection-end-line="107" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/outParserTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="72" selection-start-line="17" selection-start-column="72" selection-end-line="17" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/Activity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/Attribute.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/InParser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-278">
+          <caret line="75" column="32" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/ProcessInstance.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/getJSON.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/interfaceLogic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-353">
+          <caret line="81" column="40" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/DataBaseInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2190">
+          <caret line="146" column="25" selection-start-line="146" selection-start-column="25" selection-end-line="146" selection-end-column="25" />
+          <folding>
+            <element signature="e#7#95#0#PHP" expanded="true" />
+            <marker date="1490993759000" expanded="true" signature="1054:1094" ph="SELECT max(P... Process_Instance" />
+            <marker date="1490993759000" expanded="true" signature="1357:1389" ph="SELECT max(A... Activity" />
+            <marker date="1490993759000" expanded="true" signature="1715:1751" ph="SELECT max(A... Attribute" />
+            <marker date="1490993759000" expanded="true" signature="2010:2050" ph="SELECT min(D... Process_Instance" />
+            <marker date="1490993759000" expanded="true" signature="2293:2333" ph="SELECT max(D... Process_Instance" />
+            <marker date="1490993759000" expanded="true" signature="2567:2638" ph="SELECT DISTI... Label" />
+            <marker date="1490993759000" expanded="true" signature="3135:3184" ph="SELECT DISTI... Process_Instance" />
+            <marker date="1490993759000" expanded="true" signature="3553:3595" ph="SELECT COUNT... Attribute" />
+            <marker date="1490993759000" expanded="true" signature="3846:3891" ph="SELECT COUNT... Activity" />
+            <marker date="1490993759000" expanded="true" signature="4153:4197" ph="SELECT COUNT... Process_Instance" />
+            <marker date="1490993759000" expanded="true" signature="4450:4625" ph="SELECT `Attr... Attribute" />
+            <marker date="1490993759000" expanded="true" signature="4871:5057" ph="SELECT `Acti... Activity" />
+            <marker date="1490993759000" expanded="true" signature="5314:5490" ph="SELECT `UseC... Process_Instance" />
+            <marker date="1490993759000" expanded="true" signature="6085:6210" ph="INSERT INTO `Process_Instance`... " />
+            <marker date="1490993759000" expanded="true" signature="6610:6736" ph="INSERT INTO `Activity`... " />
+            <marker date="1490993759000" expanded="true" signature="7281:7444" ph="INSERT INTO `Attribute`... " />
+            <marker date="1490993759000" expanded="true" signature="8034:8218" ph="INSERT INTO `Label`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/OutParser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4455">
+          <caret line="297" column="34" selection-start-line="297" selection-start-column="20" selection-end-line="297" selection-end-column="34" />
+          <folding>
+            <marker date="1491072513000" expanded="true" signature="3092:3404" ph="SELECT Proce... Process_Instance" />
+            <marker date="1491072513000" expanded="true" signature="3644:3715" ph="SELECT `P_ID... Process_Instance" />
+            <marker date="1491072513000" expanded="true" signature="10757:10838" ph="SELECT * FRO... Process_Instance" />
+            <marker date="1491072513000" expanded="true" signature="11304:11385" ph="SELECT * FRO... Process_Instance" />
+            <marker date="1491072513000" expanded="true" signature="11604:11669" ph="SELECT * FRO... Process_Instance" />
+            <marker date="1491072513000" expanded="true" signature="12040:12105" ph="SELECT * FRO... Process_Instance" />
+            <marker date="1491072513000" expanded="true" signature="12818:12900" ph="SELECT `Acti... Activity" />
+            <marker date="1491072513000" expanded="true" signature="13266:13344" ph="SELECT `Attr... Attribute" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

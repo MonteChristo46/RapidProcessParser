@@ -8,6 +8,8 @@
     <script src="extensions/jquery-3.2.0.min.js"></script>
     <script src="js/app.js"></script>
     <link rel="stylesheet" href="extensions/font-awesome-4.7.0/css/font-awesome.css">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
 
     <!--LOCAL SPEICHERN!!!-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -146,25 +148,24 @@
             </div>
             <div class = "box">
                 <div class="chartDiv">
-                    <ul class="chart">
-                        <li>
-                            <span style="height:<?=$instancesHeight?>%" title="Instances"></span>
-                        </li>
-                        <li>
-                            <span style="height:<?=$activitiesHeight?>%" title="Activities"></span>
-                        </li>
-                        <li>
-                            <span style="height:<?=$attributesHeight?>%" title="Attributes"></span>
-                        </li>
-                    </ul>
+                    <svg id="dataOverview" width="320" height="250">"></svg>
                 </div>
 
-                <h3>Process instances in the database</h3>
+
+
+                <h3>Must frequently used Use Case</h3>
+                <span class=" automaticNumberCounter"><?= $fProcess?></span>
+                <h3>Must frequently used Activity</h3>
+                <span class=" automaticNumberCounter"><?= $fActivity?></span>
+                <h3>Must frequently used Attribute</h3>
+                <span class=" automaticNumberCounter"><?= $fAttr?></span>
+                <!--<h3>Process instances in the database</h3>
                 <span class="automaticNumberCounter" action="yourPhpScript" value='<?= $instances ?>'><?= $instances ?></span>
                 <h3>Activities in the database</h3>
                 <span class="automaticNumberCounter" value='<?= $activities ?>'><?= $activities ?></span>
                 <h3>Attributes in the database</h3>
                 <span class="automaticNumberCounter" value='<?= $attributes ?>'><?= $attributes ?></span>
+                -->
             </div>
         </div>
         <div id = "rightContentBottom" class="normal" onclick="expandDiv(this)">
@@ -174,7 +175,7 @@
                 <div class = "rightContentHeading"><span class="highlight">About</span> the Project</div>
             </div>
             <div class = "box" id="aboutText">
-                <p>This software provides you with the possibility to upload <span class="highlight">XML files of Rapid Miner processes</span> and store these data inside a <span class="highlight">mySQL database</span>.
+                <p>This software provides you with the possibility to upload <span class="highlight">XML files of Rapid Miner processes</span> and store these data inside a <span class="highlight">MySQL database</span>.
                     Furthermore, you can <span class="highlight">export</span> the whole database with filter settings, like "# of instances", in the box <span class="highlight">"Select data"</span> up top.<br/><br/>
                     The exported file is parsed for the usage in terms of <span class="highlight">Process Mining</span>. Because of that, you can choose whether to export the data
                     in the <span class="highlight">XES</span> or the <span class="highlight">CSV</span> format to ensure usage in different Process Mining Tools.<br/>
@@ -214,9 +215,9 @@
 
     /*Eigentlich muss hier eine Funktion stehen - aber ich habe kein Bock mehr. Mach ich noch*/
 
-    //Variablen --> Müssen an outParserHandler Übergeben werden.
-    var selectedLabels = new Array();
-    var selectedNames = new Array();
+    //Variablen --> Müssen an outParserHandler Übergeben werden
+    var selectedLabels = ["da39a3ee"]; // Ajax is not able to send empty arrays -- Hash provide solution
+    var selectedNames = ["da39a3ee"];
     //LabelSelection
     $("#labelsInput").keypress(function(e) {
         //13 is equal to enter
@@ -306,7 +307,9 @@
                 endDate: $('#endDate').val(),
                 allAttr: $('#filled-in-box').is(":checked"),
                 xes: $('#xes').is(":checked"),
-                csv: $('#csv').is(":checked")
+                csv: $('#csv').is(":checked"),
+                useCases: selectedNames,
+                labels: selectedLabels
             },
             success: function(url) {
                 var req = new XMLHttpRequest();
@@ -325,8 +328,10 @@
                 };
                 req.send();
             },
-            error: function (request, error) {
-                console.log(arguments);
+            error: function (url,request, error) {
+                console.log(url.responseText);
+                console.log(request);
+                console.log(error);
                 alert(" Can't do because: " + error);
             }
         });
@@ -356,7 +361,61 @@
             }
         });
     });
+    function getChart() {
+        $.ajax({
+            url:'php/getJSON.php',
+            complete: function (json) {
+                var data = JSON.parse(json.responseText);
+                console.log(data);
+                var svg = d3.select("#dataOverview"),
+                    margin = {top: 20, right: 20, bottom: 30, left: 40},
+                    width = +svg.attr("width") - margin.left - margin.right,
+                    height = +svg.attr("height") - margin.top - margin.bottom;
 
+                var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
+                    y = d3.scaleLinear().rangeRound([height, 0]);
+
+                var g = svg.append("g")
+                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+                var colors = d3.scaleLinear()
+                    .domain([0, data.length])
+                    .range(["#244071", "#162846"]);
+                x.domain(data.map(function(d) { return d.name; }));
+                y.domain([0, d3.max(data, function(d) { return parseInt(d.number); })]);
+
+                g.append("g")
+                    .attr("class", "axis axis--x")
+                    .attr("transform", "translate(0," + height + ")")
+                    .call(d3.axisBottom(x));
+
+                g.append("g")
+                    .attr("class", "axis axis--y")
+                    .call(d3.axisLeft(y).ticks(10))
+                    .append("text")
+                    .attr("transform", "rotate(-90)")
+
+                g.selectAll(".bar")
+                    .data(data)
+                    .enter().append("rect")
+                    .style("fill", function(d,i){
+                        return colors(i);
+                    })
+                    .attr("class", "bar")
+                    .attr("x", function(d) { return x(d.name); })
+                    .attr("y", function(d) { return y(d.number); })
+                    .attr("width", x.bandwidth())
+                    .attr("height", function(d) { return height - y(d.number); });
+
+
+            },
+            error: function () {
+                console.log("Something went wrong with the chart creation! :(");
+            }
+        });
+        return false;
+    }
+    getChart();
 
 </script>
 </html>
