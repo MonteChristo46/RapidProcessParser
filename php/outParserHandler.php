@@ -17,6 +17,7 @@ if(!empty($_POST)) {
             return true;
         }
     }
+    //Describes Logic when XES or CSV is parsed
     function parserLogic($xes, $csv, $outParser){
         if ($xes && $csv) {
             $outParser->parseDataToCSV();
@@ -31,6 +32,7 @@ if(!empty($_POST)) {
             echo json_encode(array("a" => "ProcessData.csv"));
         }
     }
+    //Zip Download Option
     function createZipFile($files){
         $zip = new ZipArchive();
         $fileName = "ProcessData.zip";
@@ -43,10 +45,10 @@ if(!empty($_POST)) {
         }
         $zip->close();
     }
-
+    //Global Variables
     $xes = convertingToBoolean($_POST['xes']);
     $csv = convertingToBoolean($_POST['csv']);
-
+    $outParser = new OutParser();
     if($_POST['type'] == "exportLastButton"){
 
         $files = scandir("../upload");
@@ -56,23 +58,13 @@ if(!empty($_POST)) {
         }
         $processParser = new inParser($relevantFiles);
         $instanceArray = $processParser->parseToProcess();
-        $createParser = new outParser();
-        $createParser->setProcessInstances($instanceArray);
+        //$createParser = new outParser();
+        $outParser->setProcessInstances($instanceArray);
 
-        if($xes && $csv){
-            $createParser->parseDataToCSV();
-            $createParser->parseDataToXES();
-            createZipFile(array("ProcessData.csv", "ProcessData.xes"));
-            echo json_encode(array("a" => "ProcessData.zip"));
-        } else if ($xes) {
-            $createParser->parseDataToXES();
-            echo json_encode(array("a" => "ProcessData.xes"));
-        } else if ($csv) {
-            $createParser->parseDataToCSV();
-            echo json_encode(array("a" => "ProcessData.csv"));
-        }
+        parserLogic($xes, $csv, $outParser);
 
     }else {
+        //Delete fix value - because AJAX Call can't contain empty array
         function deleteHashFromArray($arr){
             unset($arr[0]);
             return $arr;
@@ -85,7 +77,7 @@ if(!empty($_POST)) {
         $useCases = deleteHashFromArray($_REQUEST['useCases']);
         $labels = deleteHashFromArray($_REQUEST['labels']);
 
-        /*Why? I dont know*/
+        /*Why? I dont know - I think it is because of wrong format*/
         $neu = array(); //$useCases
         foreach($useCases as $us){
             $neu[]=$us;
@@ -97,7 +89,8 @@ if(!empty($_POST)) {
         //Transforming Dates
         $startDateNew = new DateTime($startDate);
         $endDateNew = new DateTime($endDate);
-        $outParser = new OutParser();
+
+        // Calling Parse Function and get the Data from MySQL Database depending of input parameters
         if ($startDate != "" || $endDate != "") {
             $outParser->getDataFromDatabase($startDateNew->format('d.m.Y'), $endDateNew->format('d.m.Y'), $allAttr, $neu, $neu2);
             //print_r($outParser->getDataFromDatabase($startDateNew->format('d.m.Y'), $endDateNew->format('d.m.Y'), $allAttr, $useCases, $labels));

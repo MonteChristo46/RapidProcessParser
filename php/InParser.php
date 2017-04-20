@@ -35,15 +35,9 @@ class inParser extends Parser
         $doc->preserveWhiteSpace = false; //Don't mess with whiteSpace in output
         $doc->load($upload);
         return $doc;
-        //Ohne Konstruktor (um den in- und out-Parser in der gleichen Klasse zu halten)
-        //$this->file = $doc;
     }
 
-    private function readParameters($xml, $operator){
-        //Read Parameters of an Operator and push in Database as Attributes
-        //$parameterXPath = new DOMXPath($xml);
-        //$parameterQuery = "parameter";
-        //$parameters = $parameterXPath->query($parameterQuery, $operator);
+    private function readParameters($operator){
         $childs = $operator->childNodes;
         $attributeArray = array();
 
@@ -58,22 +52,13 @@ class inParser extends Parser
                     array_push($attributeArray, $attribute);
                 }
             }else if($child->tagName == "process"){
-                $this->readProcess($xml, $child);
+                $this->readProcess($child);
             }
         }
         return $attributeArray;
     }
 
-    private function hasList($operator){
-        $lists = $operator->getElementsByTagName("list");
-        if($lists->length > 0){
-            return $lists;
-        }else{
-            return null;
-        }
-    }
-
-    private function readProcess($xml, $processTag)
+    private function readProcess($processTag)
     {
         $activityArray = array();
         if(get_class($processTag) == "DOMNodeList"){
@@ -86,7 +71,7 @@ class inParser extends Parser
         foreach ($operators as $operator) {
             //Check the operator on parameters and sub-operators/processes
             $activity = new Activity($operator->getAttribute("name"));
-            $attributes = $this->readParameters($xml, $operator);
+            $attributes = $this->readParameters($operator);
             //Add Attributes to activity
             $activity->addAttributes($attributes);
             $activityArray[] =  $activity;
@@ -113,7 +98,7 @@ class inParser extends Parser
             $processTag= $xPathToProcess->query($pathToProcess);
 
             //Get complete Activities of process
-            $result = $this->readProcess($xml, $processTag);
+            $result = $this->readProcess($processTag);
 
             //Add all Activities to ProcessInstance and upload it to database
             $instance->addActivities($result);
@@ -121,10 +106,14 @@ class inParser extends Parser
             array_push($instanceArray, $instance);
         }
 
-        $dbi = new DataBaseInterface();
-        $dbi->addProcessInstances($instanceArray);
-        $dbi->uploadProcessInstancesToDatabase();
+        $this->storeDataInDatabase($instanceArray);
         return $instanceArray;
+    }
+
+    private function storeDataInDatabase($instances){
+        $dbi = new DataBaseInterface();
+        $dbi->addProcessInstances($instances);
+        $dbi->uploadProcessInstancesToDatabase();
     }
 
     public function parseToProcess()

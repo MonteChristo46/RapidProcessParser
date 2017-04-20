@@ -8,11 +8,12 @@
     <script src="extensions/jquery-3.2.0.min.js"></script>
     <script src="js/app.js"></script>
     <link rel="stylesheet" href="extensions/font-awesome-4.7.0/css/font-awesome.css">
-    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="extensions/d3.min.js"></script>
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 
 
     <!--LOCAL SPEICHERN!!!-->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapi  s.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
 <?php
@@ -86,7 +87,8 @@
                            <tr>
                                <td>
                                    <form>
-                                   <label for="labelsInput">Labels</label>
+                                   <label for="labelsInput">Labels
+                                       <i class="fa fa-trash" id="deleteLabels"aria-hidden="true"></i></label>
                                    </br>
                                    <div class = "selectedValues" style="font-size: 10px">Selected Labels: <span style="font-size: 10px" id="selectedValuesLabels"></span></div>
                                    </br>
@@ -98,7 +100,8 @@
                                </td>
                                <td>
                                    <form>
-                                   <label for="labelsInput">Use Case Name</label>
+                                   <label for="labelsInput">Use Case Name
+                                       <i class="fa fa-trash" id="deleteUseCases"aria-hidden="true"></i></label>
                                    </br>
                                    <div class = "selectedValues" style="font-size: 10px">Selected Names: <span style="font-size: 10px" id="selectedValuesUseCase"></span></div>
                                    </br>
@@ -153,11 +156,11 @@
 
 
 
-                <h3>Must frequently used Use Case</h3>
+                <h3>Must frequently used use case</h3>
                 <span class=" automaticNumberCounter"><?= $fProcess?></span>
-                <h3>Must frequently used Activity</h3>
+                <h3>Must frequently used activity</h3>
                 <span class=" automaticNumberCounter"><?= $fActivity?></span>
-                <h3>Must frequently used Attribute</h3>
+                <h3>Must frequently used attribute</h3>
                 <span class=" automaticNumberCounter"><?= $fAttr?></span>
                 <!--<h3>Process instances in the database</h3>
                 <span class="automaticNumberCounter" action="yourPhpScript" value='<?= $instances ?>'><?= $instances ?></span>
@@ -193,10 +196,9 @@
     //Make Ruler unavailable if date is picked
     $(".datePicker").change(function(){
         var value = $(this).val();
-        //console.log(value);
-
         if(value != ""){//If date was set
             $('#range').attr('disabled', 'disabled');
+            $('#range').css('cursor', 'not-allowed');
         }else{
             var currentValues = $('.datePicker');
             var remove = true;
@@ -271,27 +273,43 @@
         }
     });
 
-    //Make inputs inactive
-    /*
-    $('.switchDownloadType').click(function(){
-        var object = $(this);
-        var id = object.attr('id');
-        var value = object.is(":checked");
-
-        if(value){
-            if(id == "csv"){
-                $('#xes').attr('disabled', 'disabled');
-            }else if(id == "xes") {
-                $('#csv').attr('disabled', 'disabled');
-            }
-        }else if(!value){
-            if(id == "csv"){
-                $('#xes').removeAttr('disabled');
-            }else if(id == "xes") {
-                $('#csv').removeAttr('disabled');
-            }
+    $('.fa-trash').click(function(){
+        var id = $(this).attr('id');
+        if(id == "deleteLabels"){
+            var span = $('#selectedValuesLabels');
+            var options = $("#labelsList");
+        }else if(id == "deleteUseCases"){
+            var span = $('#selectedValuesUseCase');
+            var options = $('#useCaseList');
         }
-    });*/
+        var selected = span.html();
+        var valueArray = selected.split(", ");
+        console.log(valueArray);
+        for(var i=0; i<(valueArray.length - 1); i++){
+            console.log(valueArray[i]);
+            var opt = document.createElement('option');
+            opt.value = valueArray[i];
+            options.append(opt);
+
+            if(id == "deleteUseCases"){
+                for(var j=0; j<selectedNames.length; j++){
+                    if(selectedNames[j] == valueArray[i]){
+                        selectedNames.splice(j);
+                    }
+                }
+            }else if(id == "deleteLabels"){
+                for(var j=0; j<selectedLabels.length; j++){
+                    if(selectedLabels[j] == valueArray[i]){
+                        selectedLabels.splice(j);
+                    }
+                }
+            }
+            //console.log(selectedLabels);
+            console.log(selectedNames);
+
+        }
+        span.html("");
+    });
 
     //Get Filter expressions and start download of parsed data
     $('.exportButton').click(function(){
@@ -383,6 +401,8 @@
                     .range(["#244071", "#162846"]);
                 x.domain(data.map(function(d) { return d.name; }));
                 y.domain([0, d3.max(data, function(d) { return parseInt(d.number); })]);
+
+            
 
                 g.append("g")
                     .attr("class", "axis axis--x")

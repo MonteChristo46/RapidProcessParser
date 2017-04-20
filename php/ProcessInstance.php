@@ -40,6 +40,7 @@ class ProcessInstance
         return $this->labels;
     }
 
+    
     public function addLabel($label){
         $this->labels[] = $label;
     }

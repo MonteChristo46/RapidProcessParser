@@ -284,6 +284,9 @@ a:active {
 #range{
     width: 80%;
 }
+#range:hover{
+    cursor: ew-resize;
+}
 .switch label .lever{
     content: "";
     display: inline-block;
@@ -644,3 +647,10 @@ form p:last-child {
 opacity: 0.6;
 }
 
+.fa-trash{
+    padding-left: 10px;
+}
+.fa-trash:hover{
+    color: #FF8C00;
+    cursor: pointer;
+}
